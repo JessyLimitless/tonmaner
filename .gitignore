@@ -1,0 +1,9 @@
+# 빌드 산출물 — 원고와 조판에서 언제든 다시 만든다
+build/
+
+# OS·편집기 부스러기
+Thumbs.db
+desktop.ini
+.DS_Store
+*.swp
+*~

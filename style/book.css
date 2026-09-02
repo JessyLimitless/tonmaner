@@ -1,0 +1,918 @@
+@charset "utf-8";
+
+/* ══════════════════════════════════════════════════════════
+   버핏의 자본 배치학 — EPUB 본문 조판
+   어법: 재무제표(ledger). 가는 괘선, 자릿수 맞춘 숫자,
+        서식처럼 읽히는 워크시트.
+   원칙: 절대 단위 금지. 모든 여백을 em으로 잡아 독자가
+        글자를 키워도 밀도가 유지되게 한다.
+   ══════════════════════════════════════════════════════════ */
+
+/* ── 서체 ──────────────────────────────────────────────
+   KoPubWorld Batang / Dotum — 한국출판인회의 배포 출판용 서체.
+   EPUB에 서브셋(woff2)으로 임베드하여 리더기와 무관하게 동일 조판.
+   ────────────────────────────────────────────────────── */
+@font-face {
+  font-family: "KoPubWorld Batang";
+  src: url("../fonts/KoPubWorldBatang-Light.woff2") format("woff2");
+  font-weight: 300; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: "KoPubWorld Batang";
+  src: url("../fonts/KoPubWorldBatang-Bold.woff2") format("woff2");
+  font-weight: 700; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: "KoPubWorld Dotum";
+  src: url("../fonts/KoPubWorldDotum-Medium.woff2") format("woff2");
+  font-weight: 500; font-style: normal; font-display: swap;
+}
+@font-face {
+  font-family: "KoPubWorld Dotum";
+  src: url("../fonts/KoPubWorldDotum-Bold.woff2") format("woff2");
+  font-weight: 700; font-style: normal; font-display: swap;
+}
+
+/* 조판 전역 변수 */
+:root {
+  --serif: "KoPubWorld Batang", "KoPubWorld Batang Light",
+           "Noto Serif KR", "Nanum Myeongjo", serif;
+  --sans:  "KoPubWorld Dotum", "Noto Sans KR", "Malgun Gothic", sans-serif;
+}
+
+/* ── 색 ────────────────────────────────────────────────── */
+:root {
+  --page:   #FFFFFF;   /* 순백 */
+  --ink:    #14120F;   /* 따뜻한 먹색 */
+  --soft:   #6E6862;   /* 보조 텍스트 */
+  --faint:  #A8A29A;   /* 라벨·장식 */
+  --rule:   #E6E2DC;   /* 괘선 */
+  --rule-2: #C9C3BA;   /* 진한 괘선 (표 머리) */
+  --accent: #2B3A55;   /* 먹청색 — 장 번호, 핵심 지표 */
+  --wash:   #F7F6F3;   /* 워크시트·수식 바탕 */
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --page:   #15171A;
+    --ink:    #DDE0E4;
+    --soft:   #9AA0A7;
+    --faint:  #5F666E;
+    --rule:   #2B2F34;
+    --rule-2: #3D434A;
+    --accent: #9DB4D6;
+    --wash:   #1B1E22;
+  }
+}
+
+/* ── 판면 ──────────────────────────────────────────────── */
+body {
+  margin: 0 auto;
+  padding: 3.2em 2em;
+  max-width: 36em;
+
+  color: var(--ink);
+  background: var(--page);
+
+  font-family: var(--serif);
+  font-weight: 300;
+  font-size: 1em;
+  line-height: 1.9;
+  letter-spacing: 0;
+  font-feature-settings: "kern" 1;
+  text-rendering: optimizeLegibility;
+
+  word-break: normal;
+  line-break: strict;
+  overflow-wrap: break-word;
+  orphans: 2;
+  widows: 2;
+}
+
+/* 제목·라벨은 어절 중간에서 갈리면 보기 나쁘다 */
+h1, h2, h3, h4,
+.ch-sub, .part-sub, .label, .toc-title, .toc-part p, figcaption {
+  word-break: keep-all;
+}
+
+/* ── 문단 ──────────────────────────────────────────────── */
+p {
+  margin: 0 0 0.5em;
+  text-indent: 1em;
+  text-align: justify;
+}
+
+h1 + p, h2 + p, h3 + p,
+hr + p,
+blockquote + p,
+figure + p,
+.ch-sub + p, .part-sub + p,
+.worksheet p, .callout p, .formula p,
+p.first {
+  text-indent: 0;
+}
+
+/* ══════════ 표지 ══════════════════════════════════════ */
+/* pandoc 이 만드는 cover.xhtml — body#cover 가 본문 판면 규칙
+   (max-width / padding) 을 물려받으면 표지 둘레에 여백이 생긴다.  */
+body#cover {
+  max-width: none;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background: var(--page);
+}
+#cover-image {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+}
+#cover-image svg,
+#cover-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  max-height: 100%;
+  margin: 0;
+  object-fit: contain;
+}
+
+/* ══════════ 차례 (직접 조판한 전체 목차) ═══════════════ */
+h1.contents {
+  font-family: var(--sans);
+  font-weight: 700;
+  font-size: 0.86em;
+  letter-spacing: 0.24em;
+  color: var(--faint);
+  margin: 0 0 2.4em;
+  padding: 6% 0 0.8em;
+  border: 0;
+  border-bottom: 1px solid var(--rule-2);
+  text-indent: 0;
+  text-align: left;
+  page-break-before: always;
+  break-before: page;
+  page-break-after: avoid;
+}
+
+/* 부 표제 — 괘선 위에 얹는 라벨 */
+.toc-part {
+  margin: 2.6em 0 1.4em;
+  padding-top: 0.9em;
+  border-top: 1px solid var(--rule-2);
+}
+.toc-part p {
+  text-indent: 0;
+  margin: 0;
+  font-family: var(--sans);
+  font-size: 0.94em;
+  font-weight: 700;
+  line-height: 1.55;
+  color: var(--ink);
+  letter-spacing: -0.015em;
+}
+.toc-part-n {
+  color: var(--accent);
+  margin-right: 0.5em;
+}
+
+/* 장 항목 */
+.toc-item {
+  margin: 0 0 1.5em;
+  page-break-inside: avoid;
+  break-inside: avoid;
+}
+.toc-item > p {
+  text-indent: 0;
+  margin: 0;
+  line-height: 1.6;
+}
+.toc-num {
+  font-family: "IBM Plex Mono", "Consolas", monospace;
+  font-size: 0.88em;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.08em;
+  color: var(--accent);
+  margin-right: 0.7em;
+}
+.toc-title {
+  font-family: var(--sans);
+  font-size: 0.92em;
+  font-weight: 500;
+  color: var(--ink);
+  letter-spacing: -0.012em;
+}
+/* 절 */
+.toc-item ul {
+  list-style: none;
+  margin: 0.6em 0 0;
+  padding-left: 2.5em;
+}
+.toc-item li {
+  font-family: var(--sans);
+  font-size: 0.8em;
+  line-height: 1.75;
+  color: var(--soft);
+  margin-bottom: 0.3em;
+  text-indent: 0;
+  letter-spacing: -0.01em;
+}
+
+/* ══════════ 간지 — 표제지·판권지 ═══════════════════════ */
+/* 마크다운:  # 제목 {.titlepage .unlisted}  /  {.colophon .unlisted} */
+
+/* pandoc 이 metadata.yaml 로 자동 생성하는 표제지를 조판한다.
+   (직접 만들면 표제지가 두 장이 된다 — 자동본 하나만 쓴다) */
+section.titlepage {
+  padding: 17% 0 0;
+  page-break-after: always;
+  break-after: page;
+}
+section.titlepage h1.title {
+  font-family: var(--serif);
+  font-weight: 700;
+  font-size: 1.92em;
+  line-height: 1.38;
+  letter-spacing: -0.03em;
+  color: var(--ink);
+  margin: 0 0 0.7em;
+  padding: 0;
+  border: 0;
+  text-indent: 0;
+  text-align: left;
+  page-break-before: auto;
+  break-before: auto;
+}
+/* 제목 아래 accent 괘선 */
+section.titlepage h1.title::after {
+  content: "";
+  display: block;
+  width: 2.6em;
+  height: 3px;
+  background: var(--accent);
+  margin-top: 0.86em;
+}
+section.titlepage p.subtitle {
+  font-family: var(--sans);
+  text-align: left;
+  font-size: 1em;
+  font-weight: 500;
+  line-height: 1.7;
+  color: var(--soft);
+  letter-spacing: -0.01em;
+  text-indent: 0;
+  margin: 0.9em 0 6.4em;
+}
+section.titlepage p.author {
+  font-family: var(--sans);
+  font-size: 1.02em;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: -0.01em;
+  text-indent: 0;
+  margin: 0 0 0.7em;
+  padding-top: 1.5em;
+  border-top: 1px solid var(--rule-2);
+}
+section.titlepage p.publisher {
+  font-family: var(--sans);
+  font-size: 0.88em;
+  font-weight: 500;
+  color: var(--soft);
+  letter-spacing: 0.02em;
+  text-indent: 0;
+  margin: 0 0 0.35em;
+}
+section.titlepage p.date {
+  font-family: var(--sans);
+  font-size: 0.8em;
+  font-variant-numeric: tabular-nums;
+  color: var(--faint);
+  text-indent: 0;
+  margin: 0 0 0.3em;
+}
+section.titlepage div.rights {
+  font-family: var(--sans);
+  text-align: left;
+  font-size: 0.78em;
+  color: var(--faint);
+  text-indent: 0;
+  margin-top: 2.4em;
+}
+
+/* 약표제지 — 표지와 표제지 사이의 완충. 제목 한 줄만 조용히 놓는다 */
+h1.halftitle {
+  font-family: var(--serif);
+  font-weight: 700;
+  font-size: 1.06em;
+  letter-spacing: 0.01em;
+  color: var(--soft);
+  margin: 0;
+  padding: 40% 0 0;
+  border: 0;
+  text-indent: 0;
+  text-align: left;
+  page-break-before: always;
+  break-before: page;
+  page-break-after: always;
+  break-after: page;
+}
+h1.halftitle::after {
+  content: "";
+  display: block;
+  width: 1.6em;
+  height: 2px;
+  background: var(--rule-2);
+  margin-top: 0.9em;
+}
+
+/* 표제지 — 직접 조판본. 표지와 같은 세로 리듬 */
+h1.titlepage-main {
+  font-family: var(--serif);
+  font-weight: 700;
+  font-size: 1.92em;
+  line-height: 1.38;
+  letter-spacing: -0.03em;
+  color: var(--ink);
+  margin: 0;
+  padding: 17% 0 0;
+  border: 0;
+  text-indent: 0;
+  text-align: left;
+  page-break-before: always;
+  break-before: page;
+}
+h1.titlepage-main::after {
+  content: "";
+  display: block;
+  width: 2.6em;
+  height: 3px;
+  background: var(--accent);
+  margin-top: 0.86em;
+}
+.tp-sub { margin: 0.9em 0 6.4em; }
+.tp-sub p {
+  font-family: var(--sans);
+  font-size: 1em;
+  font-weight: 500;
+  line-height: 1.7;
+  color: var(--soft);
+  letter-spacing: -0.01em;
+  text-indent: 0;
+  text-align: left;
+  margin: 0;
+}
+.tp-credits {
+  padding-top: 1.5em;
+  border-top: 1px solid var(--rule-2);
+  page-break-after: always;
+  break-after: page;
+}
+.tp-credits p {
+  font-family: var(--sans);
+  font-size: 0.86em;
+  color: var(--soft);
+  letter-spacing: 0.01em;
+  text-indent: 0;
+  text-align: left;
+  margin: 0 0 0.5em;
+}
+.tp-credits p:first-child {
+  font-size: 1.02em;
+  font-weight: 700;
+  color: var(--ink);
+  letter-spacing: -0.01em;
+  margin-bottom: 0.9em;
+}
+.tp-credits p:last-child { margin-bottom: 0; }
+
+/* 판권지 — 서식처럼, 가장 작고 조용하게 */
+h1.colophon {
+  font-family: var(--sans);
+  font-weight: 700;
+  font-size: 0.78em;
+  letter-spacing: 0.2em;
+  color: var(--faint);
+  margin: 0 0 1.8em;
+  padding: 30% 0 0.7em;
+  border: 0;
+  border-bottom: 1px solid var(--rule);
+  text-indent: 0;
+  text-align: left;
+  page-break-before: always;
+  break-before: page;
+  page-break-after: avoid;
+}
+.colophon-body {
+  font-family: var(--sans);
+  font-size: 0.84em;
+  line-height: 2;
+  color: var(--soft);
+}
+.colophon-body p { text-indent: 0; text-align: left; margin: 0 0 1.4em; }
+.colophon-body p:last-child { margin-bottom: 0; }
+.colophon-body strong { color: var(--ink); font-weight: 700; }
+/* 서지 항목 — 라벨/값 2열 */
+.colophon-body dl {
+  margin: 0 0 1.8em;
+  display: grid;
+  grid-template-columns: 5.4em 1fr;
+  row-gap: 0.5em;
+  column-gap: 1em;
+}
+.colophon-body dt { color: var(--faint); font-weight: 500; }
+.colophon-body dd { margin: 0; color: var(--ink); }
+/* 고지 — 상하 괘선으로 격리 */
+.notice {
+  font-family: var(--sans);
+  font-size: 0.8em;
+  line-height: 1.95;
+  color: var(--soft);
+  border-top: 1px solid var(--rule);
+  border-bottom: 1px solid var(--rule);
+  padding: 1.1em 0;
+  margin: 2.2em 0;
+}
+.notice p { text-indent: 0; margin: 0 0 0.7em; }
+.notice p:last-child { margin-bottom: 0; }
+
+/* ══════════ 장 표제 ════════════════════════════════════ */
+/* 마크다운:  # [01]{.ch-num} 장 제목                        */
+h1 {
+  font-family: var(--serif);
+  font-weight: 700;
+  font-size: 1.72em;
+  line-height: 1.42;
+  letter-spacing: -0.032em;
+  color: var(--ink);
+  margin: 2.4em 0 2.6em;
+  text-indent: 0;
+  text-align: left;
+  page-break-before: always;
+  break-before: page;
+  page-break-after: avoid;
+  break-after: avoid;
+}
+
+h1:not(.part):not(.contents):not(.colophon):not(.halftitle):not(.titlepage-main)::after {
+  content: "";
+  display: block;
+  width: 2.2em;
+  height: 3px;
+  background: var(--accent);
+  margin-top: 0.72em;
+}
+.ch-num {
+  display: block;
+  font-family: var(--serif);
+  font-weight: 300;
+  font-size: 2.35em;
+  line-height: 1;
+  color: var(--accent);
+  letter-spacing: 0.14em;
+  font-variant-numeric: tabular-nums;
+  margin-bottom: 0.5em;
+  padding-bottom: 0.34em;
+  border-bottom: 1px solid var(--rule);
+}
+
+.ch-sub {
+  font-size: 0.96em;
+  color: var(--soft);
+  margin: -1.6em 0 2.2em;
+  line-height: 1.7;
+}
+
+/* ── 부(部) 표제면 ── */
+h1.part {
+  font-size: 1.55em;
+  margin: 0 0 0.7em;
+  padding: 22% 0 0.7em;
+  border-bottom: 2px solid var(--accent);
+}
+h1.part .ch-num { display: none; }
+.part-sub {
+  font-size: 0.95em;
+  color: var(--soft);
+  line-height: 1.7;
+  letter-spacing: 0.01em;
+  text-indent: 0;
+  page-break-after: always;
+  break-after: page;
+}
+
+/* ══════════ 소제목 ═════════════════════════════════════ */
+h2 {
+  position: relative;
+  font-family: var(--sans);
+  font-weight: 700;
+  font-size: 1.26em;
+  line-height: 1.5;
+  letter-spacing: -0.024em;
+  color: var(--ink);
+  margin: 3.4em 0 1.15em;
+  padding-top: 1.05em;
+  border-top: 1px solid var(--rule-2);
+  text-indent: 0;
+  text-align: left;
+  page-break-after: avoid;
+  break-after: avoid;
+}
+
+/* 괘선 왼쪽 끝에 얹히는 강조 탭 — 소제목의 시작을 못 박는다 */
+h2::before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: 0;
+  width: 2.4em;
+  height: 3px;
+  background: var(--accent);
+}
+h3 {
+  font-family: var(--sans);
+  font-weight: 700;
+  font-size: 1em;
+  line-height: 1.6;
+  color: var(--accent);
+  letter-spacing: -0.008em;
+  margin: 2.3em 0 0.8em;
+  text-indent: 0;
+  text-align: left;
+  page-break-after: avoid;
+  break-after: avoid;
+}
+
+/* ══════════ 구분 (---) ═════════════════════════════════ */
+hr {
+  border: 0;
+  height: 1px;
+  background: var(--rule-2);
+  width: 2.4em;
+  margin: 3em auto;
+  opacity: 0.9;
+}
+
+/* ══════════ 인용 ═══════════════════════════════════════ */
+/* 버핏·멍거 발언용. 큰따옴표 없이 괘선과 들여쓰기로만 구분 */
+blockquote {
+  margin: 1.8em 0;
+  padding: 0.2em 0 0.2em 1.1em;
+  border-left: 2px solid var(--accent);
+  color: var(--ink);
+  font-size: 1.02em;
+  line-height: 1.75;
+}
+blockquote p { text-indent: 0; margin-bottom: 0.6em; }
+blockquote p:last-child { margin-bottom: 0; }
+/* 출처 표기: 인용 마지막 줄에 — 를 붙이면 */
+blockquote p:last-child em,
+blockquote cite {
+  display: block;
+  margin-top: 0.7em;
+  font-style: normal;
+  font-size: 0.85em;
+  color: var(--faint);
+  letter-spacing: 0.03em;
+}
+
+/* ══════════ 수식 ═══════════════════════════════════════ */
+.formula, div.math.display, p .math.display {
+  display: block;
+  background: var(--wash);
+  border-left: 2px solid var(--accent);
+  padding: 1.1em 1.2em;
+  margin: 1.8em 0;
+  text-indent: 0;
+  font-size: 0.97em;
+  line-height: 1.75;
+  overflow-x: auto;
+}
+.formula .label {
+  display: block;
+  font-family: var(--sans);
+  font-size: 0.74em;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  color: var(--accent);
+  margin-bottom: 0.7em;
+  text-transform: uppercase;
+}
+/* 인라인 수식 */
+span.math.inline { font-size: 1.02em; white-space: nowrap; }
+
+/* ══════════ 도해 (인라인 SVG) ══════════════════════════ */
+figure.diagram {
+  margin: 2em 0;
+  page-break-inside: avoid;
+  break-inside: avoid;
+}
+figure.diagram svg {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  color: var(--ink);          /* SVG의 currentColor 기준 */
+  font-family: var(--sans);
+}
+figure.diagram svg text { fill: currentColor; }
+/* 의미를 지닌 단 하나의 색 — var() 미지원 리더기는 앞의 hex를 씁니다 */
+.d-accent   { fill: #2B3A55; fill: var(--accent); }
+.d-accent-t { fill: #2B3A55; fill: var(--accent); font-weight: 600; }
+.d-pct      { fill: #6E6862; fill: var(--soft); }
+.d-zero     { fill: #2B3A55; fill: var(--accent); font-weight: 600; }
+.d-accent-stroke { stroke: #2B3A55; stroke: var(--accent); }
+@media (prefers-color-scheme: dark) {
+  .d-accent, .d-accent-t, .d-zero { fill: #9DB4D6; }
+  .d-accent-stroke { stroke: #9DB4D6; }
+  .d-pct { fill: #9AA0A7; }
+}
+figure.diagram figcaption {
+  text-align: left;
+  font-family: var(--sans);
+  font-size: 0.78em;
+  line-height: 1.7;
+  color: var(--soft);
+  text-indent: 0;
+  margin-top: 0.9em;
+  padding-top: 0.6em;
+  border-top: 1px solid var(--rule);
+}
+
+/* ══════════ 장면 블록 ══════════════════════════════════ */
+/* ::: {.scene} — 실무 재현·시뮬레이션 */
+.scene {
+  border-left: 2px solid var(--rule-2);
+  padding: 0.2em 0 0.2em 1.1em;
+  margin: 2em 0;
+  page-break-inside: avoid;
+  break-inside: avoid;
+}
+.scene .label {
+  display: block;
+  font-family: var(--sans);
+  font-size: 0.74em;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+  color: var(--soft);
+  margin-bottom: 0.8em;
+}
+.scene p { text-indent: 0; }
+.scene ol {
+  font-family: var(--sans);
+  font-size: 0.9em;
+  line-height: 1.9;
+  margin: 1em 0;
+  padding-left: 1.3em;
+}
+.scene ol li::marker { color: var(--soft); }
+.scene-hit {
+  display: block;
+  margin-top: 1em;
+  padding-top: 0.8em;
+  border-top: 1px solid var(--rule);
+  font-family: var(--sans);
+  font-size: 0.86em;
+  font-weight: 600;
+  color: var(--accent);
+  letter-spacing: -0.01em;
+}
+
+/* ══════════ 표 ═════════════════════════════════════════ */
+.table-wrap { overflow-x: auto; margin: 1.8em 0; }
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--sans);
+  font-size: 0.84em;
+  line-height: 1.6;
+  font-variant-numeric: tabular-nums;
+}
+caption {
+  caption-side: top;
+  text-align: left;
+  font-family: var(--sans);
+  font-size: 0.78em;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: var(--accent);
+  padding-bottom: 0.7em;
+}
+thead th {
+  font-weight: 600;
+  text-align: left;
+  color: var(--soft);
+  border-bottom: 1px solid var(--rule-2);
+  padding: 0.55em 0.7em 0.55em 0;
+  white-space: nowrap;
+}
+tbody td, tbody th {
+  border-bottom: 1px solid var(--rule);
+  padding: 0.62em 0.7em 0.62em 0;
+  vertical-align: top;
+  text-align: left;
+}
+tbody tr:last-child td { border-bottom: 1px solid var(--rule-2); }
+/* 숫자 열은 오른쪽 정렬 — 자릿수를 맞춘다 */
+td.num, th.num, td[align="right"], th[align="right"] {
+  text-align: right;
+  padding-right: 0;
+  font-variant-numeric: tabular-nums;
+}
+
+/* ══════════ 워크시트 ═══════════════════════════════════ */
+/* ::: {.worksheet} ... :::  로 감싸면 서식처럼 조판됩니다 */
+.worksheet {
+  background: var(--wash);
+  border: 1px solid var(--rule);
+  border-top: 2px solid var(--accent);
+  padding: 1.4em 1.3em;
+  margin: 2.2em 0;
+  page-break-inside: avoid;
+  break-inside: avoid;
+}
+.worksheet > h3,
+.worksheet > h4 {
+  font-family: var(--sans);
+  font-size: 0.78em;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+  color: var(--accent);
+  margin: 0 0 1em;
+  padding: 0;
+  border: 0;
+  text-transform: uppercase;
+}
+.worksheet ol, .worksheet ul {
+  margin: 0;
+  padding-left: 1.3em;
+  font-family: var(--sans);
+  font-size: 0.88em;
+  line-height: 1.9;
+}
+.worksheet li { margin-bottom: 0.7em; }
+.worksheet li:last-child { margin-bottom: 0; }
+/* 워크시트 안의 문단도 서식 어법을 따른다 (목록과 같은 고딕·크기) */
+.worksheet p {
+  font-family: var(--sans);
+  font-size: 0.88em;
+  line-height: 1.9;
+  margin: 0 0 0.8em;
+}
+.worksheet > p:last-child { margin-bottom: 0; }
+.worksheet ol + p, .worksheet ul + p {
+  margin-top: 1em;
+  padding-top: 0.9em;
+  border-top: 1px solid var(--rule);
+}
+/* 기입란 */
+.worksheet .blank {
+  display: inline-block;
+  min-width: 4em;
+  border-bottom: 1px solid var(--rule-2);
+}
+
+/* ══════════ 핵심 정리 박스 ═════════════════════════════ */
+/* ::: {.callout} ... ::: */
+.callout {
+  border-top: 1px solid var(--accent);
+  border-bottom: 1px solid var(--accent);
+  padding: 1.1em 0;
+  margin: 2.2em 0;
+  page-break-inside: avoid;
+  break-inside: avoid;
+}
+.callout > *:first-child { margin-top: 0; }
+.callout > *:last-child  { margin-bottom: 0; }
+.callout .label {
+  display: block;
+  font-family: var(--sans);
+  font-size: 0.74em;
+  font-weight: 700;
+  letter-spacing: 0.13em;
+  color: var(--accent);
+  margin-bottom: 0.7em;
+}
+
+/* ══════════ 강조 ═══════════════════════════════════════ */
+em     { font-style: italic; }
+strong { font-weight: 700; color: var(--ink); }
+/* 한글 이탤릭은 잘 안 읽힘 → 방점 */
+em.dot, span.dot {
+  font-style: normal;
+  text-emphasis: filled dot;
+  -webkit-text-emphasis: filled dot;
+}
+/* 수치 강조 */
+.figure-hl {
+  font-family: "IBM Plex Mono", "Consolas", monospace;
+  font-variant-numeric: tabular-nums;
+  color: var(--accent);
+  font-weight: 500;
+}
+
+/* ══════════ 코드·기호 ═══════════════════════════════════ */
+/* 마크업 표기, 티커, 계정과목 코드 등 */
+code {
+  font-family: "IBM Plex Mono", "Consolas", monospace;
+  font-size: 0.86em;
+  color: var(--accent);
+  background: var(--wash);
+  padding: 0.1em 0.35em;
+  border-radius: 2px;
+  word-break: break-all;
+}
+pre {
+  background: var(--wash);
+  border-left: 2px solid var(--rule-2);
+  padding: 1em 1.1em;
+  margin: 1.6em 0;
+  overflow-x: auto;
+  line-height: 1.65;
+  text-indent: 0;
+}
+pre code {
+  background: none;
+  padding: 0;
+  color: var(--ink);
+  font-size: 0.84em;
+  word-break: normal;
+}
+
+/* ══════════ 목록 ═══════════════════════════════════════ */
+ul, ol { margin: 1.3em 0; padding-left: 1.4em; }
+li     { margin-bottom: 0.5em; text-indent: 0; }
+li > p { text-indent: 0; }
+
+/* ══════════ 그림 ═══════════════════════════════════════ */
+img { max-width: 100%; height: auto; display: block; margin: 1.8em auto; }
+figure { margin: 1.8em 0; }
+figcaption {
+  text-align: left;
+  font-family: var(--sans);
+  font-size: 0.78em;
+  color: var(--soft);
+  text-indent: 0;
+  margin-top: 0.7em;
+  padding-top: 0.5em;
+  border-top: 1px solid var(--rule);
+}
+
+/* ══════════ 각주 ═══════════════════════════════════════ */
+a { color: inherit; text-decoration: none; border-bottom: 1px solid var(--rule); }
+a.footnote-ref {
+  border: 0;
+  vertical-align: super;
+  font-size: 0.7em;
+  color: var(--accent);
+  font-family: "IBM Plex Mono", monospace;
+}
+section.footnotes {
+  margin-top: 3.2em;
+  padding-top: 1em;
+  border-top: 1px solid var(--rule-2);
+  font-size: 0.84em;
+  line-height: 1.75;
+  color: var(--soft);
+}
+section.footnotes p { text-indent: 0; }
+
+/* ══════════ 차례 ═══════════════════════════════════════ */
+nav#toc h1, nav#toc h2, nav#TOC h1, nav#TOC h2 {
+  border: 0; padding: 0; margin-bottom: 1.6em;
+  page-break-before: auto; break-before: auto;
+}
+nav#toc ol, nav#toc ul, nav#TOC ol, nav#TOC ul { list-style: none; padding-left: 0; margin: 0; }
+nav#toc li, nav#TOC li {
+  margin-bottom: 0.75em;
+  text-indent: 0;
+  padding-bottom: 0.6em;
+  border-bottom: 1px solid var(--rule);
+  font-size: 0.94em;
+  line-height: 1.6;
+}
+nav#toc li ol, nav#toc li ul, nav#TOC li ol, nav#TOC li ul { margin-top: 0.7em; padding-left: 1em; }
+nav#toc li ol li, nav#toc li ul li, nav#TOC li ol li, nav#TOC li ul li {
+  border: 0; padding-bottom: 0; margin-bottom: 0.45em;
+  font-size: 0.9em; color: var(--soft);
+}
+nav#toc a, nav#TOC a { border: 0; }
+
+/* 차례 안에서는 장 번호를 인라인 라벨로 되돌린다.
+   (안 하면 .ch-num 의 2.35em + 하단 괘선이 목차를 통째로 무너뜨린다) */
+nav#toc .ch-num, nav#TOC .ch-num {
+  display: inline;
+  font-family: "IBM Plex Mono", "Consolas", monospace;
+  font-size: 0.92em;
+  font-weight: 400;
+  line-height: inherit;
+  letter-spacing: 0.06em;
+  color: var(--accent);
+  margin: 0 0.55em 0 0;
+  padding: 0;
+  border: 0;
+}

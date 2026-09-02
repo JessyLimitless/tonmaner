@@ -1,0 +1,29 @@
+---
+# ── 책 정보 ────────────────────────────────
+title: "앤스로픽 엔지니어링 표준"
+subtitle: "명세 주도 AI 네이티브 개발"
+creator:
+  - role: author
+    text: "제시리미트리스"
+contributor:
+  - role: bkp        # book producer — 기획·제작
+    text: "Muze AI"
+publisher: "소셜브레인"
+lang: ko-KR
+date: "2026"
+rights: "© 2026 제시리미트리스. All rights reserved."
+description: |
+  프롬프트 난사로는 프로덕션 시스템을 만들 수 없다. 기획(PRD) · 시스템
+  아키텍처 · 데이터 스키마 · UI 명세로 이어지는 4대 명세 체계를 세우고,
+  5대 에이전트 워크플로우와 MCP로 실행하여, 마크다운 지식 아카이브
+  풀스택 SaaS를 Phase 1부터 클라우드 배포까지 직접 완성한다.
+  — 본서는 Anthropic, PBC의 공식 간행물이 아닌 독립 저작물입니다.
+subject:
+  - 소프트웨어 공학
+  - AI 개발방법론
+  - 컴퓨터/IT
+# identifier: "978-89-XXXXX-XX-X"   # ISBN 나오면 주석 해제
+
+# ── 조판 옵션 ──────────────────────────────
+toc-title: "차례"
+---
