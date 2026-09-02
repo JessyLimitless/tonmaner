@@ -1,0 +1,32 @@
+<svg viewBox="0 0 680 384" role="img" aria-label="입력 요청이 1차 초안으로 생성된 뒤, 헌법 조항에 비추어 스스로 비판하고 교정한 다음 최종 결과물로 확정되는 순환">
+  <defs>
+    <marker id="cArrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="currentColor" />
+    </marker>
+  </defs>
+  <g fill="none" stroke="currentColor" stroke-width="1" opacity="0.4">
+    <rect x="190" y="10" width="300" height="46" />
+    <rect x="190" y="82" width="300" height="46" />
+    <rect x="190" y="248" width="300" height="46" />
+  </g>
+  <rect x="190" y="154" width="300" height="66" fill="none" stroke-width="2" class="d-accent-stroke" />
+  <rect x="190" y="320" width="300" height="46" fill="none" stroke-width="2" class="d-accent-stroke" />
+  <g text-anchor="middle" font-size="13" fill="currentColor">
+    <text x="340" y="39">입력 요청</text>
+    <text x="340" y="111">1차 초안 생성</text>
+    <text x="340" y="181" class="d-accent-t">헌법 기반 자체 비판</text>
+    <text x="340" y="277">출력 교정</text>
+    <text x="340" y="349" class="d-accent-t">최종 결과물 확정</text>
+  </g>
+  <text x="340" y="203" text-anchor="middle" font-size="11" class="d-pct">명세 조항을 준수하는가?</text>
+  <text x="340" y="299" text-anchor="middle" font-size="11" class="d-pct">위반한 부분을 스스로 수정</text>
+  <g stroke="currentColor" stroke-width="1.2" opacity="0.6">
+    <line x1="340" y1="56" x2="340" y2="76" marker-end="url(#cArrow)" />
+    <line x1="340" y1="128" x2="340" y2="148" marker-end="url(#cArrow)" />
+    <line x1="340" y1="220" x2="340" y2="242" marker-end="url(#cArrow)" />
+    <line x1="340" y1="294" x2="340" y2="314" marker-end="url(#cArrow)" />
+  </g>
+  <path d="M 190 271 L 130 271 L 130 187 L 184 187" fill="none" stroke-width="1.2" class="d-accent-stroke" opacity="0.65" marker-end="url(#cArrow)" />
+  <text x="122" y="229" text-anchor="end" font-size="11" class="d-pct">재검증</text>
+  <text x="500" y="187" font-size="11.5" class="d-pct">사람의 개입 없음</text>
+</svg>

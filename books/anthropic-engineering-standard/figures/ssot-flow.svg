@@ -1,0 +1,46 @@
+<svg viewBox="0 0 680 300" role="img" aria-label="전통적인 개발 흐름은 코드가 진실이라 문서가 방치되지만, 명세 주도 흐름은 마크다운 명세가 진실이고 코드는 에이전트가 컴파일한 산출물이 된다">
+  <defs>
+    <marker id="sArrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="currentColor" />
+    </marker>
+  </defs>
+  <text x="20" y="34" font-size="11.5" fill="currentColor" opacity="0.55" letter-spacing="1.5">전통적인 개발 흐름</text>
+  <g fill="none" stroke="currentColor" stroke-width="1" opacity="0.4">
+    <rect x="20" y="48" width="150" height="42" />
+    <rect x="206" y="48" width="150" height="42" />
+    <rect x="392" y="48" width="180" height="42" stroke-dasharray="4 4" />
+  </g>
+  <g text-anchor="middle" font-size="12" fill="currentColor">
+    <text x="95" y="74">기획 · 구두 회의</text>
+    <text x="281" y="74">소스코드 작성</text>
+  </g>
+  <text x="281" y="106" text-anchor="middle" font-size="10.5" class="d-pct">SSOT</text>
+  <text x="482" y="74" text-anchor="middle" font-size="12" fill="currentColor" opacity="0.5">문서 방치 · 괴리</text>
+  <g stroke="currentColor" stroke-width="1.2" opacity="0.5">
+    <line x1="170" y1="69" x2="200" y2="69" marker-end="url(#sArrow)" />
+    <line x1="356" y1="69" x2="386" y2="69" marker-end="url(#sArrow)" />
+  </g>
+  <line x1="20" y1="148" x2="660" y2="148" stroke="currentColor" stroke-width="1" opacity="0.25" />
+  <text x="20" y="192" font-size="11.5" class="d-accent-t" letter-spacing="1.5">명세 주도 AI 네이티브 개발 흐름</text>
+  <g fill="none" stroke-width="2" class="d-accent-stroke">
+    <rect x="20" y="206" width="150" height="42" />
+  </g>
+  <g fill="none" stroke="currentColor" stroke-width="1" opacity="0.4">
+    <rect x="196" y="206" width="140" height="42" />
+    <rect x="362" y="206" width="140" height="42" />
+    <rect x="528" y="206" width="132" height="42" />
+  </g>
+  <g text-anchor="middle" font-size="12" fill="currentColor">
+    <text x="95" y="232" class="d-accent-t">마크다운 명세</text>
+    <text x="266" y="232">명세 PR 리뷰</text>
+    <text x="432" y="232">에이전트 컴파일</text>
+    <text x="594" y="232">소스코드 생성</text>
+  </g>
+  <text x="95" y="264" text-anchor="middle" font-size="10.5" class="d-accent-t">SSOT</text>
+  <text x="594" y="264" text-anchor="middle" font-size="10.5" class="d-pct">산출물</text>
+  <g stroke="currentColor" stroke-width="1.2" opacity="0.5">
+    <line x1="170" y1="227" x2="190" y2="227" marker-end="url(#sArrow)" />
+    <line x1="336" y1="227" x2="356" y2="227" marker-end="url(#sArrow)" />
+    <line x1="502" y1="227" x2="522" y2="227" marker-end="url(#sArrow)" />
+  </g>
+</svg>

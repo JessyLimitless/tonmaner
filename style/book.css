@@ -627,8 +627,8 @@ figure.diagram svg text { fill: currentColor; }
 .d-zero     { fill: #2B3A55; fill: var(--accent); font-weight: 600; }
 .d-accent-stroke { stroke: #2B3A55; stroke: var(--accent); }
 @media (prefers-color-scheme: dark) {
-  .d-accent, .d-accent-t, .d-zero { fill: #9DB4D6; }
-  .d-accent-stroke { stroke: #9DB4D6; }
+  .d-accent, .d-accent-t, .d-zero { fill: #9DB4D6; fill: var(--accent); }
+  .d-accent-stroke { stroke: #9DB4D6; stroke: var(--accent); }
   .d-pct { fill: #9AA0A7; }
 }
 figure.diagram figcaption {
@@ -745,7 +745,8 @@ td.num, th.num, td[align="right"], th[align="right"] {
   margin: 0 0 1em;
   padding: 0;
   border: 0;
-  text-transform: uppercase;
+  /* 대문자 변환은 쓰지 않는다 — 표제에 URL·식별자가 들어오면
+     /api/v1 이 /API/V1 로 바뀌어 사실을 왜곡한다 */
 }
 .worksheet ol, .worksheet ul {
   margin: 0;

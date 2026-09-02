@@ -24,10 +24,18 @@ PAT = re.compile(r'^[ \t]*<!--\s*figure:\s*([^|>]+?)\s*(?:\|\s*(.*?)\s*)?-->[ \t
                  re.MULTILINE)
 
 
+SVG_NS = 'http://www.w3.org/2000/svg'
+
+
 def load_svg(path):
     svg = io.open(path, encoding='utf-8').read().strip()
     # pandoc 은 빈 줄에서 raw HTML 을 끊는다. 도해 안에는 빈 줄이 없어야 한다.
-    return '\n'.join(ln for ln in svg.split('\n') if ln.strip())
+    svg = '\n'.join(ln for ln in svg.split('\n') if ln.strip())
+    # EPUB 은 XHTML 이라 네임스페이스가 없으면 SVG 가 글자로 풀려 버린다.
+    # (HTML 파서는 <svg> 를 특별 취급하지만 XML 파서는 그러지 않는다)
+    if 'xmlns=' not in svg.split('>', 1)[0]:
+        svg = svg.replace('<svg', '<svg xmlns="%s"' % SVG_NS, 1)
+    return svg
 
 
 def expand(text, figdir, src_name, missing):
