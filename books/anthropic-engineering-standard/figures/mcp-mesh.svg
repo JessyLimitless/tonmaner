@@ -1,0 +1,59 @@
+<svg viewBox="0 0 680 320" role="img" aria-label="과거에는 에이전트마다 데이터 소스마다 전용 어댑터를 만들어 연결이 곱셈으로 늘어났지만, MCP 표준을 도입하면 모두가 하나의 프로토콜만 바라보므로 연결이 덧셈으로 줄어든다">
+  <text x="20" y="24" font-size="11.5" fill="currentColor" opacity="0.55" letter-spacing="1.5">과거 — 파편화된 도구 연동 (M × N)</text>
+  <g fill="none" stroke="currentColor" stroke-width="1" opacity="0.4">
+    <rect x="20" y="38" width="150" height="28" />
+    <rect x="20" y="74" width="150" height="28" />
+    <rect x="20" y="110" width="150" height="28" />
+    <rect x="510" y="38" width="150" height="28" />
+    <rect x="510" y="74" width="150" height="28" />
+    <rect x="510" y="110" width="150" height="28" />
+  </g>
+  <g font-size="10.5" fill="currentColor" text-anchor="middle">
+    <text x="95" y="56">Agent A</text>
+    <text x="95" y="92">Agent B</text>
+    <text x="95" y="128">Agent C</text>
+    <text x="585" y="56">Local Filesystem</text>
+    <text x="585" y="92">PostgreSQL</text>
+    <text x="585" y="128">Puppeteer Scraper</text>
+  </g>
+  <g stroke="currentColor" stroke-width="1" opacity="0.22">
+    <line x1="170" y1="52" x2="510" y2="52" />
+    <line x1="170" y1="52" x2="510" y2="88" />
+    <line x1="170" y1="52" x2="510" y2="124" />
+    <line x1="170" y1="88" x2="510" y2="52" />
+    <line x1="170" y1="88" x2="510" y2="88" />
+    <line x1="170" y1="88" x2="510" y2="124" />
+    <line x1="170" y1="124" x2="510" y2="52" />
+    <line x1="170" y1="124" x2="510" y2="88" />
+    <line x1="170" y1="124" x2="510" y2="124" />
+  </g>
+  <text x="340" y="156" text-anchor="middle" font-size="10.5" class="d-pct">새 도구를 추가할 때마다 모든 에이전트를 고쳐야 한다</text>
+  <line x1="20" y1="172" x2="660" y2="172" stroke="currentColor" stroke-width="1" opacity="0.25" />
+  <text x="20" y="196" font-size="11.5" class="d-accent-t" letter-spacing="1.5">MCP 표준 — 통합 개방형 인터페이스 (M + N)</text>
+  <g fill="none" stroke="currentColor" stroke-width="1" opacity="0.4">
+    <rect x="20" y="206" width="200" height="30" />
+    <rect x="240" y="206" width="200" height="30" />
+    <rect x="460" y="206" width="200" height="30" />
+    <rect x="20" y="280" width="200" height="30" />
+    <rect x="240" y="280" width="200" height="30" />
+    <rect x="460" y="280" width="200" height="30" />
+  </g>
+  <g font-size="10.5" fill="currentColor" text-anchor="middle">
+    <text x="120" y="225">Claude Code CLI</text>
+    <text x="340" y="225">Cursor / IDE</text>
+    <text x="560" y="225">Custom Agent</text>
+    <text x="120" y="299">Filesystem MCP</text>
+    <text x="340" y="299">Postgres MCP</text>
+    <text x="560" y="299">Puppeteer MCP</text>
+  </g>
+  <g stroke="currentColor" stroke-width="1.1" opacity="0.45">
+    <line x1="120" y1="236" x2="120" y2="254" />
+    <line x1="340" y1="236" x2="340" y2="254" />
+    <line x1="560" y1="236" x2="560" y2="254" />
+    <line x1="120" y1="262" x2="120" y2="280" />
+    <line x1="340" y1="262" x2="340" y2="280" />
+    <line x1="560" y1="262" x2="560" y2="280" />
+  </g>
+  <line x1="20" y1="258" x2="660" y2="258" stroke-width="2.5" class="d-accent-stroke" />
+  <text x="340" y="252" text-anchor="middle" font-size="10" class="d-accent-t">MCP Protocol — JSON-RPC 2.0</text>
+</svg>

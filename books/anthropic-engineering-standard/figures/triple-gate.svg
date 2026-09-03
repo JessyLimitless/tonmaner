@@ -1,0 +1,35 @@
+<svg viewBox="0 0 680 300" role="img" aria-label="정적 타입 검사, 린트 규칙 검증, 단위 테스트 전수 통과라는 세 개의 결정론적 관문을 차례로 통과해야 단계 완료가 선언된다">
+  <defs>
+    <marker id="vArrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="currentColor" />
+    </marker>
+  </defs>
+  <g fill="none" stroke-width="2" class="d-accent-stroke">
+    <rect x="60" y="8" width="560" height="70" />
+    <rect x="60" y="104" width="560" height="70" />
+    <rect x="60" y="200" width="560" height="70" />
+  </g>
+  <g font-size="12" class="d-accent-t">
+    <text x="80" y="32">검증 관문 1 — 정적 타입 무결성</text>
+    <text x="80" y="128">검증 관문 2 — 코드 스타일 및 헌법적 제약</text>
+    <text x="80" y="224">검증 관문 3 — 단위 테스트 전수 통과</text>
+  </g>
+  <g font-size="11" fill="currentColor">
+    <text x="80" y="51">tsc --noEmit</text>
+    <text x="80" y="147">eslint . --max-warnings 0</text>
+    <text x="80" y="243">vitest run --coverage</text>
+  </g>
+  <g font-size="10" class="d-pct">
+    <text x="80" y="68">03_DATA_SCHEMA.md 타입과 컴포넌트 Props 간 일치 확인</text>
+    <text x="80" y="164">04_UI_SPEC.md 토큰 외 임의 인라인 스타일 및 미사용 모듈 박멸</text>
+    <text x="80" y="260">parser.ts 엣지 케이스 및 watcher.ts 이벤트 디바운싱 검증</text>
+  </g>
+  <g stroke-width="1.6" class="d-accent-stroke">
+    <line x1="340" y1="78" x2="340" y2="100" marker-end="url(#vArrow)" />
+    <line x1="340" y1="174" x2="340" y2="196" marker-end="url(#vArrow)" />
+  </g>
+  <g font-size="9.5" class="d-accent-t">
+    <text x="350" y="94">Pass</text>
+    <text x="350" y="190">Pass</text>
+  </g>
+</svg>

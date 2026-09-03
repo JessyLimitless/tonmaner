@@ -1,0 +1,53 @@
+<svg viewBox="0 0 680 320" role="img" aria-label="6달러에 사서 10달러에 회수하는 같은 거래라도 회수까지 걸린 햇수가 늘어나면 연환산 수익률은 1년 66.7퍼센트에서 8년 6.6퍼센트로 무너지며, 5년을 넘는 순간 인덱스 수익률 아래로 내려간다">
+  <defs>
+    <marker id="irrArrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="currentColor" />
+    </marker>
+  </defs>
+
+  <text x="20" y="22" font-size="11" class="d-pct">같은 거래 — 6달러에 사서 10달러에 회수. 달라지는 것은 걸린 시간뿐이다</text>
+
+  <line x1="70" y1="240" x2="640" y2="240" stroke="currentColor" stroke-width="1" opacity="0.5" />
+  <line x1="70" y1="52" x2="70" y2="240" stroke="currentColor" stroke-width="1" opacity="0.5" />
+
+  <g font-size="9.5" class="d-pct" text-anchor="end">
+    <text x="62" y="62">70%</text>
+    <text x="62" y="115">50%</text>
+    <text x="62" y="168">30%</text>
+    <text x="62" y="221">10%</text>
+  </g>
+
+  <line x1="70" y1="213" x2="640" y2="213" stroke="currentColor" stroke-width="1" opacity="0.35" stroke-dasharray="5 4" />
+  <text x="636" y="208" font-size="9.5" text-anchor="end" class="d-pct">인덱스 펀드 수준 ≈ 10%</text>
+
+  <polyline points="130,63 232,163 334,191 436,212 538,223"
+            fill="none" stroke-width="2.2" class="d-accent-stroke" />
+
+  <g class="d-accent-t">
+    <circle cx="130" cy="63" r="4" fill="currentColor" />
+    <circle cx="232" cy="163" r="4" fill="currentColor" />
+    <circle cx="334" cy="191" r="4" fill="currentColor" />
+    <circle cx="436" cy="212" r="4" fill="currentColor" />
+    <circle cx="538" cy="223" r="4" fill="currentColor" />
+  </g>
+
+  <g text-anchor="middle" font-size="11" class="d-accent-t">
+    <text x="130" y="52">+66.7%</text>
+    <text x="232" y="152">+29.1%</text>
+    <text x="334" y="180">+18.6%</text>
+    <text x="436" y="201">+10.8%</text>
+    <text x="538" y="212">+6.6%</text>
+  </g>
+
+  <g text-anchor="middle" font-size="10.5" fill="currentColor">
+    <text x="130" y="258">1년</text>
+    <text x="232" y="258">2년</text>
+    <text x="334" y="258">3년</text>
+    <text x="436" y="258">5년</text>
+    <text x="538" y="258">8년</text>
+  </g>
+  <text x="355" y="278" text-anchor="middle" font-size="10" class="d-pct">저평가가 해소되기까지 걸린 시간 (t)</text>
+
+  <line x1="436" y1="228" x2="436" y2="240" stroke="currentColor" stroke-width="1.2" opacity="0.55" marker-end="url(#irrArrow)" />
+  <text x="20" y="306" font-size="11" class="d-pct">5년을 넘기는 순간 장부상 +66.7%는 인덱스 펀드와 구별되지 않는다 — 안전마진이 시간에 잠식된 자리다</text>
+</svg>

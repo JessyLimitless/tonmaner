@@ -1,0 +1,48 @@
+<svg viewBox="0 0 680 320" role="img" aria-label="생리학적 보상과 파블로프식 연상과 사회적 증거라는 세 심리 모델이 따로 작동할 때는 각각 약한 습관에 그치지만, 한 방향으로 동시에 얽히면 경쟁자가 지워낼 수 없는 절대 해자로 폭발한다는 룰라팔루자 효과">
+  <defs>
+    <marker id="loArrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="currentColor" />
+    </marker>
+  </defs>
+
+  <text x="20" y="20" font-size="10.5" class="d-pct">따로 작동하면 각각은 그저 약한 습관이다</text>
+
+  <g fill="none" stroke="currentColor" stroke-width="1" opacity="0.5">
+    <rect x="20" y="34" width="200" height="62" />
+    <rect x="240" y="34" width="200" height="62" />
+    <rect x="460" y="34" width="200" height="62" />
+  </g>
+
+  <g text-anchor="middle" font-size="11" fill="currentColor">
+    <text x="120" y="56">생리학적 보상</text>
+    <text x="340" y="56">파블로프식 연상</text>
+    <text x="560" y="56">사회적 증거</text>
+  </g>
+  <g text-anchor="middle" font-size="9.5" class="d-pct">
+    <text x="120" y="74">차가운 탄산과 설탕이</text>
+    <text x="120" y="88">뇌에 직접 주는 보상</text>
+    <text x="340" y="74">올림픽 · 크리스마스 ·</text>
+    <text x="340" y="88">빨간 캔의 시각적 결합</text>
+    <text x="560" y="74">수억 명이 매일 마시는</text>
+    <text x="560" y="88">광경 그 자체</text>
+  </g>
+
+  <g fill="none" stroke-width="1.6" class="d-accent-stroke">
+    <path d="M 120 98 L 120 130 L 326 130 L 326 158" marker-end="url(#loArrow)" />
+    <path d="M 340 98 L 340 158" marker-end="url(#loArrow)" />
+    <path d="M 560 98 L 560 130 L 354 130 L 354 158" marker-end="url(#loArrow)" />
+  </g>
+
+  <text x="340" y="124" text-anchor="middle" font-size="10.5" class="d-accent-t">세 힘이 같은 방향으로 겹치는 순간</text>
+
+  <rect x="150" y="162" width="380" height="58" fill="none" stroke-width="2.4" class="d-accent-stroke" />
+  <text x="340" y="186" text-anchor="middle" font-size="13" class="d-accent-t">룰라팔루자 효과 (Lollapalooza Effect)</text>
+  <text x="340" y="207" text-anchor="middle" font-size="10.5" class="d-pct">더해지는 것이 아니라 곱해진다</text>
+
+  <line x1="340" y1="220" x2="340" y2="244" stroke-width="1.8" class="d-accent-stroke" marker-end="url(#loArrow)" />
+
+  <rect x="110" y="248" width="460" height="38" fill="none" stroke="currentColor" stroke-width="1.2" opacity="0.55" />
+  <text x="340" y="272" text-anchor="middle" font-size="11.5" fill="currentColor">경쟁자가 수십억 달러로도 뇌 신경망에서 지워낼 수 없는 해자</text>
+
+  <text x="20" y="310" font-size="11" class="d-pct">해자를 재무제표에서 찾으면 보이지 않는다 — 그것은 소비자의 머릿속에 지어져 있다</text>
+</svg>

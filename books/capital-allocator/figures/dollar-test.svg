@@ -1,0 +1,30 @@
+<svg viewBox="0 0 680 300" role="img" aria-label="사내에 유보한 1달러가 시장에서 얼마의 가치로 평가되는지 재는 1달러 테스트. 가치 창출형은 유보 1달러가 2.25달러의 시가총액 증가를 만들고, 가치 파괴형은 1달러가 30센트로 쪼그라들어 70센트가 증발한다">
+  <text x="20" y="22" font-size="10.5" class="d-pct">사내에 남긴 이익 1달러가 시장에서 얼마가 되었는가 — 유보의 정당성을 재는 유일한 자</text>
+
+  <text x="36" y="56" font-size="11.5" class="d-accent-t">가치 창출형 — 승수 2.25</text>
+  <text x="36" y="76" font-size="9.8" class="d-pct">누적 유보이익 2,000억 → 시가총액 증가 4,500억</text>
+  <rect x="36" y="88" width="120" height="30" fill="none" stroke="currentColor" stroke-width="1" opacity="0.5" />
+  <text x="96" y="108" text-anchor="middle" font-size="11" fill="currentColor">유보 \$1</text>
+  <line x1="160" y1="103" x2="196" y2="103" stroke-width="1.8" class="d-accent-stroke" />
+  <rect x="200" y="82" width="270" height="42" fill="currentColor" opacity="0.08" />
+  <rect x="200" y="82" width="270" height="42" fill="none" stroke-width="2.4" class="d-accent-stroke" />
+  <text x="335" y="108" text-anchor="middle" font-size="14" class="d-accent-t">시장 가치 \$2.25</text>
+  <text x="484" y="107" font-size="10.5" class="d-accent-t">1.25달러를 새로 만들어 냈다</text>
+
+  <line x1="20" y1="146" x2="660" y2="146" stroke="currentColor" stroke-width="1" opacity="0.25" />
+
+  <text x="36" y="176" font-size="11.5" fill="currentColor" opacity="0.8">가치 파괴형 — 승수 0.30</text>
+  <text x="36" y="196" font-size="9.8" class="d-pct">누적 유보이익 500억 → 시가총액 증가 150억</text>
+  <rect x="36" y="208" width="120" height="30" fill="none" stroke="currentColor" stroke-width="1" opacity="0.5" />
+  <text x="96" y="228" text-anchor="middle" font-size="11" fill="currentColor">유보 \$1</text>
+  <line x1="160" y1="223" x2="196" y2="223" stroke="currentColor" stroke-width="1.6" opacity="0.5" />
+  <rect x="200" y="208" width="81" height="30" fill="currentColor" opacity="0.06" />
+  <rect x="200" y="208" width="81" height="30" fill="none" stroke="currentColor" stroke-width="1.4" opacity="0.6" />
+  <text x="240" y="228" text-anchor="middle" font-size="12" fill="currentColor">\$0.30</text>
+  <rect x="281" y="208" width="189" height="30" fill="none" stroke="currentColor" stroke-width="1" opacity="0.3" stroke-dasharray="4 3" />
+  <text x="375" y="228" text-anchor="middle" font-size="10.5" class="d-pct">70센트 증발</text>
+  <text x="484" y="227" font-size="10.5" class="d-pct">맡긴 돈의 70%를 태워 없앴다</text>
+
+  <text x="20" y="272" font-size="11" class="d-pct">가치 파괴형 경영진도 연례 보고서에서는 "매년 흑자를 냈다"고 자랑한다</text>
+  <text x="20" y="292" font-size="11" class="d-accent-t">이 자를 들이대는 순간, 흑자를 낸 것이 아니라 주주 자본을 소각한 것임이 드러난다</text>
+</svg>

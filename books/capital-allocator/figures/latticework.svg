@@ -1,0 +1,73 @@
+<svg viewBox="0 0 680 340" role="img" aria-label="물리학 생물학 심리학 수학 공학 다섯 학문의 핵심 모델이 서로 교차하며 격자를 이루고, 그 격자 위에 기업을 올려놓아야 경제적 해자가 입체로 보인다는 찰리 멍거의 격자틀 정신모델">
+  <defs>
+    <marker id="ltArrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="currentColor" />
+    </marker>
+  </defs>
+
+  <text x="20" y="20" font-size="10.5" class="d-pct">한 학문의 렌즈 하나로는 기업의 한 단면밖에 보이지 않는다</text>
+
+  <g fill="none" stroke="currentColor" stroke-width="1" opacity="0.5">
+    <rect x="20" y="32" width="120" height="54" />
+    <rect x="150" y="32" width="120" height="54" />
+    <rect x="280" y="32" width="120" height="54" />
+    <rect x="410" y="32" width="120" height="54" />
+    <rect x="540" y="32" width="120" height="54" />
+  </g>
+
+  <g text-anchor="middle" font-size="11" fill="currentColor">
+    <text x="80" y="52">물리학</text>
+    <text x="210" y="52">생물학</text>
+    <text x="340" y="52">심리학</text>
+    <text x="470" y="52">수학 · 확률</text>
+    <text x="600" y="52">공학</text>
+  </g>
+  <g text-anchor="middle" font-size="8.8" class="d-pct">
+    <text x="80" y="68">임계질량 · 엔트로피</text>
+    <text x="80" y="80">관성의 법칙</text>
+    <text x="210" y="68">자연선택</text>
+    <text x="210" y="80">생태계 적소(Niche)</text>
+    <text x="340" y="68">사회적 증거 · 일관성</text>
+    <text x="340" y="80">박탈 반응</text>
+    <text x="470" y="68">복리 · 순열과 조합</text>
+    <text x="470" y="80">파레토 법칙</text>
+    <text x="600" y="68">백업 시스템 · 파괴점</text>
+    <text x="600" y="80">중복 설계</text>
+  </g>
+
+  <g stroke="currentColor" stroke-width="1" opacity="0.45" fill="none">
+    <line x1="80"  y1="88" x2="145" y2="156" />
+    <line x1="80"  y1="88" x2="405" y2="156" />
+    <line x1="210" y1="88" x2="145" y2="156" />
+    <line x1="210" y1="88" x2="535" y2="156" />
+    <line x1="340" y1="88" x2="275" y2="156" />
+    <line x1="340" y1="88" x2="405" y2="156" />
+    <line x1="470" y1="88" x2="275" y2="156" />
+    <line x1="470" y1="88" x2="535" y2="156" />
+    <line x1="600" y1="88" x2="405" y2="156" />
+    <line x1="600" y1="88" x2="145" y2="156" />
+  </g>
+
+  <g class="d-accent-t">
+    <circle cx="145" cy="158" r="4.5" fill="currentColor" />
+    <circle cx="275" cy="158" r="4.5" fill="currentColor" />
+    <circle cx="405" cy="158" r="4.5" fill="currentColor" />
+    <circle cx="535" cy="158" r="4.5" fill="currentColor" />
+  </g>
+
+  <text x="340" y="186" text-anchor="middle" font-size="10.5" class="d-accent-t">모델들이 서로 얽혀 단단한 격자를 이룬다</text>
+
+  <g stroke-width="1.4" class="d-accent-stroke" fill="none">
+    <path d="M 145 166 L 145 206 L 330 206 L 330 232" />
+    <path d="M 275 166 L 275 206 L 336 206 L 336 232" />
+    <path d="M 405 166 L 405 206 L 344 206 L 344 232" />
+    <path d="M 535 166 L 535 206 L 350 206 L 350 232" />
+  </g>
+  <line x1="340" y1="212" x2="340" y2="234" stroke-width="1.6" class="d-accent-stroke" marker-end="url(#ltArrow)" />
+
+  <rect x="140" y="238" width="400" height="52" fill="none" stroke-width="2" class="d-accent-stroke" />
+  <text x="340" y="260" text-anchor="middle" font-size="12" class="d-accent-t">기업을 격자 위에 올려 교차 검증한다</text>
+  <text x="340" y="278" text-anchor="middle" font-size="10" class="d-pct">경제적 해자가 평면이 아니라 입체로 보이는 자리</text>
+
+  <text x="20" y="320" font-size="11" class="d-pct">회계학 하나만 쥐면 세상의 모든 기업이 담배꽁초로 보인다 — 격자는 그 편향을 깨는 장치다</text>
+</svg>

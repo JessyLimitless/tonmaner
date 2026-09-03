@@ -90,6 +90,19 @@ pandoc "$BOOK/meta/metadata.yaml" $FILES \
   $TOC \
   --resource-path=".:$BOOK:$BOOK/images:fonts"
 
+# 경량 미리보기 (조판 검수용) — 서체를 base64로 박지 않고 링크로 건다.
+# 4MB+ → 수백 KB. 대신 로컬 서버로만 열린다 (file:// 로는 CSS 경로가 안 잡힌다).
+CSSLITE="--css=../../../style/book.css"
+[ -f "$BOOK/style/override.css" ] && CSSLITE="$CSSLITE --css=../style/override.css"
+
+pandoc "$BOOK/meta/metadata.yaml" $FILES \
+  -o "$BOOK/build/preview-lite.html" \
+  --from=markdown+fenced_divs+bracketed_spans+raw_html+tex_math_dollars+footnotes+smart \
+  --to=html5 --standalone \
+  $CSSLITE \
+  $TOC \
+  --resource-path=".:$BOOK:$BOOK/images:fonts"
+
 # 페이지 넘김 리더 (독서 확인용)
 # 리더 UI 강조색 — 책별 override.css 의 표시선에서 뽑는다 (없으면 공용 먹청색)
 ACC_L=$(sed -n 's/.*--accent: *\([^;]*\);.*reader-accent-light.*/\1/p' "$BOOK/style/override.css" 2>/dev/null | head -1)
@@ -105,5 +118,6 @@ rm -rf "$WORK"
 
 echo ""
 echo "✅ $OUT  ($(du -h "$OUT" | cut -f1))"
-echo "   미리보기  $BOOK/build/preview.html"
+echo "   미리보기  $BOOK/build/preview.html      ($(du -h "$BOOK/build/preview.html" | cut -f1) · 서체 임베드)"
+echo "   경량 검수  $BOOK/build/preview-lite.html ($(du -h "$BOOK/build/preview-lite.html" | cut -f1) · 로컬 서버 필요)"
 echo "   넘겨보기  $BOOK/build/reader.html"

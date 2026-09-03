@@ -1,0 +1,38 @@
+<svg viewBox="0 0 680 340" role="img" aria-label="플로트 저수조 모형. 새 보험료가 위에서 계속 유입되고 사고 보험금이 아래로 유출되지만, 유입 속도가 유출 속도보다 빠르거나 같은 한 저수조의 수위는 낮아지지 않으며 개별 계약은 소멸해도 전체 잔액은 영구히 회전한다">
+  <defs>
+    <marker id="ftArrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="currentColor" />
+    </marker>
+  </defs>
+
+  <text x="150" y="26" font-size="11.5" class="d-accent-t">새로운 보험료 수납 — 유입</text>
+  <text x="150" y="42" font-size="9.8" class="d-pct">매일 새 가입자가 선불로 붓는다</text>
+  <g stroke-width="2" class="d-accent-stroke" fill="none">
+    <line x1="200" y1="52" x2="200" y2="92" marker-end="url(#ftArrow)" />
+    <line x1="340" y1="52" x2="340" y2="92" marker-end="url(#ftArrow)" />
+    <line x1="480" y1="52" x2="480" y2="92" marker-end="url(#ftArrow)" />
+  </g>
+
+  <rect x="90" y="96" width="500" height="118" fill="currentColor" opacity="0.05" />
+  <rect x="90" y="96" width="500" height="118" fill="none" stroke-width="2.4" class="d-accent-stroke" />
+  <line x1="90" y1="128" x2="590" y2="128" stroke="currentColor" stroke-width="1" opacity="0.35" stroke-dasharray="5 4" />
+
+  <text x="340" y="156" text-anchor="middle" font-size="14" class="d-accent-t">플로트(Float) 저수조</text>
+  <text x="340" y="178" text-anchor="middle" font-size="10.5" class="d-pct">아직 지급하지 않은 보험금 — 회사 금고에 머무는 남의 돈</text>
+  <text x="340" y="198" text-anchor="middle" font-size="10.5" class="d-pct">이자 0% · 만기 없음 · 상환 독촉 없음</text>
+
+  <text x="604" y="124" font-size="9.5" class="d-pct">수위</text>
+
+  <g stroke="currentColor" stroke-width="1.6" opacity="0.55" fill="none">
+    <line x1="270" y1="218" x2="270" y2="252" marker-end="url(#ftArrow)" />
+    <line x1="410" y1="218" x2="410" y2="252" marker-end="url(#ftArrow)" />
+  </g>
+  <text x="150" y="272" font-size="11.5" fill="currentColor" opacity="0.8">사고 보험금 지급 — 유출</text>
+  <text x="150" y="288" font-size="9.8" class="d-pct">사고가 났을 때만, 약정된 절차로만 나간다</text>
+
+  <path d="M 620 214 L 640 214 L 640 80 L 620 80" fill="none" stroke-width="1.8" class="d-accent-stroke" marker-end="url(#ftArrow)" />
+  <text x="612" y="150" font-size="9.8" text-anchor="end" class="d-accent-t">유입 ≥ 유출인 한 수위는 유지된다</text>
+
+  <text x="20" y="318" font-size="11" class="d-pct">개별 계약(물 분자)은 소멸한다. 그러나 저수조(시스템)의 잔액은 소멸하지 않는다</text>
+  <text x="20" y="334" font-size="11" class="d-accent-t">그래서 회계상 부채인 이 돈이 실질적으로는 영구 자본처럼 작동한다</text>
+</svg>

@@ -5,17 +5,61 @@
 ## 빌드
 
 ```bash
-bash tools/build.sh <슬러그>     # EPUB + 미리보기 + 리더
-bash tools/specimen.sh           # 공용 조판 견본
-bash tools/cover.sh <슬러그>     # 표지 SVG → PNG
+bash tools/build.sh <슬러그>            # EPUB + 미리보기 + 리더
+bash tools/specimen.sh                  # 공용 조판 견본
+bash tools/cover.sh <슬러그>            # 표지 SVG → PNG
+python tools/reader3d.py <슬러그> [쪽]  # 3D 책장 넘김 리더 (빌드 후 실행)
 ```
 
 리더 확인은 로컬 서버가 필요하다 (EPUB을 fetch 하므로 `file://`로는 안 열린다).
 
 ```bash
 python -m http.server 8900 --bind 127.0.0.1
-# http://localhost:8900/books/<슬러그>/build/reader.html
+# http://localhost:8900/books/<슬러그>/build/reader.html     ← 가벼운 리더
+# http://localhost:8900/books/<슬러그>/build/reader3d.html   ← 3D 넘김
 ```
+
+## 3D 책장 넘김 리더 (`tools/reader3d.py`)
+
+**책마다 선택한다. 전부에 적용하지 않는다.** (2026-09-03 저자 확정)
+
+| 슬러그 | 열람 방식 |
+|---|---|
+| `capital-allocator` | **2D 리더(`reader.html`)가 기본** — 3D는 보류 |
+| `anthropic-engineering-standard` | **지금의 편집 양식 유지** — `reader.html` / `preview-lite.html` |
+
+**2026-09-03 저자 재확정 — 두 권 모두 2D 리더로 본다.**
+3D 넘김은 처음 볼 때 신선하지만 진득하게 읽기에는 2D가 낫다.
+`tools/reader3d.py`는 데모·홍보용으로만 남겨 둔다. 기본 열람 경로가 아니다.
+
+빌드된 EPUB에서 본문을 뽑아 **StPageFlip** 기반 3D 리더를 굽는다.
+`style/book.css`와 책별 `override.css`를 그대로 참조하므로 조판이 EPUB과 동일하다.
+
+```bash
+python tools/reader3d.py capital-allocator      # 전체
+python tools/reader3d.py capital-allocator 40   # 앞 40쪽만 (데모·홍보용)
+```
+
+**핵심 — EPUB은 흐르는 글이고 넘김 라이브러리는 고정 쪽을 요구한다.**
+그래서 브라우저에서 측정용 페이지에 블록을 붙여보며 직접 쪽을 나눈다.
+
+### 이 파일을 고칠 때 반드시 지킬 것
+
+- **절(`div.levelN`) 껍데기는 재귀로 다 벗긴다.** 한 단계만 벗기면 절 하나가
+  블록 하나가 되어 페이지보다 커지고, `overflow:hidden`에 **잘려서 사라진다.**
+  (2026-09-03에 실제로 이 버그로 본문 대부분이 안 보였다)
+- **조판 블록은 쪼개지 않는다.** `.formula` · `.scene` · `.table-wrap` ·
+  `.worksheet` · `figure`는 통째로 유지한다. 표가 반으로 갈리면 안 된다.
+- **쪽 나누기는 선형이어야 한다.** 블록마다 `cur.innerHTML + node.outerHTML`로
+  문자열을 다시 만들면 O(n²)가 되어 **브라우저가 얼어붙는다.**
+  노드를 실제로 붙여보고 넘치면 떼어내는 방식을 쓴다.
+- **프레임 단위로 끊어 처리한다.** 한 번에 다 돌리면 화면이 멈춘 것처럼 보인다.
+  진행률(`쪽을 나누는 중… n%`)을 반드시 표시한다.
+- **서체 로드 후에 잰다.** `document.fonts.ready` 뒤에 시작하지 않으면
+  서체가 바뀌며 쪽이 밀린다.
+- **중앙 정렬은 측정으로 한다.** StPageFlip은 표지처럼 단면만 보일 때
+  펼침 폭 안 한쪽에 붙여 놓는다. 실제 그려진 면의 좌우 끝을 재서
+  화면 중앙에 맞춘다(넘길 때마다 재계산).
 
 ## 작업 원칙
 

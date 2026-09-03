@@ -1,0 +1,29 @@
+<svg viewBox="0 0 680 300" role="img" aria-label="자동차는 20세기 초 2000개가 넘는 제조사가 난립했다가 3개만 살아남았고, 항공은 100년 동안 업계 누적 순이익 합계가 마이너스였다. 세상을 바꾼 혁신이 주주에게는 자본의 무덤이었다는 대비">
+  <text x="20" y="22" font-size="11" class="d-pct">세상을 바꾼 기술이 곧 주주를 부자로 만드는 사업은 아니다</text>
+
+  <rect x="20" y="40" width="310" height="180" fill="none" stroke="currentColor" stroke-width="1" opacity="0.5" />
+  <text x="36" y="64" font-size="12" fill="currentColor">자동차 — 20세기 초</text>
+  <text x="36" y="88" font-size="10.5" class="d-pct">말을 대체한 문명사 최대의 혁신</text>
+
+  <text x="36" y="126" font-size="10.5" class="d-pct">설립된 미국 완성차 제조사</text>
+  <text x="316" y="126" text-anchor="end" font-size="18" fill="currentColor">2,000개 이상</text>
+  <line x1="36" y1="140" x2="314" y2="140" stroke="currentColor" stroke-width="1" opacity="0.3" />
+  <text x="36" y="164" font-size="10.5" class="d-pct">20세기 후반까지 살아남은 수</text>
+  <text x="316" y="166" text-anchor="end" font-size="22" class="d-accent-t">3개</text>
+  <text x="36" y="196" font-size="9.8" class="d-pct">GM · 포드 · 크라이슬러. 그 셋마저 파산 위기를 겪었다</text>
+
+  <rect x="350" y="40" width="310" height="180" fill="none" stroke="currentColor" stroke-width="1" opacity="0.5" />
+  <text x="366" y="64" font-size="12" fill="currentColor">항공 — 1903년 이후 100년</text>
+  <text x="366" y="88" font-size="10.5" class="d-pct">지구를 일일생활권으로 묶은 기적</text>
+
+  <text x="366" y="126" font-size="10.5" class="d-pct">투입된 주주 자본과 정부 보조금</text>
+  <text x="646" y="126" text-anchor="end" font-size="18" fill="currentColor">수천억 달러</text>
+  <line x1="366" y1="140" x2="644" y2="140" stroke="currentColor" stroke-width="1" opacity="0.3" />
+  <text x="366" y="164" font-size="10.5" class="d-pct">업계 순이익의 누적 합계</text>
+  <text x="646" y="166" text-anchor="end" font-size="22" class="d-accent-t">0 미만</text>
+  <text x="366" y="196" font-size="9.8" class="d-pct">유가·기체 유지비·출혈 할인 경쟁의 불길로 영구 소각</text>
+
+  <rect x="20" y="238" width="640" height="46" fill="none" stroke-width="2" class="d-accent-stroke" />
+  <text x="340" y="258" text-anchor="middle" font-size="11.5" class="d-accent-t">혁신의 과실은 소비자가 가져간다 — 진입장벽이 없으면 주주 몫은 남지 않는다</text>
+  <text x="340" y="275" text-anchor="middle" font-size="10" class="d-pct">1900년 자동차 혁명에서 확실히 돈을 버는 유일한 방법은 말을 공매도하는 것이었다</text>
+</svg>

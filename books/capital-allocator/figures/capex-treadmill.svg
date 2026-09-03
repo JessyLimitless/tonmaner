@@ -1,0 +1,39 @@
+<svg viewBox="0 0 680 330" role="img" aria-label="범용재 제조업의 자본 소각 순환. 신형 기계를 도입하면 경쟁사도 같은 기계를 들여 업계 생산량이 늘고 제품 가격이 떨어져, 절감한 원가가 그대로 가격 하락으로 증발하며 다시 다음 기계를 사야 하는 자리로 돌아온다">
+  <defs>
+    <marker id="cxArrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="currentColor" />
+    </marker>
+  </defs>
+
+  <rect x="230" y="10" width="220" height="46" fill="none" stroke-width="2" class="d-accent-stroke" />
+  <text x="340" y="30" text-anchor="middle" font-size="11.5" class="d-accent-t">① 신형 고속 기계 도입</text>
+  <text x="340" y="47" text-anchor="middle" font-size="9.8" class="d-pct">주주 자본 수백만 달러 투입</text>
+
+  <rect x="440" y="102" width="220" height="46" fill="none" stroke="currentColor" stroke-width="1" opacity="0.5" />
+  <text x="550" y="122" text-anchor="middle" font-size="11.5" fill="currentColor">② 경쟁사도 같은 기계 도입</text>
+  <text x="550" y="139" text-anchor="middle" font-size="9.8" class="d-pct">남부 · 해외 공장이 리스로 따라붙음</text>
+
+  <rect x="440" y="196" width="220" height="46" fill="none" stroke="currentColor" stroke-width="1" opacity="0.5" />
+  <text x="550" y="216" text-anchor="middle" font-size="11.5" fill="currentColor">③ 업계 생산량 폭증</text>
+  <text x="550" y="233" text-anchor="middle" font-size="9.8" class="d-pct">공급 과잉</text>
+
+  <rect x="20" y="196" width="220" height="46" fill="none" stroke="currentColor" stroke-width="1" opacity="0.5" />
+  <text x="130" y="216" text-anchor="middle" font-size="11.5" fill="currentColor">④ 원단 가격 폭락</text>
+  <text x="130" y="233" text-anchor="middle" font-size="9.8" class="d-pct">아낀 원가가 판가 하락으로 증발</text>
+
+  <rect x="20" y="102" width="220" height="46" fill="none" stroke="currentColor" stroke-width="1" opacity="0.5" />
+  <text x="130" y="122" text-anchor="middle" font-size="11.5" fill="currentColor">⑤ 마진율 제자리</text>
+  <text x="130" y="139" text-anchor="middle" font-size="9.8" class="d-pct">현금은 기계 쇳덩어리에 결박</text>
+
+  <g fill="none" stroke="currentColor" stroke-width="1.3" opacity="0.5">
+    <path d="M 450 33 L 540 33 L 540 98" marker-end="url(#cxArrow)" />
+    <path d="M 550 148 L 550 192" marker-end="url(#cxArrow)" />
+    <path d="M 436 219 L 244 219" marker-end="url(#cxArrow)" />
+    <path d="M 130 196 L 130 152" marker-end="url(#cxArrow)" />
+  </g>
+  <path d="M 130 102 L 130 33 L 226 33" fill="none" stroke-width="1.8" class="d-accent-stroke" marker-end="url(#cxArrow)" />
+  <text x="140" y="76" font-size="9.8" class="d-accent-t">다음 세대 기계를 또 사야 한다</text>
+
+  <text x="340" y="290" text-anchor="middle" font-size="11" class="d-pct">기계를 안 사면 도산하고, 사면 경쟁자도 사서 값이 떨어진다</text>
+  <text x="340" y="310" text-anchor="middle" font-size="11" class="d-accent-t">절감의 과실은 소비자와 기계 제조사가 가져가고, 주주 몫은 0이다</text>
+</svg>

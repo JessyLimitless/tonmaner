@@ -1,0 +1,31 @@
+<svg viewBox="0 0 680 300" role="img" aria-label="사이드바는 320픽셀로 고정되어 검색바와 문서 목록을 담고, 오른쪽 뷰어는 가변 폭으로 메타바와 본문을 최대 840픽셀 안에 중앙 정렬해 보여준다">
+  <text x="20" y="24" font-size="11" class="d-pct">AppLayout — 100vh · bg #0F172A · text #F8FAFC</text>
+  <rect x="20" y="32" width="640" height="212" fill="none" stroke="currentColor" stroke-width="1" opacity="0.45" />
+  <line x1="252" y1="32" x2="252" y2="244" stroke="currentColor" stroke-width="1" opacity="0.45" />
+  <text x="32" y="52" font-size="10.5" class="d-accent-t">Sidebar · 320px 고정</text>
+  <text x="266" y="52" font-size="10.5" class="d-accent-t">ContentViewer · flex-1 · overflow-y-auto</text>
+  <rect x="34" y="62" width="204" height="30" fill="none" stroke="currentColor" stroke-width="1" opacity="0.35" />
+  <text x="136" y="81" text-anchor="middle" font-size="10.5" fill="currentColor">SearchBar — Cmd+K 바인딩</text>
+  <rect x="34" y="102" width="204" height="128" fill="none" stroke="currentColor" stroke-width="1" opacity="0.35" />
+  <text x="46" y="121" font-size="10" class="d-pct">FileList</text>
+  <rect x="44" y="130" width="184" height="24" fill="none" stroke-width="1.6" class="d-accent-stroke" />
+  <text x="54" y="146" font-size="10" class="d-accent-t">Item 1 — active</text>
+  <g font-size="10" fill="currentColor" opacity="0.55">
+    <text x="54" y="174">Item 2</text>
+    <text x="54" y="196">Item 3</text>
+    <text x="54" y="218">…</text>
+  </g>
+  <rect x="266" y="62" width="380" height="42" fill="none" stroke="currentColor" stroke-width="1" opacity="0.35" />
+  <text x="278" y="80" font-size="10.5" fill="currentColor">MetaBar</text>
+  <text x="278" y="96" font-size="10" class="d-pct">H1 제목 · 태그 뱃지 · 단어 수</text>
+  <rect x="266" y="114" width="380" height="116" fill="none" stroke="currentColor" stroke-width="1" opacity="0.35" />
+  <text x="278" y="133" font-size="10.5" fill="currentColor">MarkdownBody</text>
+  <text x="278" y="149" font-size="10" class="d-pct">최대 840px 중앙 정렬 · AST 기반 헤딩 / 코드 블록 렌더링</text>
+  <g stroke="currentColor" stroke-width="1" opacity="0.2">
+    <line x1="278" y1="166" x2="620" y2="166" />
+    <line x1="278" y1="182" x2="620" y2="182" />
+    <line x1="278" y1="198" x2="560" y2="198" />
+    <line x1="278" y1="214" x2="600" y2="214" />
+  </g>
+  <text x="20" y="276" font-size="11" class="d-pct">계층과 상태 소유자를 명세에 적어두면, 에이전트는 컴포넌트를 파일 단위로 알아서 쪼갠다</text>
+</svg>

@@ -1,0 +1,32 @@
+<svg viewBox="0 0 680 300" role="img" aria-label="자사주 매입의 운명을 가르는 단 하나의 부등식. 주가가 내재가치보다 낮으면 떠나는 매도자에게서 가치를 할인 매수해 남은 주주에게 이전시키고, 주가가 내재가치보다 높으면 남은 주주의 현금을 떠나는 자에게 프리미엄으로 퍼준다">
+  <text x="20" y="22" font-size="10.5" class="d-pct">자사주 매입은 선도 악도 아니다 — 얼마에 사느냐가 전부다</text>
+
+  <rect x="20" y="40" width="310" height="180" fill="none" stroke-width="2.4" class="d-accent-stroke" />
+  <text x="36" y="64" font-size="13" class="d-accent-t">주가 &lt; 내재가치</text>
+  <text x="36" y="86" font-size="10.5" class="d-pct">1달러짜리를 60센트에 사서 소각한다</text>
+
+  <line x1="36" y1="100" x2="314" y2="100" stroke="currentColor" stroke-width="1" opacity="0.3" />
+  <text x="36" y="124" font-size="10.8" fill="currentColor">떠나는 매도자</text>
+  <text x="314" y="124" text-anchor="end" font-size="11.5" class="d-pct">60센트를 받고 나간다</text>
+  <text x="36" y="152" font-size="10.8" fill="currentColor">남은 장기 주주</text>
+  <text x="314" y="152" text-anchor="end" font-size="13" class="d-accent-t">40센트만큼 부유해진다</text>
+
+  <rect x="36" y="168" width="278" height="38" fill="currentColor" opacity="0.07" />
+  <text x="175" y="192" text-anchor="middle" font-size="11" class="d-accent-t">가치가 떠나는 자에게서 남는 자에게로 이전</text>
+
+  <rect x="350" y="40" width="310" height="180" fill="none" stroke="currentColor" stroke-width="1" opacity="0.5" />
+  <text x="366" y="64" font-size="13" fill="currentColor">주가 &gt; 내재가치</text>
+  <text x="366" y="86" font-size="10.5" class="d-pct">1달러짜리를 1.5달러에 사서 소각한다</text>
+
+  <line x1="366" y1="100" x2="644" y2="100" stroke="currentColor" stroke-width="1" opacity="0.3" />
+  <text x="366" y="124" font-size="10.8" fill="currentColor">떠나는 매도자</text>
+  <text x="644" y="124" text-anchor="end" font-size="11.5" class="d-pct">50센트의 프리미엄을 챙겨 나간다</text>
+  <text x="366" y="152" font-size="10.8" fill="currentColor">남은 장기 주주</text>
+  <text x="644" y="152" text-anchor="end" font-size="13" fill="currentColor" opacity="0.85">50센트만큼 가난해진다</text>
+
+  <rect x="366" y="168" width="278" height="38" fill="none" stroke="currentColor" stroke-width="1" opacity="0.35" stroke-dasharray="5 4" />
+  <text x="505" y="192" text-anchor="middle" font-size="11" class="d-pct">남은 주주의 현금이 허공으로 사라진다</text>
+
+  <text x="340" y="252" text-anchor="middle" font-size="11" class="d-pct">주당 가치 증분 = (내재가치 − 매입가) ÷ 매입 후 잔여 주식 수</text>
+  <text x="340" y="278" text-anchor="middle" font-size="11.5" class="d-accent-t">같은 행위가 부호 하나로 주주 환원이 되기도 하고 기만이 되기도 한다</text>
+</svg>

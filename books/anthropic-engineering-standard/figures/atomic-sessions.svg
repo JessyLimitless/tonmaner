@@ -1,0 +1,53 @@
+<svg viewBox="0 0 680 300" role="img" aria-label="한 세션에 모든 작업을 몰아넣으면 토큰 오염이 누적되지만, 태스크마다 세션을 격리하고 각 세션이 명세 두 편만 읽고 커밋으로 끝나면 다음 세션은 대화 기록이 아니라 디스크의 파일만 읽는다">
+  <defs>
+    <marker id="tArrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="currentColor" />
+    </marker>
+  </defs>
+
+  <text x="20" y="24" font-size="11" class="d-pct" letter-spacing="1.5">오염된 통합 세션</text>
+  <rect x="20" y="34" width="640" height="42" fill="none" stroke="currentColor" stroke-width="1" opacity="0.45" />
+  <text x="340" y="60" text-anchor="middle" font-size="11.5" fill="currentColor">DB 마이그레이션 → API 라우터 → UI 컴포넌트 → 디버깅 → 배포 스크립트</text>
+  <text x="20" y="96" font-size="10.5" class="d-pct">명세 네 편이 전부 올라간 채 끝까지 남는다 — 실패 로그와 임시 코드가 그 위에 계속 쌓인다</text>
+
+  <line x1="20" y1="118" x2="660" y2="118" stroke="currentColor" stroke-width="1" opacity="0.3" />
+
+  <text x="20" y="146" font-size="11" class="d-accent-t" letter-spacing="1.5">격리된 원자적 세션</text>
+
+  <g fill="none" stroke="currentColor" stroke-width="1" opacity="0.5">
+    <rect x="20" y="158" width="190" height="76" />
+    <rect x="245" y="158" width="190" height="76" />
+    <rect x="470" y="158" width="190" height="76" />
+  </g>
+
+  <g text-anchor="middle" font-size="11.5" fill="currentColor">
+    <text x="115" y="180">Task A — 데이터 모델링</text>
+    <text x="340" y="180">Task B — API 구현</text>
+    <text x="565" y="180">Task C — UI 컴포넌트</text>
+  </g>
+
+  <g text-anchor="middle" font-size="9.8" class="d-accent-t">
+    <text x="115" y="200">01_PRD + 03_DATA_SCHEMA</text>
+    <text x="340" y="200">02_ARCHITECTURE + 03_DATA_SCHEMA</text>
+    <text x="565" y="200">04_UI_SPEC + 03_DATA_SCHEMA</text>
+  </g>
+
+  <g text-anchor="middle" font-size="9.8" class="d-pct">
+    <text x="115" y="222">→ 모델 · 마이그레이션</text>
+    <text x="340" y="222">→ 라우터 · 핸들러</text>
+    <text x="565" y="222">→ 컴포넌트 · 상태</text>
+  </g>
+
+  <g stroke-width="1.6" class="d-accent-stroke">
+    <line x1="210" y1="196" x2="241" y2="196" marker-end="url(#tArrow)" />
+    <line x1="435" y1="196" x2="466" y2="196" marker-end="url(#tArrow)" />
+  </g>
+
+  <g text-anchor="middle" font-size="9.5" class="d-pct">
+    <text x="115" y="252">커밋 후 초기화</text>
+    <text x="340" y="252">커밋 후 초기화</text>
+    <text x="565" y="252">커밋 후 초기화</text>
+  </g>
+
+  <text x="20" y="284" font-size="10.5" class="d-pct">세션마다 올라가는 명세는 언제나 둘. 다음 세션이 읽는 것은 대화 기록이 아니라 디스크에 커밋된 파일뿐이다</text>
+</svg>

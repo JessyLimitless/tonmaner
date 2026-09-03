@@ -1,0 +1,49 @@
+<svg viewBox="0 0 680 300" role="img" aria-label="외부 인터넷망 DMZ의 수집 에이전트가 스크랩하고 정제한 마크다운을 망연계 보안 검증 구간에서 악성코드 검사와 해시 검증을 거쳐 내부 업무망의 데이터베이스와 인덱서로 주입한다">
+  <defs>
+    <marker id="nArrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="currentColor" />
+    </marker>
+  </defs>
+  <g stroke="currentColor" stroke-width="1" opacity="0.3" stroke-dasharray="5 5">
+    <line x1="228" y1="14" x2="228" y2="252" />
+    <line x1="452" y1="14" x2="452" y2="252" />
+  </g>
+  <g text-anchor="middle" font-size="11.5" letter-spacing="1.5">
+    <text x="118" y="32" fill="currentColor" opacity="0.55">외부 인터넷망 · DMZ</text>
+    <text x="340" y="32" class="d-accent-t">망연계 보안 검증</text>
+    <text x="562" y="32" fill="currentColor" opacity="0.55">내부 업무망</text>
+  </g>
+  <g fill="none" stroke="currentColor" stroke-width="1" opacity="0.4">
+    <rect x="20" y="52" width="196" height="52" />
+    <rect x="20" y="118" width="196" height="52" />
+    <rect x="464" y="52" width="196" height="52" />
+    <rect x="464" y="118" width="196" height="52" />
+  </g>
+  <g fill="none" stroke-width="2" class="d-accent-stroke">
+    <rect x="240" y="52" width="200" height="52" />
+    <rect x="240" y="118" width="200" height="52" />
+  </g>
+  <g text-anchor="middle" font-size="11.5" fill="currentColor">
+    <text x="118" y="74">MCP 수집 에이전트</text>
+    <text x="118" y="140">스크립트 · 쿠키 제거</text>
+    <text x="562" y="74">PostgreSQL 적재</text>
+    <text x="562" y="140">인덱서 엔진 주입</text>
+  </g>
+  <g text-anchor="middle" font-size="11.5" class="d-accent-t">
+    <text x="340" y="74">안티바이러스 · CDR 전수 검사</text>
+    <text x="340" y="140">SHA-256 해시 변조 검증</text>
+  </g>
+  <g text-anchor="middle" font-size="10.5" class="d-pct">
+    <text x="118" y="92">Puppeteer · Fetch</text>
+    <text x="118" y="158">순수 마크다운으로 정제</text>
+    <text x="340" y="92">악성 파일 탐지</text>
+    <text x="340" y="158">승인된 파일만 통과</text>
+    <text x="562" y="92">영속화 · 전문 검색 색인</text>
+    <text x="562" y="158">내부 아카이브 동기화</text>
+  </g>
+  <g stroke-width="1.6" class="d-accent-stroke">
+    <line x1="216" y1="111" x2="236" y2="111" marker-end="url(#nArrow)" />
+    <line x1="440" y1="111" x2="460" y2="111" marker-end="url(#nArrow)" />
+  </g>
+  <text x="340" y="278" text-anchor="middle" font-size="11" class="d-pct">이 경계선이 명세에 없으면, 에이전트는 내부망 서버에서 외부 URL로 곧장 요청하는 코드를 짠다</text>
+</svg>

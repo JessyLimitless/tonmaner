@@ -1,0 +1,38 @@
+<svg viewBox="0 0 680 310" role="img" aria-label="에이전트는 벤더 SDK를 직접 호출하지 않고 사내 LLM 게이트웨이 하나만 바라본다. 게이트웨이는 데이터 민감도에 따라 폐쇄망 내부 sLLM과 인가된 망연계 구간의 전용선 API로 라우팅을 나눈다">
+  <defs>
+    <marker id="gArrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="currentColor" />
+    </marker>
+  </defs>
+  <rect x="250" y="10" width="180" height="36" fill="none" stroke="currentColor" stroke-width="1" opacity="0.4" />
+  <text x="340" y="33" text-anchor="middle" font-size="12" fill="currentColor">클라이언트 · 워커 에이전트</text>
+  <line x1="340" y1="46" x2="340" y2="60" stroke="currentColor" stroke-width="1.2" opacity="0.5" marker-end="url(#gArrow)" />
+  <rect x="110" y="62" width="460" height="86" fill="none" stroke-width="2" class="d-accent-stroke" />
+  <text x="340" y="86" text-anchor="middle" font-size="12.5" class="d-accent-t">LLM Gateway &amp; Fallback Proxy</text>
+  <g font-size="10.5" class="d-pct">
+    <text x="146" y="107">· 인증 토큰 검증 &amp; Rate Limiting</text>
+    <text x="146" y="125">· 로깅 및 감사 추적 (Audit Trail)</text>
+    <text x="146" y="143">· OpenAI / Anthropic 표준 호환 어댑터</text>
+  </g>
+  <g stroke="currentColor" stroke-width="1.2" opacity="0.5" fill="none">
+    <path d="M 340 148 L 340 168 L 175 168 L 175 194" marker-end="url(#gArrow)" />
+    <path d="M 340 148 L 340 168 L 505 168 L 505 194" marker-end="url(#gArrow)" />
+  </g>
+  <g text-anchor="middle" font-size="10.5" class="d-pct">
+    <text x="175" y="188">폐쇄망 내부 라우팅</text>
+    <text x="505" y="188">인가된 망연계 구간</text>
+  </g>
+  <g fill="none" stroke="currentColor" stroke-width="1" opacity="0.4">
+    <rect x="40" y="198" width="270" height="54" />
+    <rect x="370" y="198" width="270" height="54" />
+  </g>
+  <g text-anchor="middle" font-size="12" fill="currentColor">
+    <text x="175" y="222">내부 온프레미스 vLLM · sLLM</text>
+    <text x="505" y="222">전용선 VPC 엔드포인트 Claude API</text>
+  </g>
+  <g text-anchor="middle" font-size="10.5" class="d-pct">
+    <text x="175" y="241">보안 등급 — 1급 기밀 데이터</text>
+    <text x="505" y="241">보안 등급 — 비식별화 일반 텍스트</text>
+  </g>
+  <text x="340" y="284" text-anchor="middle" font-size="11" class="d-pct">에이전트는 벤더 SDK가 아니라 게이트웨이 하나만 바라본다 — 갈림길은 데이터의 민감도가 정한다</text>
+</svg>

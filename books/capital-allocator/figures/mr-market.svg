@@ -1,0 +1,32 @@
+<svg viewBox="0 0 680 320" role="img" aria-label="사업의 내재가치는 평평한 직선으로 거의 변하지 않는데, 미스터 마켓이 매일 부르는 호가는 3000달러에서 300달러 사이를 미친 듯이 오르내린다. 가격은 진실의 척도가 아니라 그날의 기분일 뿐이다">
+  <text x="20" y="20" font-size="10.5" class="d-pct">같은 사업이다. 공장도 고객도 제품도 어제와 다르지 않다</text>
+
+  <line x1="70" y1="264" x2="650" y2="264" stroke="currentColor" stroke-width="1" opacity="0.5" />
+  <line x1="70" y1="44" x2="70" y2="264" stroke="currentColor" stroke-width="1" opacity="0.5" />
+
+  <g font-size="9.5" class="d-pct" text-anchor="end">
+    <text x="62" y="66">\$3,000</text>
+    <text x="62" y="168">\$1,000</text>
+    <text x="62" y="252">\$300</text>
+  </g>
+
+  <polyline points="100,150 155,72 210,196 265,110 320,244 375,86 430,210 485,62 540,238 595,128 640,168"
+            fill="none" stroke="currentColor" stroke-width="1.6" opacity="0.55" />
+  <g fill="currentColor" opacity="0.55">
+    <circle cx="155" cy="72" r="3.5" /><circle cx="320" cy="244" r="3.5" />
+    <circle cx="485" cy="62" r="3.5" /><circle cx="540" cy="238" r="3.5" />
+  </g>
+
+  <line x1="80" y1="163" x2="645" y2="163" stroke-width="2.6" class="d-accent-stroke" />
+  <text x="645" y="156" text-anchor="end" font-size="11.5" class="d-accent-t">내재가치 — 거의 변하지 않는다</text>
+
+  <text x="163" y="62" font-size="9.5" fill="currentColor" opacity="0.8">조증</text>
+  <text x="493" y="52" font-size="9.5" fill="currentColor" opacity="0.8">"영원히 번영할 거야"</text>
+  <text x="328" y="260" font-size="9.5" fill="currentColor" opacity="0.8">울증</text>
+  <text x="548" y="254" font-size="9.5" fill="currentColor" opacity="0.8">"내일 망할 거야"</text>
+
+  <text x="88" y="140" font-size="9.5" class="d-pct">미스터 마켓의 호가</text>
+
+  <text x="20" y="292" font-size="11" class="d-pct">가격은 진실의 척도가 아니라 그날의 기분이다 — 거래는 전적으로 나의 자유다</text>
+  <text x="20" y="312" font-size="11" class="d-accent-t">호가가 굵은 선 아래로 깊이 내려간 날, 그날이 안전마진이 열린 날이다</text>
+</svg>

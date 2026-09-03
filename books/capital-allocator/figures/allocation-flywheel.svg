@@ -1,0 +1,48 @@
+<svg viewBox="0 0 680 320" role="img" aria-label="자회사에서 올라온 현금이 오마하 본사로 집결하고, 본사는 그 자본을 가장 수익률 높은 기회에 재배치하며, 살 만한 자산이 없을 때는 자사주를 사서 소각해 주당 가치를 끌어올린 뒤 다시 처음으로 돌아가는 순환">
+  <defs>
+    <marker id="afArr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="currentColor" />
+    </marker>
+  </defs>
+
+  <text x="20" y="20" font-size="10.5" class="d-pct">현장은 100% 자율, 자본은 100% 중앙 통제 — 본사 인력 스무 명이 굴리는 순환</text>
+
+  <rect x="30" y="40" width="200" height="58" fill="none" stroke="currentColor" stroke-width="1" opacity="0.55" />
+  <text x="130" y="62" text-anchor="middle" font-size="11.5" fill="currentColor">① 현금 집결</text>
+  <text x="130" y="80" text-anchor="middle" font-size="9.5" class="d-pct">보험 플로트 · 철도 · 사탕</text>
+  <text x="130" y="93" text-anchor="middle" font-size="9.5" class="d-pct">유지 CapEx 뺀 전액을 본사로</text>
+
+  <rect x="240" y="40" width="200" height="58" fill="none" stroke-width="2.4" class="d-accent-stroke" />
+  <text x="340" y="62" text-anchor="middle" font-size="11.5" class="d-accent-t">② 최고 기회로 재배치</text>
+  <text x="340" y="80" text-anchor="middle" font-size="9.5" class="d-pct">해자 기업 주식 · 비상장 알짜 인수</text>
+  <text x="340" y="93" text-anchor="middle" font-size="9.5" class="d-pct">세금·수수료 누출 0</text>
+
+  <rect x="450" y="40" width="200" height="58" fill="none" stroke="currentColor" stroke-width="1" opacity="0.55" />
+  <text x="550" y="62" text-anchor="middle" font-size="11.5" fill="currentColor">③ 자사주 소각</text>
+  <text x="550" y="80" text-anchor="middle" font-size="9.5" class="d-pct">밖에 살 것이 없을 때만</text>
+  <text x="550" y="93" text-anchor="middle" font-size="9.5" class="d-pct">주가가 내재가치보다 쌀 때만</text>
+
+  <g fill="none" stroke-width="1.8" class="d-accent-stroke">
+    <line x1="234" y1="69" x2="236" y2="69" marker-end="url(#afArr)" />
+    <line x1="444" y1="69" x2="446" y2="69" marker-end="url(#afArr)" />
+  </g>
+  <line x1="230" y1="69" x2="238" y2="69" stroke-width="1.8" class="d-accent-stroke" marker-end="url(#afArr)" />
+  <line x1="440" y1="69" x2="448" y2="69" stroke-width="1.8" class="d-accent-stroke" marker-end="url(#afArr)" />
+
+  <path d="M 650 98 L 664 98 L 664 150 L 16 150 L 16 98 L 28 98" fill="none" stroke-width="1.8" class="d-accent-stroke" marker-end="url(#afArr)" />
+  <text x="340" y="144" text-anchor="middle" font-size="10.5" class="d-accent-t">더 커진 현금 덩어리를 들고 다시 ①로 — 이 바퀴에는 마찰이 없다</text>
+
+  <rect x="30" y="178" width="620" height="72" fill="none" stroke="currentColor" stroke-width="1" opacity="0.4" stroke-dasharray="5 4" />
+  <text x="46" y="200" font-size="10.5" class="d-pct">이 순환 안에 존재하지 않는 것</text>
+  <g font-size="10.5" fill="currentColor" opacity="0.8">
+    <text x="46" y="222">투자은행 중개 수수료</text>
+    <text x="240" y="222">사모펀드 성과보수</text>
+    <text x="420" y="222">매매 양도소득세</text>
+    <text x="46" y="240">배당소득세</text>
+    <text x="240" y="240">고객의 환매 요구</text>
+    <text x="420" y="240">채권자의 마진콜</text>
+  </g>
+
+  <text x="20" y="282" font-size="11" class="d-pct">자본주의에서 발생할 수 있는 모든 마찰력을 0에 수렴시킨 상태</text>
+  <text x="20" y="304" font-size="11.5" class="d-accent-t">남은 것은 순수한 자본의 성장 동력뿐이고, 그것이 영구히 회전한다</text>
+</svg>

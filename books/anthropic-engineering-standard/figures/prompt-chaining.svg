@@ -1,0 +1,33 @@
+<svg viewBox="0 0 680 300" role="img" aria-label="프롬프트 체이닝은 입력을 LLM 1단계로 처리한 뒤 프로그래밍 방식의 검증 게이트를 통과시키고, 통과한 것만 LLM 2단계로 넘겨 최종 결과를 낸다">
+  <defs>
+    <marker id="cArrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="currentColor" />
+    </marker>
+  </defs>
+  <g fill="none" stroke="currentColor" stroke-width="1" opacity="0.4">
+    <rect x="120" y="8" width="300" height="34" />
+    <rect x="120" y="62" width="300" height="44" />
+    <rect x="120" y="186" width="300" height="44" />
+    <rect x="120" y="250" width="300" height="34" />
+  </g>
+  <rect x="120" y="126" width="300" height="40" fill="none" stroke-width="2" class="d-accent-stroke" stroke-dasharray="6 4" />
+  <g text-anchor="middle" font-size="12" fill="currentColor">
+    <text x="270" y="30">입력 데이터 (Raw Data)</text>
+    <text x="270" y="90">LLM Step 1</text>
+    <text x="270" y="214">LLM Step 2</text>
+    <text x="270" y="272">최종 결과물 출력</text>
+  </g>
+  <text x="270" y="151" text-anchor="middle" font-size="12" class="d-accent-t">Programmatic Gate</text>
+  <g font-size="10" class="d-pct">
+    <text x="436" y="90">마크다운 Frontmatter 추출</text>
+    <text x="436" y="151">JSON 스키마 검증 · 누락 필드 확인</text>
+    <text x="436" y="214">본문 AST 분석 · 검색 토큰 생성</text>
+  </g>
+  <g stroke="currentColor" stroke-width="1.2" opacity="0.5">
+    <line x1="270" y1="42" x2="270" y2="58" marker-end="url(#cArrow)" />
+    <line x1="270" y1="106" x2="270" y2="122" marker-end="url(#cArrow)" />
+    <line x1="270" y1="230" x2="270" y2="246" marker-end="url(#cArrow)" />
+  </g>
+  <line x1="270" y1="166" x2="270" y2="182" stroke-width="1.6" class="d-accent-stroke" marker-end="url(#cArrow)" />
+  <text x="286" y="180" font-size="9.5" class="d-accent-t">통과 시에만</text>
+</svg>

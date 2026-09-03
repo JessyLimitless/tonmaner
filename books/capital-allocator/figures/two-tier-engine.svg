@@ -1,0 +1,30 @@
+<svg viewBox="0 0 680 330" role="img" aria-label="벅셔의 2층 구조. 1층 보험 그룹이 조달 비용 0퍼센트 이하의 플로트를 만들어 위로 올려보내면, 2층 자본 운용층이 그 자본을 자본수익률 15퍼센트 이상의 해자 기업에 배치하고, 그 스프레드가 마진콜 없이 영구히 쌓인다">
+  <defs>
+    <marker id="ttArr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="currentColor" />
+    </marker>
+  </defs>
+
+  <rect x="40" y="26" width="600" height="112" fill="none" stroke-width="2.4" class="d-accent-stroke" />
+  <text x="60" y="50" font-size="12.5" class="d-accent-t">2층 — 자본 운용층 (Asset Engine)</text>
+  <text x="622" y="50" text-anchor="end" font-size="12.5" class="d-accent-t">ROIC &gt; 15%</text>
+  <g font-size="10.2" class="d-pct">
+    <text x="60" y="76">4대 해자 독점 기업군 — 애플 · 코카콜라 · 아멕스 · 신용평가사</text>
+    <text x="60" y="98">100% 완전 자회사 — 화물 철도 · 에너지 · 씨즈캔디</text>
+    <text x="60" y="120">위기 시 구제 금융 — 우선주와 워런트로 받는 확정 배당</text>
+  </g>
+
+  <line x1="340" y1="200" x2="340" y2="144" stroke-width="2.2" class="d-accent-stroke" marker-end="url(#ttArr)" />
+  <text x="352" y="176" font-size="10.5" class="d-accent-t">영구 자본 수혈 — 마진콜 없는 돈</text>
+
+  <rect x="40" y="204" width="600" height="112" fill="none" stroke="currentColor" stroke-width="1.4" opacity="0.6" />
+  <text x="60" y="228" font-size="12.5" fill="currentColor">1층 — 자본 조달층 (Liability Engine)</text>
+  <text x="622" y="228" text-anchor="end" font-size="12.5" class="d-accent-t">조달 비용 ≤ 0%</text>
+  <g font-size="10.2" class="d-pct">
+    <text x="60" y="254">국영급 보험 그룹 — 가이코 · 내셔널 인뎀너티 · 제너럴 리</text>
+    <text x="60" y="276">엄격한 언더라이팅 — 손실이 뻔한 계약은 거절한다 (합산비율 100% 미만)</text>
+    <text x="60" y="298">1,600억 달러 규모의 무이자·역금리 영구 부채(Float)</text>
+  </g>
+
+  <text x="20" y="20" font-size="10.5" class="d-pct">월가는 2층만 짓는다 — 그래서 시장이 무너지면 1층에서 다리가 부러진다</text>
+</svg>

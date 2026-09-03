@@ -1,0 +1,36 @@
+<svg viewBox="0 0 680 300" role="img" aria-label="벅셔는 초기 매수 이후 애플 주식을 한 주도 더 사지 않았지만, 애플이 자사주를 사들여 소각하면서 전체 발행주식 수가 줄어 벅셔의 지분율이 5.0퍼센트에서 5.8퍼센트로 저절로 올라갔다">
+  <defs>
+    <marker id="abArrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="currentColor" />
+    </marker>
+  </defs>
+
+  <text x="20" y="22" font-size="10.5" class="d-pct">분자는 그대로인데 분모가 줄면, 몫은 저절로 커진다</text>
+
+  <text x="140" y="52" text-anchor="middle" font-size="11.5" fill="currentColor">2016년 매수 직후</text>
+  <text x="540" y="52" text-anchor="middle" font-size="11.5" class="d-accent-t">수년간의 자사주 소각 뒤</text>
+
+  <rect x="40" y="66" width="200" height="120" fill="none" stroke="currentColor" stroke-width="1" opacity="0.5" />
+  <text x="140" y="88" text-anchor="middle" font-size="9.8" class="d-pct">애플 전체 발행주식 수</text>
+  <rect x="56" y="98" width="168" height="76" fill="currentColor" opacity="0.07" />
+  <rect x="56" y="98" width="168" height="76" fill="none" stroke="currentColor" stroke-width="1" opacity="0.4" />
+  <rect x="56" y="98" width="9" height="76" class="d-accent-stroke" fill="currentColor" />
+  <text x="140" y="204" text-anchor="middle" font-size="12" fill="currentColor">벅셔 지분 약 5.0%</text>
+
+  <rect x="440" y="66" width="200" height="120" fill="none" stroke-width="2" class="d-accent-stroke" />
+  <text x="540" y="88" text-anchor="middle" font-size="9.8" class="d-pct">발행주식 수가 줄었다</text>
+  <rect x="470" y="98" width="140" height="76" fill="currentColor" opacity="0.07" />
+  <rect x="470" y="98" width="140" height="76" fill="none" stroke="currentColor" stroke-width="1" opacity="0.4" />
+  <rect x="470" y="98" width="9" height="76" class="d-accent-stroke" fill="currentColor" />
+  <text x="540" y="204" text-anchor="middle" font-size="12" class="d-accent-t">벅셔 지분 약 5.8%</text>
+
+  <text x="456" y="94" font-size="9" class="d-pct">↤ 소각</text>
+
+  <line x1="248" y1="126" x2="432" y2="126" stroke-width="1.8" class="d-accent-stroke" marker-end="url(#abArrow)" />
+  <text x="340" y="118" text-anchor="middle" font-size="10.5" class="d-accent-t">팀 쿡의 자사주 매입·소각</text>
+  <text x="340" y="146" text-anchor="middle" font-size="9.8" class="d-pct">벅셔는 단 1주도 추가로 사지 않았다</text>
+
+  <text x="340" y="238" text-anchor="middle" font-size="11" class="d-pct">색이 진한 띠가 벅셔의 몫이다. 띠의 폭은 그대로인데 전체 막대가 줄어들었다</text>
+  <text x="340" y="262" text-anchor="middle" font-size="11.5" class="d-accent-t">1센트도 더 쓰지 않고 세계 최고 기업의 지분을 매년 공짜로 늘려 받는다</text>
+  <text x="340" y="284" text-anchor="middle" font-size="10" class="d-pct">이것이 버핏이 자사주 소각을 배당보다 사랑하는 이유다</text>
+</svg>

@@ -1,0 +1,60 @@
+<svg viewBox="0 0 680 300" role="img" aria-label="수집 파이프라인의 유한 상태 머신. IDLE에서 시작해 FETCHING_HTML, PARSING_AST, SAVING_DB를 거쳐 COMPLETED로 가며, 각 단계의 실패는 ERROR_NETWORK, ERROR_PARSE, ERROR_DB로 빠진 뒤 RESET으로 IDLE에 복귀한다">
+  <defs>
+    <marker id="fArrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="currentColor" />
+    </marker>
+  </defs>
+  <g text-anchor="middle" font-size="9.5" class="d-pct">
+    <text x="138" y="62">START_SCRAPE</text>
+    <text x="270" y="62">SUCCESS</text>
+    <text x="402" y="62">SUCCESS</text>
+    <text x="534" y="62">SUCCESS</text>
+  </g>
+  <g fill="none" stroke-width="2" class="d-accent-stroke">
+    <rect x="20" y="70" width="112" height="42" />
+    <rect x="152" y="70" width="112" height="42" />
+    <rect x="284" y="70" width="112" height="42" />
+    <rect x="416" y="70" width="112" height="42" />
+    <rect x="548" y="70" width="112" height="42" />
+  </g>
+  <g text-anchor="middle" font-size="10.5" class="d-accent-t">
+    <text x="76" y="95">IDLE</text>
+    <text x="208" y="95">FETCHING_HTML</text>
+    <text x="340" y="95">PARSING_AST</text>
+    <text x="472" y="95">SAVING_DB</text>
+    <text x="604" y="95">COMPLETED</text>
+  </g>
+  <g stroke-width="1.6" class="d-accent-stroke">
+    <line x1="132" y1="91" x2="148" y2="91" marker-end="url(#fArrow)" />
+    <line x1="264" y1="91" x2="280" y2="91" marker-end="url(#fArrow)" />
+    <line x1="396" y1="91" x2="412" y2="91" marker-end="url(#fArrow)" />
+    <line x1="528" y1="91" x2="544" y2="91" marker-end="url(#fArrow)" />
+  </g>
+  <g fill="none" stroke="currentColor" stroke-width="1" opacity="0.4">
+    <rect x="152" y="190" width="112" height="42" />
+    <rect x="284" y="190" width="112" height="42" />
+    <rect x="416" y="190" width="112" height="42" />
+  </g>
+  <g text-anchor="middle" font-size="10.5" fill="currentColor" opacity="0.7">
+    <text x="208" y="215">ERROR_NETWORK</text>
+    <text x="340" y="215">ERROR_PARSE</text>
+    <text x="472" y="215">ERROR_DB</text>
+  </g>
+  <g stroke="currentColor" stroke-width="1.2" opacity="0.5">
+    <line x1="208" y1="112" x2="208" y2="186" marker-end="url(#fArrow)" />
+    <line x1="340" y1="112" x2="340" y2="186" marker-end="url(#fArrow)" />
+    <line x1="472" y1="112" x2="472" y2="186" marker-end="url(#fArrow)" />
+  </g>
+  <g font-size="9.5" class="d-pct">
+    <text x="216" y="152">FAIL</text>
+    <text x="348" y="152">FAIL</text>
+    <text x="480" y="152">FAIL</text>
+  </g>
+  <g fill="none" stroke="currentColor" stroke-width="1.1" opacity="0.4" stroke-dasharray="5 4">
+    <path d="M 208 232 L 208 262" />
+    <path d="M 340 232 L 340 262" />
+    <path d="M 472 232 L 472 262" />
+    <path d="M 472 262 L 76 262 L 76 118" marker-end="url(#fArrow)" />
+  </g>
+  <text x="284" y="280" text-anchor="middle" font-size="9.5" class="d-pct">RESET</text>
+</svg>

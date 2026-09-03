@@ -1,0 +1,48 @@
+<svg viewBox="0 0 680 300" role="img" aria-label="스키마는 이름과 타입과 의미와 결측 처리라는 네 층으로 환각을 막는데, 대부분의 명세는 위 두 층만 적어서 아래 두 층이 뚫린다">
+  <defs>
+    <marker id="slArrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="currentColor" />
+    </marker>
+  </defs>
+  <g fill="none" stroke="currentColor" stroke-width="1" opacity="0.4">
+    <rect x="150" y="12" width="380" height="50" />
+    <rect x="150" y="72" width="380" height="50" />
+  </g>
+  <g fill="none" stroke-width="2" class="d-accent-stroke">
+    <rect x="150" y="132" width="380" height="50" />
+    <rect x="150" y="192" width="380" height="50" />
+  </g>
+  <g font-size="12" fill="currentColor">
+    <text x="170" y="34">이름</text>
+    <text x="170" y="94">타입과 제약</text>
+  </g>
+  <g font-size="12" class="d-accent-t">
+    <text x="170" y="154">의미 단위</text>
+    <text x="170" y="214">없을 때</text>
+  </g>
+  <g font-size="10" class="d-pct">
+    <text x="170" y="52">시스템 전체에서 단 하나의 표기 · 별칭 금지</text>
+    <text x="170" y="112">형태 · 길이 · 허용값의 닫힌 집합</text>
+    <text x="170" y="172">유량인지 저량인지 · 단독인지 누계인지 · 어느 시점 기준인지</text>
+    <text x="170" y="232">결측의 표현 · 지어내지 않는다는 선언</text>
+  </g>
+  <g text-anchor="end" font-size="10.5" fill="currentColor" opacity="0.55">
+    <text x="138" y="40">대부분의</text>
+    <text x="138" y="56">명세가 적는 곳</text>
+  </g>
+  <g text-anchor="end" font-size="10.5" class="d-accent-t">
+    <text x="138" y="168">사고가</text>
+    <text x="138" y="184">나는 곳</text>
+  </g>
+  <g stroke="currentColor" stroke-width="1.2" opacity="0.45">
+    <line x1="600" y1="24" x2="600" y2="50" marker-end="url(#slArrow)" />
+    <line x1="600" y1="84" x2="600" y2="110" marker-end="url(#slArrow)" />
+  </g>
+  <g text-anchor="middle" font-size="9.5" class="d-pct">
+    <text x="600" y="20">없는 필드</text>
+    <text x="600" y="80">틀린 형태</text>
+  </g>
+  <text x="600" y="140" text-anchor="middle" font-size="9.5" class="d-accent-t">다른 의미</text>
+  <text x="600" y="200" text-anchor="middle" font-size="9.5" class="d-accent-t">지어낸 값</text>
+  <text x="340" y="278" text-anchor="middle" font-size="11" class="d-pct">이름과 타입이 같아도 의미가 다르면, 컴파일러도 스키마 검증기도 통과시킨다</text>
+</svg>

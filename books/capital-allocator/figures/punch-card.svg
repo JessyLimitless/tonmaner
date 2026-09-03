@@ -1,0 +1,31 @@
+<svg viewBox="0 0 680 300" role="img" aria-label="평생 스무 번의 투자 결정만 허용하는 펀치 카드. 한 번 살 때마다 구멍 하나가 영구히 사라지므로, 뜬소문이나 추천 한마디에 카드를 내밀 수 없게 된다">
+  <text x="20" y="22" font-size="10.5" class="d-pct">평생 스무 번. 주식을 하나 살 때마다 구멍 하나가 영구히 사라진다</text>
+
+  <rect x="40" y="44" width="600" height="150" fill="none" stroke-width="2.4" class="d-accent-stroke" />
+  <text x="60" y="70" font-size="11" class="d-accent-t">LIFETIME PUNCH CARD — 20 SLOTS</text>
+  <line x1="60" y1="78" x2="620" y2="78" stroke="currentColor" stroke-width="1" opacity="0.3" />
+
+  <g class="d-accent-t">
+    <circle cx="88" cy="104" r="11" fill="currentColor" />
+    <circle cx="158" cy="104" r="11" fill="currentColor" />
+    <circle cx="228" cy="104" r="11" fill="currentColor" />
+    <circle cx="298" cy="104" r="11" fill="currentColor" />
+  </g>
+  <g fill="none" stroke="currentColor" stroke-width="1.4" opacity="0.45">
+    <circle cx="368" cy="104" r="11" /><circle cx="438" cy="104" r="11" />
+    <circle cx="508" cy="104" r="11" /><circle cx="578" cy="104" r="11" />
+    <circle cx="88" cy="148" r="11" /><circle cx="158" cy="148" r="11" />
+    <circle cx="228" cy="148" r="11" /><circle cx="298" cy="148" r="11" />
+    <circle cx="368" cy="148" r="11" /><circle cx="438" cy="148" r="11" />
+    <circle cx="508" cy="148" r="11" /><circle cx="578" cy="148" r="11" />
+    <circle cx="88" cy="176" r="7" /><circle cx="158" cy="176" r="7" />
+    <circle cx="228" cy="176" r="7" /><circle cx="298" cy="176" r="7" />
+  </g>
+
+  <text x="60" y="128" font-size="9.5" class="d-accent-t">사용함 4</text>
+  <text x="352" y="128" font-size="9.5" class="d-pct">남은 16 — 완벽한 공이 올 때까지 쓰지 않는다</text>
+
+  <text x="20" y="228" font-size="11" class="d-pct">스무 번뿐임을 아는 사람은 술자리에서 들은 뜬소문에 카드를 내밀지 않는다</text>
+  <text x="20" y="250" font-size="11" class="d-pct">한 번 뚫기 전에 수개월을 조사하고, 경쟁자를 뒤지고, 10년 뒤 현금흐름을 들여다본다</text>
+  <text x="20" y="276" font-size="11.5" class="d-accent-t">제약이 규율을 만든다 — 무제한으로 살 수 있다는 자유가 실은 가장 비싼 대가였다</text>
+</svg>

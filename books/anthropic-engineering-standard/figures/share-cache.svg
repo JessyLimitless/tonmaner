@@ -1,0 +1,38 @@
+<svg viewBox="0 0 680 300" role="img" aria-label="외부 공유 요청은 먼저 메모리 캐시를 검사해 적중하면 즉시 응답하고, 빗나갔을 때만 데이터베이스를 조회해 렌더링한 뒤 캐시에 적재한다">
+  <defs>
+    <marker id="shArrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="currentColor" />
+    </marker>
+  </defs>
+  <rect x="250" y="8" width="180" height="32" fill="none" stroke="currentColor" stroke-width="1" opacity="0.4" />
+  <text x="340" y="29" text-anchor="middle" font-size="11.5" fill="currentColor">GET /share/:slug</text>
+  <line x1="340" y1="40" x2="340" y2="52" stroke="currentColor" stroke-width="1.2" opacity="0.5" marker-end="url(#shArrow)" />
+  <rect x="140" y="54" width="400" height="56" fill="none" stroke-width="2" class="d-accent-stroke" />
+  <text x="340" y="78" text-anchor="middle" font-size="12.5" class="d-accent-t">In-Memory LRU Cache</text>
+  <text x="340" y="97" text-anchor="middle" font-size="10.5" class="d-pct">key: share:slug — 사전 렌더링 HTML + 마스킹된 메타데이터</text>
+  <g fill="none" stroke="currentColor" stroke-width="1.2" opacity="0.5">
+    <path d="M 340 110 L 340 132 L 170 132 L 170 146" marker-end="url(#shArrow)" />
+    <path d="M 340 110 L 340 132 L 510 132 L 510 146" marker-end="url(#shArrow)" />
+  </g>
+  <g text-anchor="middle" font-size="10" class="d-pct">
+    <text x="212" y="128">Cache Hit</text>
+    <text x="468" y="128">Cache Miss</text>
+  </g>
+  <g fill="none" stroke="currentColor" stroke-width="1" opacity="0.4">
+    <rect x="40" y="150" width="260" height="46" />
+    <rect x="380" y="150" width="260" height="46" />
+    <rect x="380" y="216" width="260" height="46" />
+  </g>
+  <g text-anchor="middle" font-size="11.5" fill="currentColor">
+    <text x="170" y="172">즉시 서빙</text>
+    <text x="510" y="172">PostgreSQL 조회</text>
+    <text x="510" y="238">HTML 렌더링 후 캐시 적재</text>
+  </g>
+  <g text-anchor="middle" font-size="10" class="d-pct">
+    <text x="170" y="189">DB 연결 없이 1~2ms</text>
+    <text x="510" y="189">is_public 제약 필수</text>
+    <text x="510" y="255">다음 요청부터는 왼쪽 경로</text>
+  </g>
+  <line x1="510" y1="196" x2="510" y2="212" stroke="currentColor" stroke-width="1.2" opacity="0.5" marker-end="url(#shArrow)" />
+  <text x="20" y="286" font-size="11" class="d-pct">트래픽이 몰려도 원본 데이터베이스는 거의 건드리지 않는다 — 그것이 개방의 전제다</text>
+</svg>

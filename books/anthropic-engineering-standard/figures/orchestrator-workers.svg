@@ -1,0 +1,42 @@
+<svg viewBox="0 0 680 320" role="img" aria-label="오케스트레이터 LLM이 명세를 파싱해 실행 계획을 세우고, 슬라이싱된 최소 컨텍스트만 받은 전문 워커들이 각자 구현한 뒤, 종합 단계에서 통합과 충돌 해결이 이루어진다">
+  <defs>
+    <marker id="oArrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="currentColor" />
+    </marker>
+  </defs>
+  <rect x="210" y="6" width="260" height="32" fill="none" stroke="currentColor" stroke-width="1" opacity="0.4" />
+  <text x="340" y="27" text-anchor="middle" font-size="11.5" fill="currentColor">고수준 엔지니어링 목표 접수</text>
+  <line x1="340" y1="38" x2="340" y2="50" stroke="currentColor" stroke-width="1.2" opacity="0.5" marker-end="url(#oArrow)" />
+  <rect x="140" y="52" width="400" height="58" fill="none" stroke-width="2" class="d-accent-stroke" />
+  <text x="340" y="76" text-anchor="middle" font-size="12.5" class="d-accent-t">Central Orchestrator LLM</text>
+  <text x="340" y="96" text-anchor="middle" font-size="10.5" class="d-pct">전체 명세 파싱 · 의존성 분석 · 동적 실행 계획(DAG) 수립</text>
+  <g fill="none" stroke="currentColor" stroke-width="1.2" opacity="0.5">
+    <path d="M 340 110 L 340 130 L 118 130 L 118 144" marker-end="url(#oArrow)" />
+    <path d="M 340 110 L 340 144" marker-end="url(#oArrow)" />
+    <path d="M 340 110 L 340 130 L 562 130 L 562 144" marker-end="url(#oArrow)" />
+  </g>
+  <g fill="none" stroke="currentColor" stroke-width="1" opacity="0.4">
+    <rect x="20" y="148" width="196" height="58" />
+    <rect x="242" y="148" width="196" height="58" />
+    <rect x="464" y="148" width="196" height="58" />
+  </g>
+  <g text-anchor="middle" font-size="12" fill="currentColor">
+    <text x="118" y="172">Worker 1</text>
+    <text x="340" y="172">Worker 2</text>
+    <text x="562" y="172">Worker 3</text>
+  </g>
+  <g text-anchor="middle" font-size="10.5" class="d-pct">
+    <text x="118" y="192">DDL &amp; DB 모델</text>
+    <text x="340" y="192">Express 라우터</text>
+    <text x="562" y="192">React 컴포넌트</text>
+  </g>
+  <text x="20" y="228" font-size="10.5" class="d-pct">워커에게는 슬라이싱된 최소 컨텍스트만 — 워커들끼리는 서로의 존재를 모른다</text>
+  <g fill="none" stroke="currentColor" stroke-width="1.2" opacity="0.5">
+    <path d="M 118 206 L 118 240 L 340 240 L 340 252" marker-end="url(#oArrow)" />
+    <path d="M 340 206 L 340 252" marker-end="url(#oArrow)" />
+    <path d="M 562 206 L 562 240 L 340 240 L 340 252" marker-end="url(#oArrow)" />
+  </g>
+  <rect x="140" y="256" width="400" height="52" fill="none" stroke-width="2" class="d-accent-stroke" />
+  <text x="340" y="278" text-anchor="middle" font-size="12.5" class="d-accent-t">Synthesis &amp; Integration</text>
+  <text x="340" y="296" text-anchor="middle" font-size="10.5" class="d-pct">워커 결과물 통합 및 충돌 해결</text>
+</svg>

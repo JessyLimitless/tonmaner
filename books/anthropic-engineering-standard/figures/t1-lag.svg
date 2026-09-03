@@ -1,0 +1,36 @@
+<svg viewBox="0 0 680 300" role="img" aria-label="가격은 당일 마감에 확정되지만 수급 데이터는 다음 날 공표되므로, 마감 당일 밤에 한 행으로 합치면 오늘 가격과 어제 수량이 섞여 방향이 뒤집힌다">
+  <defs>
+    <marker id="tlArrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="currentColor" />
+    </marker>
+  </defs>
+  <line x1="60" y1="44" x2="640" y2="44" stroke="currentColor" stroke-width="1" opacity="0.3" />
+  <g text-anchor="middle" font-size="11" fill="currentColor" opacity="0.7">
+    <text x="150" y="34">D − 1</text>
+    <text x="350" y="34">D · 마감일</text>
+    <text x="550" y="34">D + 1</text>
+  </g>
+  <g stroke="currentColor" stroke-width="1" opacity="0.3">
+    <line x1="150" y1="38" x2="150" y2="50" />
+    <line x1="350" y1="38" x2="350" y2="50" />
+    <line x1="550" y1="38" x2="550" y2="50" />
+  </g>
+  <text x="20" y="86" font-size="10.5" class="d-pct">가격</text>
+  <rect x="270" y="68" width="160" height="34" fill="none" stroke-width="2" class="d-accent-stroke" />
+  <text x="350" y="90" text-anchor="middle" font-size="11" class="d-accent-t">D 종가 확정</text>
+  <text x="20" y="140" font-size="10.5" class="d-pct">수급</text>
+  <rect x="70" y="122" width="160" height="34" fill="none" stroke="currentColor" stroke-width="1" opacity="0.45" />
+  <text x="150" y="144" text-anchor="middle" font-size="11" fill="currentColor">D−1 수량 발생</text>
+  <rect x="470" y="122" width="160" height="34" fill="none" stroke="currentColor" stroke-width="1" opacity="0.45" />
+  <text x="550" y="144" text-anchor="middle" font-size="11" fill="currentColor">D 수량 공표</text>
+  <path d="M 230 139 L 466 139" fill="none" stroke="currentColor" stroke-width="1.2" opacity="0.4" stroke-dasharray="5 4" marker-end="url(#tlArrow)" />
+  <text x="348" y="133" text-anchor="middle" font-size="9.5" class="d-pct">하루 늦게 나온다</text>
+  <g fill="none" stroke="currentColor" stroke-width="1.2" opacity="0.5">
+    <path d="M 350 102 L 350 186" marker-end="url(#tlArrow)" />
+    <path d="M 150 156 L 150 172 L 330 172 L 330 186" marker-end="url(#tlArrow)" />
+  </g>
+  <rect x="200" y="190" width="300" height="52" fill="none" stroke-width="2" class="d-accent-stroke" />
+  <text x="350" y="212" text-anchor="middle" font-size="11.5" class="d-accent-t">D 밤에 만든 한 행</text>
+  <text x="350" y="230" text-anchor="middle" font-size="10.5" class="d-pct">D의 가격 + D−1의 수량</text>
+  <text x="340" y="272" text-anchor="middle" font-size="11" class="d-pct">타입은 맞다. 스키마도 통과한다. 뒤집히는 것은 부호다</text>
+</svg>

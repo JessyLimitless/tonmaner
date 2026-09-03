@@ -1,0 +1,37 @@
+<svg viewBox="0 0 680 300" role="img" aria-label="라우터가 입력의 의도와 복잡도를 판별해 단순 포맷 변환, 데이터 DDL 생성, 복합 웹 수집 파이프라인 중 하나의 전문 경로로 분기시킨다">
+  <defs>
+    <marker id="rArrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="currentColor" />
+    </marker>
+  </defs>
+  <rect x="250" y="8" width="180" height="34" fill="none" stroke="currentColor" stroke-width="1" opacity="0.4" />
+  <text x="340" y="30" text-anchor="middle" font-size="12" fill="currentColor">사용자 입력 · 작업 요청</text>
+  <line x1="340" y1="42" x2="340" y2="56" stroke="currentColor" stroke-width="1.2" opacity="0.5" marker-end="url(#rArrow)" />
+  <rect x="210" y="58" width="260" height="52" fill="none" stroke-width="2" class="d-accent-stroke" />
+  <text x="340" y="82" text-anchor="middle" font-size="12.5" class="d-accent-t">Router — 분류기</text>
+  <text x="340" y="100" text-anchor="middle" font-size="10.5" class="d-pct">키워드 · 규칙 · 경량 LLM</text>
+  <g fill="none" stroke="currentColor" stroke-width="1.2" opacity="0.5">
+    <path d="M 340 110 L 340 132 L 116 132 L 116 146" marker-end="url(#rArrow)" />
+    <path d="M 340 110 L 340 146" marker-end="url(#rArrow)" />
+    <path d="M 340 110 L 340 132 L 564 132 L 564 146" marker-end="url(#rArrow)" />
+  </g>
+  <g fill="none" stroke="currentColor" stroke-width="1" opacity="0.4">
+    <rect x="20" y="150" width="192" height="66" />
+    <rect x="244" y="150" width="192" height="66" />
+    <rect x="468" y="150" width="192" height="66" />
+  </g>
+  <g text-anchor="middle" font-size="11.5" fill="currentColor">
+    <text x="116" y="174">Branch A</text>
+    <text x="340" y="174">Branch B</text>
+    <text x="564" y="174">Branch C</text>
+  </g>
+  <g text-anchor="middle" font-size="11" class="d-pct">
+    <text x="116" y="193">단순 포맷 변환</text>
+    <text x="116" y="209">경량 모델 · 빠른 응답</text>
+    <text x="340" y="193">데이터 DDL 생성</text>
+    <text x="340" y="209">엄격한 스키마 검증</text>
+    <text x="564" y="193">복합 웹 수집 파이프라인</text>
+    <text x="564" y="209">MCP 연동 + 체이닝</text>
+  </g>
+  <text x="340" y="256" text-anchor="middle" font-size="11" class="d-pct">분기는 상호 배타적이어야 하고, 분류 신뢰도가 낮으면 기본 안전 경로로 우회한다</text>
+</svg>

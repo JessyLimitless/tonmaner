@@ -1,0 +1,29 @@
+<svg viewBox="0 0 680 300" role="img" aria-label="합산비율 100퍼센트를 경계로 세계가 갈린다. 100퍼센트를 넘으면 플로트를 보유하는 대가로 이자를 무는 것이고, 정확히 100퍼센트면 무이자 대출이며, 100퍼센트 아래면 돈을 빌리면서 오히려 수수료를 받는 마이너스 금리가 된다">
+  <text x="20" y="22" font-size="10.5" class="d-pct">보험료 100을 받아 보험금과 경비로 얼마를 썼는가 — 그 한 숫자가 전부를 가른다</text>
+
+  <line x1="340" y1="42" x2="340" y2="238" stroke-width="2" class="d-accent-stroke" />
+  <text x="340" y="36" text-anchor="middle" font-size="11.5" class="d-accent-t">합산비율 100%</text>
+  <text x="340" y="256" text-anchor="middle" font-size="9.8" class="d-pct">조달 비용 0 — 완전한 무이자</text>
+
+  <rect x="20" y="52" width="290" height="80" fill="none" stroke="currentColor" stroke-width="1" opacity="0.5" />
+  <text x="36" y="74" font-size="12" fill="currentColor">합산비율 &gt; 100%</text>
+  <text x="36" y="94" font-size="10.2" class="d-pct">100을 받아 105를 지출한다</text>
+  <text x="36" y="112" font-size="10.2" class="d-pct">플로트를 쥐는 대가로 5%를 문다</text>
+  <text x="294" y="122" text-anchor="end" font-size="13" fill="currentColor" opacity="0.8">조달 비용 +5%</text>
+
+  <rect x="20" y="148" width="290" height="66" fill="none" stroke="currentColor" stroke-width="1" opacity="0.35" stroke-dasharray="5 4" />
+  <text x="36" y="172" font-size="11" class="d-pct">은행에서 5% 이자를 내고</text>
+  <text x="36" y="192" font-size="11" class="d-pct">돈을 빌려온 것과 같다</text>
+
+  <rect x="370" y="52" width="290" height="80" fill="none" stroke-width="2.4" class="d-accent-stroke" />
+  <text x="386" y="74" font-size="12" class="d-accent-t">합산비율 &lt; 100%</text>
+  <text x="386" y="94" font-size="10.2" class="d-pct">100을 받아 95만 지출한다</text>
+  <text x="386" y="112" font-size="10.2" class="d-pct">5가 순이익으로 남는다</text>
+  <text x="644" y="122" text-anchor="end" font-size="13" class="d-accent-t">조달 비용 −5%</text>
+
+  <rect x="370" y="148" width="290" height="66" fill="none" stroke-width="1.6" class="d-accent-stroke" />
+  <text x="386" y="172" font-size="11" class="d-accent-t">돈을 빌려 쓰면서</text>
+  <text x="386" y="192" font-size="11" class="d-accent-t">오히려 수수료를 받는다</text>
+
+  <text x="20" y="284" font-size="11" class="d-pct">벅셔의 반세기 누적 평균은 합산비율 97~98% — 실질 조달 비용 약 −2%다</text>
+</svg>

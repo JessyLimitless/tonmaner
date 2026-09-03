@@ -1,0 +1,54 @@
+<svg viewBox="0 0 680 330" role="img" aria-label="초과 이익을 내는 성을 굶주린 경쟁자들이 사방에서 공격하지만, 무형자산과 전환 비용과 네트워크 효과와 원가 우위라는 네 겹의 해자가 그들을 막아선다">
+  <defs>
+    <marker id="mcArr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="currentColor" />
+    </marker>
+  </defs>
+
+  <text x="20" y="20" font-size="10.5" class="d-pct">초과 이익을 내는 성을 세우는 순간, 지평선 너머에서 경쟁자들이 몰려온다</text>
+
+  <g stroke="currentColor" stroke-width="1.2" opacity="0.45" fill="none">
+    <line x1="60" y1="70" x2="150" y2="120" marker-end="url(#mcArr)" />
+    <line x1="340" y1="42" x2="340" y2="86" marker-end="url(#mcArr)" />
+    <line x1="620" y1="70" x2="530" y2="120" marker-end="url(#mcArr)" />
+    <line x1="60" y1="250" x2="150" y2="212" marker-end="url(#mcArr)" />
+    <line x1="620" y1="250" x2="530" y2="212" marker-end="url(#mcArr)" />
+  </g>
+  <g font-size="9.5" class="d-pct">
+    <text x="24" y="64">경쟁자</text>
+    <text x="310" y="38">신규 진입</text>
+    <text x="596" y="64">모방자</text>
+    <text x="24" y="264">가격 공세</text>
+    <text x="590" y="264">대체 기술</text>
+  </g>
+
+  <rect x="140" y="88" width="400" height="132" fill="none" stroke-width="2.4" class="d-accent-stroke" />
+  <text x="340" y="106" text-anchor="middle" font-size="10.5" class="d-accent-t">네 겹의 해자</text>
+
+  <g fill="none" stroke-width="1.6" class="d-accent-stroke">
+    <rect x="158" y="116" width="86" height="34" />
+    <rect x="252" y="116" width="86" height="34" />
+    <rect x="346" y="116" width="86" height="34" />
+    <rect x="440" y="116" width="86" height="34" />
+  </g>
+  <g text-anchor="middle" font-size="10" class="d-accent-t">
+    <text x="201" y="132">① 무형자산</text>
+    <text x="295" y="132">② 전환 비용</text>
+    <text x="389" y="132">③ 네트워크</text>
+    <text x="483" y="132">④ 원가 우위</text>
+  </g>
+  <g text-anchor="middle" font-size="8.4" class="d-pct">
+    <text x="201" y="145">브랜드·특허·규제</text>
+    <text x="295" y="145">떠날 때의 고통</text>
+    <text x="389" y="145">모일수록 커진다</text>
+    <text x="483" y="145">따라올 수 없는 원가</text>
+  </g>
+
+  <rect x="235" y="164" width="210" height="44" fill="currentColor" opacity="0.07" />
+  <rect x="235" y="164" width="210" height="44" fill="none" stroke-width="2" class="d-accent-stroke" />
+  <text x="340" y="184" text-anchor="middle" font-size="13" class="d-accent-t">성(Castle)</text>
+  <text x="340" y="200" text-anchor="middle" font-size="9.5" class="d-pct">ROIC가 자본비용을 압도하는 기업</text>
+
+  <text x="20" y="292" font-size="11" class="d-pct">우리가 찾는 것은 멋진 성이 아니라, 깊고 넓은 해자를 가진 성이다</text>
+  <text x="20" y="314" font-size="11" class="d-accent-t">그리고 그 해자 속에는 악어와 피라냐가 우글거리고 있어야 한다</text>
+</svg>

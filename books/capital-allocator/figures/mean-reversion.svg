@@ -1,0 +1,40 @@
+<svg viewBox="0 0 680 320" role="img" aria-label="해자가 없는 기업의 높은 자본수익률은 경쟁자 진입과 가격 경쟁을 거쳐 자본비용 수준으로 끌려 내려가지만, 넓은 해자를 가진 기업은 20년이 지나도 그 중력을 거스르며 초과 수익을 방어한다">
+  <text x="20" y="20" font-size="10.5" class="d-pct">세로축 — 투하자본이익률(ROIC). 가로축 — 초과 이익이 시작된 뒤 흐른 시간</text>
+
+  <line x1="70" y1="250" x2="650" y2="250" stroke="currentColor" stroke-width="1" opacity="0.5" />
+  <line x1="70" y1="46" x2="70" y2="250" stroke="currentColor" stroke-width="1" opacity="0.5" />
+
+  <line x1="70" y1="196" x2="650" y2="196" stroke="currentColor" stroke-width="1.4" opacity="0.45" stroke-dasharray="6 4" />
+  <text x="646" y="190" text-anchor="end" font-size="9.8" class="d-pct">자본비용(WACC) ≈ 8~9%</text>
+
+  <g font-size="9.5" class="d-pct" text-anchor="end">
+    <text x="62" y="70">30%</text>
+    <text x="62" y="133">20%</text>
+    <text x="62" y="200">9%</text>
+  </g>
+
+  <path d="M 100 76 L 200 80 L 320 78 L 450 82 L 620 80" fill="none" stroke-width="2.6" class="d-accent-stroke" />
+  <text x="616" y="68" text-anchor="end" font-size="11" class="d-accent-t">넓은 해자 — 20년 뒤에도 방어</text>
+
+  <path d="M 100 76 L 180 96 L 260 132 L 350 166 L 460 188 L 620 194" fill="none" stroke="currentColor" stroke-width="1.8" opacity="0.6" stroke-dasharray="6 4" />
+  <text x="616" y="214" text-anchor="end" font-size="11" fill="currentColor" opacity="0.75">해자 없음 — 자본비용으로 수렴</text>
+
+  <g font-size="9.2" class="d-pct" text-anchor="middle">
+    <text x="180" y="134">① 경쟁자 진입</text>
+    <text x="285" y="164">② 공급 과잉</text>
+    <text x="395" y="196">③ 가격 덤핑</text>
+  </g>
+
+  <circle cx="100" cy="76" r="4.5" class="d-accent-t" fill="currentColor" />
+  <text x="100" y="62" text-anchor="middle" font-size="9.8" class="d-pct">혁신·독점으로 초과 이익 달성</text>
+
+  <g text-anchor="middle" font-size="10" fill="currentColor">
+    <text x="100" y="268">0년</text>
+    <text x="320" y="268">5년</text>
+    <text x="450" y="268">10년</text>
+    <text x="620" y="268">20년</text>
+  </g>
+
+  <text x="20" y="298" font-size="11" class="d-pct">평균 회귀는 자본주의의 중력이다 — 99%의 기업이 이 곡선을 따라 평범해진다</text>
+  <text x="20" y="316" font-size="11" class="d-accent-t">해자란 그 중력을 20년 이상 거스르는 구조적 장치를 말한다</text>
+</svg>

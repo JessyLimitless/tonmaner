@@ -1,0 +1,36 @@
+<svg viewBox="0 0 680 320" role="img" aria-label="핵심 엔진과 뷰어를 세운 1단계 위에 데이터베이스와 수집 파이프라인을 얹은 2단계, 그 위에 컨테이너 배포와 외부 개방을 얹은 3단계가 차례로 쌓인다">
+  <defs>
+    <marker id="psArrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="currentColor" />
+    </marker>
+  </defs>
+  <g fill="none" stroke="currentColor" stroke-width="1" opacity="0.4">
+    <rect x="60" y="8" width="560" height="86" />
+    <rect x="60" y="116" width="560" height="86" />
+  </g>
+  <rect x="60" y="224" width="560" height="86" fill="none" stroke-width="2" class="d-accent-stroke" />
+  <g font-size="12" fill="currentColor">
+    <text x="80" y="32">Phase 1 — 뼈대 완성 (v0.1.0)</text>
+    <text x="80" y="140">Phase 2 — 데이터 및 외부 수집 안착 (v0.2.0)</text>
+  </g>
+  <text x="80" y="248" font-size="12" class="d-accent-t">Phase 3 — 프로덕션 배포 및 B2B 개방 (v1.0.0)</text>
+  <g font-size="10" class="d-pct">
+    <text x="80" y="52">무의존성 마크다운 AST 파서</text>
+    <text x="80" y="70">이벤트 디바운싱 로컬 파일 감시자</text>
+    <text x="80" y="88">디자인 토큰 기반 2-Pane 뷰어</text>
+    <text x="80" y="160">PostgreSQL DDL · tsvector · GIN 전문 검색 색인</text>
+    <text x="80" y="178">Puppeteer MCP + Readability 수집 파이프라인</text>
+    <text x="80" y="196">디바운스 실시간 검색 및 하이라이팅 스니펫</text>
+    <text x="80" y="268">Docker 멀티스테이지 빌드 · Zod 환경 변수 격리</text>
+    <text x="80" y="286">슬러그 캐싱 기반 Public Share 뷰어</text>
+    <text x="80" y="304">API Key 보안 게이트웨이 · 재시도 보장형 Webhook</text>
+  </g>
+  <g stroke-width="1.6" class="d-accent-stroke">
+    <line x1="340" y1="94" x2="340" y2="112" marker-end="url(#psArrow)" />
+    <line x1="340" y1="202" x2="340" y2="220" marker-end="url(#psArrow)" />
+  </g>
+  <g font-size="9.5" class="d-accent-t">
+    <text x="352" y="108">검증 후 기반 위에 적재</text>
+    <text x="352" y="216">검증 후 기반 위에 적재</text>
+  </g>
+</svg>

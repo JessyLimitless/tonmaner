@@ -1,0 +1,44 @@
+<svg viewBox="0 0 680 320" role="img" aria-label="순이익 1000만에 감가상각비 2000만을 더한 EBITDA 3000만은 현금이 넘쳐 보이지만, 기계를 유지하기 위해 매년 2500만을 다시 써야 하므로 주주가 실제로 손에 쥐는 주주이익은 500만에 불과하다">
+  <defs>
+    <marker id="oeArr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="currentColor" />
+    </marker>
+  </defs>
+
+  <text x="20" y="20" font-size="10.5" class="d-pct">자본 집약적 제조업체 A사 — 같은 회사를 두 가지 자로 잰다</text>
+
+  <text x="36" y="52" font-size="11.5" fill="currentColor" opacity="0.8">월가의 자 — EBITDA</text>
+  <rect x="36" y="62" width="200" height="30" fill="currentColor" opacity="0.07" />
+  <rect x="36" y="62" width="200" height="30" fill="none" stroke="currentColor" stroke-width="1" opacity="0.5" />
+  <text x="136" y="82" text-anchor="middle" font-size="10.5" fill="currentColor">당기순이익 1,000만</text>
+  <rect x="240" y="62" width="330" height="30" fill="currentColor" opacity="0.07" />
+  <rect x="240" y="62" width="330" height="30" fill="none" stroke="currentColor" stroke-width="1" opacity="0.5" />
+  <text x="405" y="82" text-anchor="middle" font-size="10.5" fill="currentColor">+ 감가상각비 2,000만</text>
+  <text x="582" y="82" font-size="14" fill="currentColor">3,000만</text>
+  <text x="36" y="112" font-size="9.8" class="d-pct">"현금이 넘쳐난다" — 월가는 여기서 멈춘다</text>
+
+  <line x1="20" y1="132" x2="660" y2="132" stroke="currentColor" stroke-width="1" opacity="0.25" />
+
+  <text x="36" y="162" font-size="11.5" class="d-accent-t">버핏의 자 — 주주이익(Owner Earnings)</text>
+  <rect x="36" y="172" width="200" height="30" fill="currentColor" opacity="0.07" />
+  <rect x="36" y="172" width="200" height="30" fill="none" stroke="currentColor" stroke-width="1" opacity="0.5" />
+  <text x="136" y="192" text-anchor="middle" font-size="10.5" fill="currentColor">당기순이익 1,000만</text>
+  <rect x="240" y="172" width="330" height="30" fill="currentColor" opacity="0.07" />
+  <rect x="240" y="172" width="330" height="30" fill="none" stroke="currentColor" stroke-width="1" opacity="0.5" />
+  <text x="405" y="192" text-anchor="middle" font-size="10.5" fill="currentColor">+ 감가상각비 2,000만</text>
+
+  <rect x="158" y="212" width="412" height="30" fill="none" stroke="currentColor" stroke-width="1.4" opacity="0.6" stroke-dasharray="5 4" />
+  <text x="364" y="232" text-anchor="middle" font-size="10.5" fill="currentColor">− 유지보수 설비투자 2,500만 — 기계를 굴리려면 반드시 다시 써야 한다</text>
+  <line x1="364" y1="204" x2="364" y2="208" stroke="currentColor" stroke-width="1" opacity="0.5" />
+
+  <rect x="36" y="252" width="122" height="32" fill="currentColor" opacity="0.12" />
+  <rect x="36" y="252" width="122" height="32" fill="none" stroke-width="2.4" class="d-accent-stroke" />
+  <text x="97" y="273" text-anchor="middle" font-size="14" class="d-accent-t">500만</text>
+  <text x="172" y="266" font-size="11" class="d-accent-t">주주가 실제로 손에 쥐는 돈</text>
+  <text x="172" y="282" font-size="10" class="d-pct">EBITDA가 말한 것의 6분의 1</text>
+
+  <line x1="600" y1="96" x2="600" y2="248" stroke-width="1.6" class="d-accent-stroke" marker-end="url(#oeArr)" />
+  <text x="646" y="176" text-anchor="end" font-size="10.5" class="d-accent-t">같은 회사, 다른 진실</text>
+
+  <text x="20" y="308" font-size="11" class="d-pct">감가상각비는 공짜 현금이 아니다 — 언젠가 기계를 다시 사야 한다는 청구서다</text>
+</svg>

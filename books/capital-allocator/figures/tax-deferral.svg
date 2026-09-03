@@ -1,0 +1,48 @@
+<svg viewBox="0 0 680 330" role="img" aria-label="같은 연 15퍼센트 수익이라도 매년 팔아 세금을 내면 30년 뒤 2449만 달러에 그치지만, 한 번도 팔지 않고 마지막에 한 번만 과세되면 세금을 낸 뒤에도 4991만 달러로 두 배 이상 벌어진다">
+  <defs>
+    <marker id="txArrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="currentColor" />
+    </marker>
+  </defs>
+
+  <text x="20" y="22" font-size="11" class="d-pct">초기 자본 100만 달러 · 연 15% · 30년 · 자본이득세 25% — 수익률도 기간도 같다</text>
+
+  <line x1="70" y1="250" x2="640" y2="250" stroke="currentColor" stroke-width="1" opacity="0.5" />
+  <line x1="70" y1="46" x2="70" y2="250" stroke="currentColor" stroke-width="1" opacity="0.5" />
+
+  <g font-size="9.5" class="d-pct" text-anchor="end">
+    <text x="62" y="70">6,000만</text>
+    <text x="62" y="130">4,000만</text>
+    <text x="62" y="190">2,000만</text>
+  </g>
+
+  <path d="M 70 250 Q 300 244 430 214 T 610 66" fill="none" stroke-width="2.4" class="d-accent-stroke" />
+  <path d="M 70 250 Q 300 247 430 236 T 610 176" fill="none" stroke="currentColor" stroke-width="1.6" opacity="0.55" stroke-dasharray="6 4" />
+
+  <circle cx="610" cy="66" r="4.5" class="d-accent-t" fill="currentColor" />
+  <circle cx="610" cy="176" r="4.5" fill="currentColor" opacity="0.55" />
+
+  <text x="600" y="56" text-anchor="end" font-size="11" class="d-accent-t">세전 6,621만</text>
+  <line x1="614" y1="72" x2="614" y2="115" stroke-width="1.4" class="d-accent-stroke" marker-end="url(#txArrow)" />
+  <text x="628" y="98" font-size="9.5" class="d-pct" text-anchor="end">마지막에 한 번만 과세</text>
+
+  <circle cx="610" cy="121" r="4.5" class="d-accent-t" fill="currentColor" />
+  <text x="600" y="140" text-anchor="end" font-size="12" class="d-accent-t">세후 4,991만</text>
+  <text x="600" y="196" text-anchor="end" font-size="12" fill="currentColor" opacity="0.75">2,449만</text>
+
+  <g font-size="10.5">
+    <rect x="96" y="76" width="12" height="3" class="d-accent-stroke" stroke-width="3" />
+    <text x="118" y="81" class="d-accent-t">전략 B — 30년간 한 번도 팔지 않는다</text>
+    <line x1="96" y1="100" x2="108" y2="100" stroke="currentColor" stroke-width="1.6" opacity="0.55" stroke-dasharray="6 4" />
+    <text x="118" y="104" fill="currentColor" opacity="0.75">전략 A — 매년 팔아 세금을 내고 다시 산다 (세후 연 11.25%)</text>
+  </g>
+
+  <g text-anchor="middle" font-size="10.5" fill="currentColor">
+    <text x="70" y="268">0년</text>
+    <text x="340" y="268">15년</text>
+    <text x="610" y="268">30년</text>
+  </g>
+
+  <text x="20" y="300" font-size="11" class="d-pct">벌어진 2,542만 달러는 더 잘 골라서 생긴 것이 아니다. 팔지 않아서 생긴 것이다</text>
+  <text x="20" y="320" font-size="11" class="d-accent-t">아직 내지 않은 세금은 정부에서 이자 0%로 빌린 자본과 같다</text>
+</svg>

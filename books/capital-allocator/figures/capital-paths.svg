@@ -1,0 +1,53 @@
+<svg viewBox="0 0 680 300" role="img" aria-label="기업이 벌어들인 잉여현금흐름 앞에 놓인 다섯 갈래 길. 내부 재투자와 타사 인수는 성장 경로, 부채 상환은 재무 건전성 경로, 현금 배당과 자사주 매입은 주주 환원 경로이며, 뛰어난 자본 배치자는 이 다섯을 한계 수익률로 저울질한다">
+  <defs>
+    <marker id="cpArrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="currentColor" />
+    </marker>
+  </defs>
+
+  <rect x="230" y="12" width="220" height="42" fill="none" stroke-width="2" class="d-accent-stroke" />
+  <text x="340" y="38" text-anchor="middle" font-size="12.5" class="d-accent-t">기업의 잉여현금흐름(FCF)</text>
+
+  <g fill="none" stroke="currentColor" stroke-width="1.3" opacity="0.5">
+    <path d="M 340 54 L 340 76 L 120 76 L 120 100" marker-end="url(#cpArrow)" />
+    <path d="M 340 54 L 340 100" marker-end="url(#cpArrow)" />
+    <path d="M 340 54 L 340 76 L 560 76 L 560 100" marker-end="url(#cpArrow)" />
+  </g>
+
+  <g text-anchor="middle" font-size="10" class="d-pct">
+    <text x="120" y="94">성장</text>
+    <text x="340" y="94">재무 건전성</text>
+    <text x="560" y="94">주주 환원</text>
+  </g>
+
+  <g fill="none" stroke="currentColor" stroke-width="1" opacity="0.5">
+    <rect x="20" y="104" width="200" height="40" />
+    <rect x="20" y="152" width="200" height="40" />
+    <rect x="240" y="104" width="200" height="40" />
+  </g>
+  <g fill="none" stroke-width="2" class="d-accent-stroke">
+    <rect x="460" y="104" width="200" height="40" />
+    <rect x="460" y="152" width="200" height="40" />
+  </g>
+
+  <g font-size="11" fill="currentColor">
+    <text x="36" y="121">① 내부 재투자</text>
+    <text x="36" y="169">② 타사 인수(M&amp;A)</text>
+    <text x="256" y="121">③ 부채 상환</text>
+  </g>
+  <g font-size="11" class="d-accent-t">
+    <text x="476" y="121">④ 현금 배당</text>
+    <text x="476" y="169">⑤ 자사주 매입·소각</text>
+  </g>
+  <g font-size="9.5" class="d-pct">
+    <text x="36" y="137">R&amp;D · 설비 확장 — 재투자 수익률 &gt; 자본비용일 때만</text>
+    <text x="36" y="185">내재가치보다 싸게 살 때만</text>
+    <text x="256" y="137">금리가 높거나 파산 위험을 낮출 때</text>
+    <text x="476" y="137">사내에 재투자처가 없을 때</text>
+    <text x="476" y="185">주가가 내재가치보다 낮을 때만</text>
+  </g>
+
+  <text x="20" y="226" font-size="11" class="d-pct">평범한 CEO는 ①②에 집착해 몸집을 불린다 — 그것이 연봉과 지위를 키우는 길이기 때문이다</text>
+  <text x="20" y="250" font-size="11" class="d-accent-t">뛰어난 자본 배치자는 사내 재투자 수익률이 떨어지면 주저 없이 ④⑤로 자본을 돌려보낸다</text>
+  <text x="20" y="278" font-size="10.5" class="d-pct">판단 기준은 취향이 아니라 기회비용 — 다섯 경로 중 한계 수익률이 가장 높은 곳 하나뿐이다</text>
+</svg>

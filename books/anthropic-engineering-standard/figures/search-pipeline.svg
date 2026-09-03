@@ -1,0 +1,57 @@
+<svg viewBox="0 0 680 300" role="img" aria-label="검색어는 토큰으로 쪼개져 접두사 질의로 정규화되고, 전문 검색 색인을 타고 조회된 뒤 랭킹과 발췌를 붙여 응답으로 나간다. 색인 갱신은 애플리케이션이 아니라 데이터베이스가 맡는다">
+  <defs>
+    <marker id="spArrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="currentColor" />
+    </marker>
+  </defs>
+  <g fill="none" stroke="currentColor" stroke-width="1" opacity="0.4">
+    <rect x="20" y="60" width="140" height="52" />
+    <rect x="520" y="60" width="140" height="52" />
+  </g>
+  <g fill="none" stroke-width="2" class="d-accent-stroke">
+    <rect x="186" y="60" width="140" height="52" />
+    <rect x="353" y="60" width="140" height="52" />
+  </g>
+  <g text-anchor="middle" font-size="11.5" fill="currentColor">
+    <text x="90" y="82">검색어</text>
+    <text x="590" y="82">응답</text>
+  </g>
+  <g text-anchor="middle" font-size="11.5" class="d-accent-t">
+    <text x="256" y="82">질의 정규화</text>
+    <text x="423" y="82">색인 조회</text>
+  </g>
+  <g text-anchor="middle" font-size="9.5" class="d-pct">
+    <text x="90" y="100">사용자가 친 문자열</text>
+    <text x="256" y="100">토큰 분해 · 접두사 매칭</text>
+    <text x="423" y="100">역색인 · 랭킹 · 발췌</text>
+    <text x="590" y="100">정렬된 결과 + 스니펫</text>
+  </g>
+  <g stroke="currentColor" stroke-width="1.2" opacity="0.5">
+    <line x1="160" y1="86" x2="182" y2="86" marker-end="url(#spArrow)" />
+    <line x1="493" y1="86" x2="516" y2="86" marker-end="url(#spArrow)" />
+  </g>
+  <line x1="326" y1="86" x2="349" y2="86" stroke-width="1.6" class="d-accent-stroke" marker-end="url(#spArrow)" />
+  <text x="20" y="40" font-size="11" class="d-pct">읽기 경로 — 매 요청마다</text>
+  <line x1="20" y1="150" x2="660" y2="150" stroke="currentColor" stroke-width="1" opacity="0.25" />
+  <text x="20" y="180" font-size="11" class="d-pct">쓰기 경로 — 문서가 들어오거나 바뀔 때</text>
+  <g fill="none" stroke="currentColor" stroke-width="1" opacity="0.4">
+    <rect x="20" y="196" width="180" height="46" />
+    <rect x="460" y="196" width="200" height="46" />
+  </g>
+  <rect x="240" y="196" width="180" height="46" fill="none" stroke-width="2" class="d-accent-stroke" stroke-dasharray="6 4" />
+  <g text-anchor="middle" font-size="11.5" fill="currentColor">
+    <text x="110" y="216">문서 INSERT · UPDATE</text>
+    <text x="560" y="216">색인 갱신 완료</text>
+  </g>
+  <text x="330" y="216" text-anchor="middle" font-size="11.5" class="d-accent-t">DB 트리거</text>
+  <g text-anchor="middle" font-size="9.5" class="d-pct">
+    <text x="110" y="233">애플리케이션이 하는 일</text>
+    <text x="330" y="233">같은 트랜잭션 안에서</text>
+    <text x="560" y="233">동기화 코드가 필요 없다</text>
+  </g>
+  <g stroke="currentColor" stroke-width="1.2" opacity="0.5">
+    <line x1="200" y1="219" x2="236" y2="219" marker-end="url(#spArrow)" />
+    <line x1="420" y1="219" x2="456" y2="219" marker-end="url(#spArrow)" />
+  </g>
+  <text x="340" y="276" text-anchor="middle" font-size="11" class="d-pct">색인 동기화를 애플리케이션이 맡으면 언젠가 반드시 어긋난다 — 그 일은 DB에 맡긴다</text>
+</svg>

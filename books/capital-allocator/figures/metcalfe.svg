@@ -1,0 +1,49 @@
+<svg viewBox="0 0 680 320" role="img" aria-label="네트워크의 가치는 참여자 수의 제곱에 비례한다. 참여자가 10명일 때 45개였던 연결이 100명이면 4950개로 110배, 1000명이면 499500개로 11100배가 되며, 그래서 사용자 절반을 가진 2위 기업의 가치는 1위의 절반이 아니라 4분의 1에 그친다">
+  <text x="20" y="20" font-size="10.5" class="d-pct">네트워크의 가치는 참여자 수에 비례하지 않는다 — 참여자 수의 제곱에 비례한다</text>
+
+  <text x="340" y="48" text-anchor="middle" font-size="12" class="d-accent-t">V ≈ n × (n − 1) ÷ 2</text>
+
+  <g fill="none" stroke="currentColor" stroke-width="1" opacity="0.5">
+    <rect x="30" y="66" width="190" height="96" />
+    <rect x="245" y="66" width="190" height="96" />
+  </g>
+  <rect x="460" y="66" width="190" height="96" fill="none" stroke-width="2.4" class="d-accent-stroke" />
+
+  <g text-anchor="middle" font-size="11.5" fill="currentColor">
+    <text x="125" y="88">참여자 10명</text>
+    <text x="340" y="88">참여자 100명</text>
+  </g>
+  <text x="555" y="88" text-anchor="middle" font-size="11.5" class="d-accent-t">참여자 1,000명</text>
+
+  <g text-anchor="middle" font-size="19" fill="currentColor">
+    <text x="125" y="122">45</text>
+    <text x="340" y="122">4,950</text>
+  </g>
+  <text x="555" y="122" text-anchor="middle" font-size="19" class="d-accent-t">499,500</text>
+
+  <g text-anchor="middle" font-size="9.5" class="d-pct">
+    <text x="125" y="140">가능한 연결의 수</text>
+    <text x="340" y="140">가능한 연결의 수</text>
+    <text x="555" y="140">가능한 연결의 수</text>
+    <text x="125" y="155">기준</text>
+    <text x="340" y="155">110배</text>
+  </g>
+  <text x="555" y="155" text-anchor="middle" font-size="9.5" class="d-accent-t">11,100배</text>
+
+  <text x="20" y="188" font-size="10.5" class="d-pct">사용자가 10배 늘면 효용은 100배가 된다 — 그리고 이것이 2위를 지워 버린다</text>
+
+  <rect x="30" y="200" width="290" height="66" fill="none" stroke-width="2.4" class="d-accent-stroke" />
+  <text x="46" y="222" font-size="11.5" class="d-accent-t">1위 — 사용자 100%</text>
+  <rect x="46" y="232" width="258" height="22" fill="currentColor" opacity="0.14" />
+  <rect x="46" y="232" width="258" height="22" fill="none" stroke-width="1.4" class="d-accent-stroke" />
+  <text x="175" y="248" text-anchor="middle" font-size="11" class="d-accent-t">네트워크 가치 10,000</text>
+
+  <rect x="360" y="200" width="290" height="66" fill="none" stroke="currentColor" stroke-width="1" opacity="0.5" />
+  <text x="376" y="222" font-size="11.5" fill="currentColor">2위 — 사용자 50%</text>
+  <rect x="376" y="232" width="64" height="22" fill="currentColor" opacity="0.07" />
+  <rect x="376" y="232" width="64" height="22" fill="none" stroke="currentColor" stroke-width="1.2" opacity="0.5" />
+  <text x="452" y="248" font-size="11" fill="currentColor">2,500 — 절반이 아니라 4분의 1</text>
+
+  <text x="20" y="294" font-size="11" class="d-pct">사용자가 절반이면 가치도 절반일 것 같지만, 제곱이므로 4분의 1로 주저앉는다</text>
+  <text x="20" y="314" font-size="11" class="d-accent-t">그래서 네트워크 시장에는 2위가 설 자리가 없다 — 승자독식은 취향이 아니라 산수다</text>
+</svg>

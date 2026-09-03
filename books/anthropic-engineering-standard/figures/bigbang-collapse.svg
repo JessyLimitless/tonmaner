@@ -1,0 +1,53 @@
+<svg viewBox="0 0 680 300" role="img" aria-label="여러 도메인을 한 번에 요구하는 빅뱅 프롬프트는 어텐션 희석, 출력 토큰 한계로 인한 TODO 스킵, 디버깅 불가라는 세 갈래 실패로 갈라지고, 셋이 다시 모여 실행하자마자 깨지는 코드 무더기로 귀결된다">
+  <defs>
+    <marker id="bArrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="currentColor" />
+    </marker>
+  </defs>
+
+  <rect x="90" y="8" width="500" height="46" fill="none" stroke="currentColor" stroke-width="1.2" opacity="0.55" />
+  <text x="340" y="28" text-anchor="middle" font-size="12.5" fill="currentColor">빅뱅 프롬프트 투입</text>
+  <text x="340" y="45" text-anchor="middle" font-size="10" class="d-pct">기획 · 백엔드 · 프론트엔드 · DB · 인프라를 한 번에</text>
+
+  <g fill="none" stroke="currentColor" stroke-width="1.2" opacity="0.5">
+    <path d="M 340 54 L 340 76 L 120 76 L 120 96" marker-end="url(#bArrow)" />
+    <path d="M 340 54 L 340 96" marker-end="url(#bArrow)" />
+    <path d="M 340 54 L 340 76 L 560 76 L 560 96" marker-end="url(#bArrow)" />
+  </g>
+
+  <g fill="none" stroke="currentColor" stroke-width="1" opacity="0.45">
+    <rect x="20" y="100" width="200" height="88" />
+    <rect x="240" y="100" width="200" height="88" />
+    <rect x="460" y="100" width="200" height="88" />
+  </g>
+
+  <g text-anchor="middle" font-size="11.5" fill="currentColor">
+    <text x="120" y="124">① 어텐션 희석</text>
+    <text x="340" y="124">② 출력 토큰 한계</text>
+    <text x="560" y="124">③ 디버깅 불가</text>
+  </g>
+
+  <g text-anchor="middle" font-size="9.8" class="d-pct">
+    <text x="120" y="146">도메인이 늘수록 주의력이</text>
+    <text x="120" y="162">얇고 넓게 퍼진다</text>
+    <text x="120" y="178">엣지 케이스 · 보안 검증 누락</text>
+
+    <text x="340" y="146">분량을 줄이려 핵심 로직을</text>
+    <text x="340" y="162">주석 한 줄로 건너뛴다</text>
+    <text x="340" y="178">// TODO: 결제 승인 구현 필요</text>
+
+    <text x="560" y="146">30개 파일에 얽힌 에러는</text>
+    <text x="560" y="162">원인 추적 자체가 불가능하다</text>
+    <text x="560" y="178">고칠 때마다 다른 곳이 깨진다</text>
+  </g>
+
+  <g fill="none" stroke="currentColor" stroke-width="1.2" opacity="0.5">
+    <path d="M 120 188 L 120 210 L 336 210 L 336 228" marker-end="url(#bArrow)" />
+    <path d="M 340 188 L 340 228" marker-end="url(#bArrow)" />
+    <path d="M 560 188 L 560 210 L 344 210 L 344 228" marker-end="url(#bArrow)" />
+  </g>
+
+  <rect x="140" y="232" width="400" height="48" fill="none" stroke-width="2" class="d-accent-stroke" />
+  <text x="340" y="254" text-anchor="middle" font-size="12.5" class="d-accent-t">실행하자마자 깨지는 코드 무더기</text>
+  <text x="340" y="271" text-anchor="middle" font-size="10" class="d-pct">그럴듯해 보이는 것과 동작하는 것은 다르다</text>
+</svg>

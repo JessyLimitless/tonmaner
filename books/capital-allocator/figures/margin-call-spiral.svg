@@ -1,0 +1,37 @@
+<svg viewBox="0 0 680 330" role="img" aria-label="은행 차입은 자산 가격이 떨어지면 담보 가치 하락으로 마진콜이 걸리고, 상환을 위한 강제 투매가 가격을 더 떨어뜨려 다시 마진콜을 부르는 폐순환에 빠지며, 내재가치와 무관하게 자본금 0으로 강제 청산된다">
+  <defs>
+    <marker id="mcArrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="currentColor" />
+    </marker>
+  </defs>
+
+  <text x="20" y="20" font-size="10.5" class="d-pct">빌린 돈에 만기와 담보가 붙어 있을 때 벌어지는 일</text>
+
+  <rect x="230" y="32" width="220" height="42" fill="none" stroke="currentColor" stroke-width="1" opacity="0.5" />
+  <text x="340" y="58" text-anchor="middle" font-size="11.5" fill="currentColor">① 자산 가격 단기 급락</text>
+
+  <rect x="450" y="108" width="210" height="42" fill="none" stroke="currentColor" stroke-width="1" opacity="0.5" />
+  <text x="555" y="128" text-anchor="middle" font-size="11.5" fill="currentColor">② 담보 가치 하락</text>
+  <text x="555" y="143" text-anchor="middle" font-size="9.8" class="d-accent-t">마진콜 발생</text>
+
+  <rect x="450" y="188" width="210" height="42" fill="none" stroke="currentColor" stroke-width="1" opacity="0.5" />
+  <text x="555" y="208" text-anchor="middle" font-size="11.5" fill="currentColor">③ 강제 헐값 투매</text>
+  <text x="555" y="223" text-anchor="middle" font-size="9.8" class="d-pct">상환을 위한 Fire Sale</text>
+
+  <rect x="20" y="188" width="210" height="42" fill="none" stroke="currentColor" stroke-width="1" opacity="0.5" />
+  <text x="125" y="208" text-anchor="middle" font-size="11.5" fill="currentColor">④ 가격 추가 폭락</text>
+  <text x="125" y="223" text-anchor="middle" font-size="9.8" class="d-pct">담보 가치 재훼손</text>
+
+  <g fill="none" stroke="currentColor" stroke-width="1.3" opacity="0.5">
+    <path d="M 450 53 L 555 53 L 555 104" marker-end="url(#mcArrow)" />
+    <path d="M 555 150 L 555 184" marker-end="url(#mcArrow)" />
+    <path d="M 446 209 L 234 209" marker-end="url(#mcArrow)" />
+  </g>
+  <path d="M 125 188 L 125 53 L 226 53" fill="none" stroke-width="1.8" class="d-accent-stroke" marker-end="url(#mcArrow)" />
+  <text x="134" y="130" font-size="9.8" class="d-accent-t">2차 · 3차 마진콜</text>
+
+  <line x1="340" y1="236" x2="340" y2="262" stroke-width="1.8" class="d-accent-stroke" marker-end="url(#mcArrow)" />
+  <rect x="150" y="266" width="380" height="44" fill="none" stroke-width="2" class="d-accent-stroke" />
+  <text x="340" y="286" text-anchor="middle" font-size="12" class="d-accent-t">내재가치와 무관하게 자본금 0으로 강제 청산</text>
+  <text x="340" y="303" text-anchor="middle" font-size="10" class="d-pct">기다릴 시간을 살 수 없었던 것이 패인이다</text>
+</svg>

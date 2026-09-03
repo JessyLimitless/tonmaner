@@ -1,0 +1,58 @@
+<svg viewBox="0 0 680 330" role="img" aria-label="벅셔 해서웨이의 보험 플로트는 1970년 3900만 달러에서 1980년 2억 3700만, 1990년 16억, 2000년 278억, 2010년 658억을 거쳐 2020년대 중반 1600억 달러 이상으로 반세기에 걸쳐 기하급수적으로 불어났다">
+  <text x="20" y="20" font-size="10.5" class="d-pct">세로축은 로그 눈금 — 각 칸은 열 배다. 직선으로 오르면 기하급수 성장이다</text>
+
+  <line x1="86" y1="248" x2="650" y2="248" stroke="currentColor" stroke-width="1" opacity="0.5" />
+  <line x1="86" y1="44" x2="86" y2="248" stroke="currentColor" stroke-width="1" opacity="0.5" />
+
+  <g stroke="currentColor" stroke-width="1" opacity="0.18">
+    <line x1="86" y1="207" x2="650" y2="207" />
+    <line x1="86" y1="166" x2="650" y2="166" />
+    <line x1="86" y1="125" x2="650" y2="125" />
+    <line x1="86" y1="84" x2="650" y2="84" />
+  </g>
+  <g font-size="9.5" class="d-pct" text-anchor="end">
+    <text x="78" y="251">1천만</text>
+    <text x="78" y="210">1억</text>
+    <text x="78" y="169">10억</text>
+    <text x="78" y="128">100억</text>
+    <text x="78" y="87">1천억</text>
+  </g>
+
+  <polyline points="120,224 226,190 332,153 438,106 544,90 640,74"
+            fill="none" stroke-width="2.6" class="d-accent-stroke" />
+
+  <g class="d-accent-t">
+    <circle cx="120" cy="224" r="4" fill="currentColor" />
+    <circle cx="226" cy="190" r="4" fill="currentColor" />
+    <circle cx="332" cy="153" r="4" fill="currentColor" />
+    <circle cx="438" cy="106" r="4" fill="currentColor" />
+    <circle cx="544" cy="90" r="4" fill="currentColor" />
+    <circle cx="640" cy="74" r="5.5" fill="currentColor" />
+  </g>
+
+  <g text-anchor="middle" font-size="9.8" class="d-accent-t">
+    <text x="120" y="214">3,900만</text>
+    <text x="226" y="180">2억 3,700만</text>
+    <text x="332" y="143">16억</text>
+    <text x="438" y="96">278억</text>
+    <text x="544" y="80">658억</text>
+  </g>
+  <text x="640" y="62" text-anchor="end" font-size="12" class="d-accent-t">1,600억 달러 이상</text>
+
+  <g text-anchor="middle" font-size="10.5" fill="currentColor">
+    <text x="120" y="266">1970</text>
+    <text x="226" y="266">1980</text>
+    <text x="332" y="266">1990</text>
+    <text x="438" y="266">2000</text>
+    <text x="544" y="266">2010</text>
+    <text x="640" y="266">2020년대</text>
+  </g>
+
+  <g font-size="9.2" class="d-pct" text-anchor="middle">
+    <text x="120" y="284">내셔널 인뎀너티</text>
+    <text x="226" y="284">가이코 회생</text>
+    <text x="438" y="284">가이코 100% 편입</text>
+  </g>
+
+  <text x="20" y="316" font-size="11" class="d-pct">이 곡선이 2008년의 구제금융과 애플 수천억 달러 매수를 가능하게 한 자본의 원자로다</text>
+</svg>

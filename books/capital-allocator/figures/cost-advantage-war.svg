@@ -1,0 +1,32 @@
+<svg viewBox="0 0 680 320" role="img" aria-label="정가 100달러에서는 두 기업 모두 흑자지만, 원가 우위 기업이 판가를 80달러로 내리면 원가 65달러인 자신은 여전히 15달러를 남기는 반면 원가 85달러인 경쟁사는 5달러 적자로 돌아서 팔수록 자본이 잠식된다">
+  <text x="20" y="20" font-size="10.5" class="d-pct">같은 제품, 같은 시장. 다른 것은 원가뿐이다</text>
+
+  <text x="175" y="48" text-anchor="middle" font-size="11.5" fill="currentColor">정가 \$100 — 둘 다 흑자</text>
+  <text x="505" y="48" text-anchor="middle" font-size="11.5" class="d-accent-t">판가를 \$80으로 내리면</text>
+  <line x1="340" y1="36" x2="340" y2="290" stroke="currentColor" stroke-width="1" opacity="0.25" />
+
+  <text x="36" y="82" font-size="10.5" fill="currentColor">경쟁 기업 A — 원가 \$85</text>
+  <rect x="36" y="90" width="238" height="26" fill="none" stroke="currentColor" stroke-width="1" opacity="0.5" />
+  <rect x="36" y="90" width="202" height="26" fill="currentColor" opacity="0.09" />
+  <text x="246" y="108" font-size="11" fill="currentColor">+\$15</text>
+
+  <text x="36" y="146" font-size="10.5" class="d-accent-t">원가 우위 B — 원가 \$65</text>
+  <rect x="36" y="154" width="238" height="26" fill="none" stroke-width="1.6" class="d-accent-stroke" />
+  <rect x="36" y="154" width="155" height="26" fill="currentColor" opacity="0.09" />
+  <text x="200" y="172" font-size="11" class="d-accent-t">+\$35</text>
+
+  <text x="376" y="82" font-size="10.5" fill="currentColor">경쟁 기업 A</text>
+  <rect x="376" y="90" width="238" height="26" fill="none" stroke="currentColor" stroke-width="1" opacity="0.5" />
+  <rect x="376" y="90" width="238" height="26" fill="currentColor" opacity="0.09" />
+  <rect x="614" y="90" width="30" height="26" fill="none" stroke="currentColor" stroke-width="1.4" opacity="0.7" stroke-dasharray="4 3" />
+  <text x="376" y="134" font-size="13" fill="currentColor">−\$5 — 팔수록 자본이 잠식된다</text>
+
+  <text x="376" y="164" font-size="10.5" class="d-accent-t">원가 우위 B</text>
+  <rect x="376" y="172" width="238" height="26" fill="none" stroke-width="1.6" class="d-accent-stroke" />
+  <rect x="376" y="172" width="193" height="26" fill="currentColor" opacity="0.09" />
+  <text x="376" y="216" font-size="13" class="d-accent-t">+\$15 — 여전히 흑자, 점유율은 2배</text>
+
+  <rect x="20" y="238" width="640" height="54" fill="none" stroke-width="2" class="d-accent-stroke" />
+  <text x="340" y="260" text-anchor="middle" font-size="11.5" class="d-accent-t">원가 우위 기업은 가격을 내리면서도 돈을 벌고, 경쟁사는 따라오는 순간 피를 흘린다</text>
+  <text x="340" y="280" text-anchor="middle" font-size="10.5" class="d-pct">그래서 경쟁자는 애초에 들어올 엄두를 내지 못한다 — 이것이 구조적 억제력이다</text>
+</svg>
