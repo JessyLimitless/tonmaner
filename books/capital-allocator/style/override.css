@@ -26,3 +26,42 @@
 .toc-part   { margin: 3.2em 0 1.7em; }
 .toc-item   { margin: 0 0 1.25em; }
 .toc-title  { font-size: 1em; }
+
+/* ══════════════════════════════════════════════════════════
+   절은 새 쪽에서 시작한다 (2026-09-03 저자 지시)
+
+   장마다 절이 정확히 여섯 개다. 절 길이는 57~140줄로 고르다.
+   그래서 절을 쪽 머리로 올려도 반쯤 빈 쪽이 생기지 않는다.
+
+   덤으로 장 간지가 공짜로 생긴다 — 이 책은 장 표제 바로 다음이
+   첫 절이라, 첫 절이 밀리면 장 표제만 남은 쪽이 된다.
+
+   절마다 간지를 따로 두는 안은 택하지 않았다. 절이 48개라
+   빈 쪽 48장이 붙는다. 쪽을 새로 여는 것만으로 「여기서 숨을
+   고른다」는 신호는 충분하다.
+
+   프롤로그·에필로그는 제외한다(`{.essay}`). 절이 18~25줄로 짧아
+   쪽을 나누면 성기게 흩어진다.
+
+   `break-before: column` 을 함께 쓰는 이유 — 리더(epub.js)는
+   다단으로 쪽을 만든다. 옛 뷰어를 위해 `page-break-before` 도 남긴다.
+   ══════════════════════════════════════════════════════════ */
+
+section.level1:not(.essay) > section.level2 {
+  page-break-before: always;
+  break-before: column;
+}
+
+/* 쪽 머리에 올라온 절 제목 — 괘선을 걷고 활자를 떨어뜨린다.
+   원래의 위 괘선은 앞 본문과 절을 갈라주는 선이었다. 쪽이 갈리면
+   그 일은 쪽이 대신하고, 괘선만 남으면 쪽머리 장식으로 오해된다.
+   여백은 margin 대신 padding 으로 준다 — 쪽 머리의 margin 은
+   뷰어에 따라 잘려 나간다. */
+section.level1:not(.essay) > section.level2 > h2 {
+  margin-top: 0;
+  padding-top: 2.5em;
+  border-top: 0;
+}
+section.level1:not(.essay) > section.level2 > h2::before {
+  top: 1.15em;
+}
