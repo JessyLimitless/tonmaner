@@ -7,8 +7,8 @@
 #   docs/index.html   ← 고른 책의 리더 (reader.html)
 #   docs/book.epub    ← 그 책의 본문
 #
-# 자동배포 서비스는 docs/ 만 바라보면 된다.
-# 루트의 index.html 이 곧 그 책이므로, 다른 책은 배포에 끼지 않는다.
+# 배포(Cloud5)는 루트 Dockerfile 을 읽고 docs/ 만 이미지에 담는다.
+# 그래서 다른 책 원고는 저장소에 남아도 웹에는 나가지 않는다.
 #
 # build/ 는 .gitignore 로 빠지지만 docs/ 는 커밋된다.
 # 원고를 고쳤으면 이 스크립트를 다시 돌리고 커밋해야 배포에 반영된다.
