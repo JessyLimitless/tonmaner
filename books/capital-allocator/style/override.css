@@ -65,3 +65,104 @@ section.level1:not(.essay) > section.level2 > h2 {
 section.level1:not(.essay) > section.level2 > h2::before {
   top: 1.15em;
 }
+
+/* ══════════════════════════════════════════════════════════
+   장 간지의 절 목록 (2026-09-03 저자 확정)
+
+   장 표제만 있던 간지가 허전해서 그 장의 절 여섯 개를 싣는다.
+   차례에서 절 제목을 걷어낸 결정과 충돌하지 않는다 — 그때 이유는
+   책 앞에서 48개를 한꺼번에 노출하면 본문에서 터질 대목이 미리
+   소모된다는 것이었다. 이건 그 장에 들어서는 문턱에서 여섯 개만
+   펼치는 지도다. 예고편이 아니다.
+
+   절이 새 쪽에서 시작하므로(위 규칙) 이 목록은 저절로 간지 쪽에 남는다.
+   ══════════════════════════════════════════════════════════ */
+
+.ch-toc {
+  margin: 4.2em 0 0;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+.ch-toc ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  counter-reset: chtoc;
+}
+.ch-toc li {
+  position: relative;
+  font-family: var(--sans);
+  font-size: 0.9em;
+  line-height: 1.6;
+  color: var(--soft);
+  margin: 0 0 1.05em;
+  padding-left: 2.2em;
+  text-indent: 0;
+  word-break: keep-all;   /* 목록은 제목이다 — 어절 단위로 꺾는다 */
+}
+.ch-toc li:last-child { margin-bottom: 0; }
+.ch-toc li::before {
+  counter-increment: chtoc;
+  content: counter(chtoc);
+  position: absolute;
+  left: 0;
+  top: 0.1em;
+  font-size: 0.82em;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  color: var(--accent);
+}
+
+/* ══════════════════════════════════════════════════════════
+   워크시트를 한 쪽에 앉힌다 (2026-09-03 저자 지시)
+
+   워크시트에는 이미 `break-inside: avoid` 가 걸려 있다. 그런데도
+   쪽이 갈리는 이유는 상자가 **쪽보다 크기 때문**이다. 쪽보다 큰 상자는
+   어떤 뷰어도 자를 수밖에 없다. 그래서 막는 게 아니라 줄인다.
+
+   공용 조판의 워크시트는 읽는 글의 리듬(행간 1.9)을 그대로 쓰고 있었다.
+   워크시트는 읽는 글이 아니라 **채워 넣는 서식**이다. 서식은 조밀해도
+   되고, 오히려 한눈에 들어와야 쓰기 편하다.
+
+   두 단계로 나눈다.
+     .worksheet          — 전부. 행간과 여백을 줄인다
+     .worksheet.dense    — 표를 두세 개 품은 큰 것 여섯 개. 더 조인다
+       1장 NCAV 계산기 · 2장 ROIC 산출표 · 3장 합산비율
+       7장 주주이익 역산 · 7장 펀치 카드 · 8장 최종 점검
+
+   ⚠ 흐르는 글이라 「한 쪽」이 고정 크기가 아니다. 독자가 글자를 크게
+   키우면 다시 넘칠 수 있다. 기본 크기에서 들어가도록 맞춘 것이다.
+   ══════════════════════════════════════════════════════════ */
+
+.worksheet {
+  padding: 1.1em 1.05em;
+  margin: 1.9em 0;
+}
+.worksheet > h3,
+.worksheet > h4 { margin-bottom: 0.75em; }
+.worksheet p { margin: 0.75em 0; line-height: 1.62; }
+.worksheet p:first-of-type { margin-top: 0; }
+.worksheet ol, .worksheet ul {
+  font-size: 0.85em;
+  line-height: 1.62;
+}
+.worksheet li { margin-bottom: 0.42em; }
+
+/* 워크시트 안의 표 — 서식용이므로 셀을 조인다 */
+.worksheet .table-wrap { margin: 0.9em 0; }
+.worksheet table { font-size: 0.8em; line-height: 1.45; }
+.worksheet thead th { padding: 0.38em 0.55em 0.38em 0; }
+.worksheet tbody td,
+.worksheet tbody th { padding: 0.4em 0.55em 0.4em 0; }
+
+/* 표를 여러 개 품은 큰 워크시트 — 한 단계 더 */
+.worksheet.dense { padding: 0.95em 0.9em; }
+.worksheet.dense p { margin: 0.6em 0; line-height: 1.5; font-size: 0.92em; }
+.worksheet.dense ol,
+.worksheet.dense ul { font-size: 0.8em; line-height: 1.5; }
+.worksheet.dense li { margin-bottom: 0.3em; }
+.worksheet.dense .table-wrap { margin: 0.7em 0; }
+.worksheet.dense table { font-size: 0.74em; line-height: 1.36; }
+.worksheet.dense thead th { padding: 0.3em 0.45em 0.3em 0; }
+.worksheet.dense tbody td,
+.worksheet.dense tbody th { padding: 0.32em 0.45em 0.32em 0; }
