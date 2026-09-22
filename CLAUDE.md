@@ -112,3 +112,4 @@ python tools/reader3d.py capital-allocator 40   # 앞 40쪽만 (데모·홍보�
 |---|---|---|
 | `capital-allocator` | 버핏의 자본 배치학 | 먹청 `#2B3A55` |
 | `anthropic-engineering-standard` | 앤스로픽 엔지니어링 표준 | 코랄 `#C15F3C` |
+| `mezzanine-code` | 메자닌 코드 | 황동 `#9C7A2C` |

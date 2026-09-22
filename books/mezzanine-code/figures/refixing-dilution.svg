@@ -1,0 +1,26 @@
+<svg viewBox="0 0 440 362" role="img" aria-label="리픽싱이 신주 수를 불리는 원리. 100억 원의 CB를 전환가 10,000원으로 전환하면 100만 주가 되지만, 리픽싱으로 전환가가 최저 한도인 70퍼센트, 즉 7,000원까지 깎이면 같은 100억 원이 142만 9천 주가 된다. 1 나누기 0.7은 약 1.43배">
+  <text x="16" y="24" font-size="13" font-weight="700" fill="currentColor">같은 100억 원의 부채가 주식으로 바뀔 때</text>
+  <!-- 최초 -->
+  <text x="16" y="56" font-size="12.5" fill="currentColor">최초 전환가 10,000원</text>
+  <text x="424" y="56" font-size="13" font-weight="700" text-anchor="end" fill="currentColor">100만 주</text>
+  <rect x="16" y="64" width="286" height="24" fill="currentColor" opacity="0.3" />
+  <!-- 조정 1 -->
+  <text x="16" y="124" font-size="12.5" fill="currentColor">1차 조정 9,000원</text>
+  <text x="424" y="124" font-size="13" font-weight="700" text-anchor="end" fill="currentColor">111만 주</text>
+  <rect x="16" y="132" width="317" height="24" fill="currentColor" opacity="0.3" />
+  <!-- 조정 2 -->
+  <text x="16" y="192" font-size="12.5" fill="currentColor">2차 조정 8,000원</text>
+  <text x="424" y="192" font-size="13" font-weight="700" text-anchor="end" fill="currentColor">125만 주</text>
+  <rect x="16" y="200" width="357" height="24" fill="currentColor" opacity="0.3" />
+  <!-- 바닥 -->
+  <text x="16" y="260" font-size="12.5" font-weight="700" class="d-accent-t">최저 한도 7,000원 (70%)</text>
+  <text x="424" y="260" font-size="13" font-weight="700" text-anchor="end" class="d-accent-t">142.9만 주</text>
+  <rect x="16" y="268" width="408" height="24" class="d-accent" />
+  <!-- 기준선 -->
+  <path d="M 302 60 V 298" stroke="currentColor" stroke-width="0.8" opacity="0.4" stroke-dasharray="3 3" />
+  <text x="302" y="312" font-size="11" text-anchor="middle" class="d-pct">100만 주 기준선</text>
+  <g font-size="12" class="d-pct">
+    <text x="16" y="336">희석 배수 = 1 ÷ 0.7 ≒ 1.43배</text>
+    <text x="16" y="353">— 펀더멘털의 변화 없이 기존 주주의 지분 가치가 43% 녹아내린다</text>
+  </g>
+</svg>

@@ -1,0 +1,39 @@
+<svg viewBox="0 0 440 404" role="img" aria-label="추적 자동화 파이프라인. OpenDART API에서 전환가액의조정, 전환청구권행사, 최대주주등소유주식변동 키워드를 잡아 텔레그램으로 푸시하고, HTS 조건검색으로 최근 1년 내 전환사채 발행 이력과 현재 주가가 최종 전환가액에 근접한 종목을 좁혀 매복한다">
+  <defs>
+    <marker id="apArrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="currentColor" />
+    </marker>
+  </defs>
+  <!-- 공시 파이프라인 -->
+  <rect x="16" y="16" width="408" height="48" fill="none" stroke="currentColor" stroke-width="1" opacity="0.6" />
+  <text x="220" y="36" font-size="13" font-weight="700" text-anchor="middle" fill="currentColor">OpenDART API</text>
+  <text x="220" y="54" font-size="11.5" text-anchor="middle" class="d-pct">수천 개 상장사 공시 실시간</text>
+  <path d="M 220 64 V 78" stroke="currentColor" stroke-width="1.2" opacity="0.6" fill="none" marker-end="url(#apArrow)" />
+
+  <rect x="16" y="80" width="408" height="66" fill="none" stroke-width="1.8" class="d-accent-stroke" />
+  <text x="220" y="102" font-size="13" font-weight="700" text-anchor="middle" class="d-accent-t">엑시트 시그널 키워드 필터</text>
+  <g font-size="12" text-anchor="middle" fill="currentColor">
+    <text x="220" y="121">전환가액의조정 · 전환청구권행사</text>
+    <text x="220" y="138">최대주주등소유주식변동</text>
+  </g>
+  <path d="M 220 146 V 160" stroke="currentColor" stroke-width="1.2" opacity="0.6" fill="none" marker-end="url(#apArrow)" />
+
+  <rect x="16" y="162" width="408" height="48" class="d-accent" />
+  <text x="220" y="182" font-size="13" font-weight="700" text-anchor="middle" class="d-on-accent">텔레그램 푸시</text>
+  <text x="220" y="200" font-size="11.5" text-anchor="middle" class="d-on-accent">업로드 즉시 · 장 마감 후에도</text>
+
+  <!-- HTS 조건검색 -->
+  <rect x="16" y="240" width="380" height="70" fill="none" stroke="currentColor" stroke-width="1" opacity="0.6" />
+  <text x="28" y="262" font-size="13" font-weight="700" fill="currentColor">HTS 조건검색 — 매복 대상 좁히기</text>
+  <g font-size="12" class="d-pct">
+    <text x="28" y="282">① 최근 1년 내 전환사채 발행 이력</text>
+    <text x="28" y="299">② 현재 주가가 최종 전환가액에 근접</text>
+  </g>
+  <path d="M 206 310 V 336" stroke="currentColor" stroke-width="1.2" opacity="0.6" fill="none" marker-end="url(#apArrow)" />
+  <!-- 텔레그램 → 매복 (오른쪽 가장자리로 우회) -->
+  <path d="M 412 210 V 336" fill="none" stroke-width="1.6" class="d-accent-stroke" marker-end="url(#apArrow)" />
+
+  <rect x="16" y="340" width="408" height="50" fill="none" stroke-width="1.8" class="d-accent-stroke" />
+  <text x="220" y="361" font-size="13" font-weight="700" text-anchor="middle" class="d-accent-t">알림이 울리면 매복</text>
+  <text x="220" y="379" font-size="11.5" text-anchor="middle" class="d-pct">두 흐름이 겹치는 종목만</text>
+</svg>

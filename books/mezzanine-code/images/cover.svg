@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 2560" width="1600" height="2560">
+  <defs>
+    <!-- 바탕: 차가운 상아빛 — 공시 서류의 종이색. 버핏 책과 같은 결 -->
+    <linearGradient id="bg" x1="0" y1="0" x2="0.3" y2="1">
+      <stop offset="0" stop-color="#F4F3EF"/>
+      <stop offset="0.55" stop-color="#ECEBE5"/>
+      <stop offset="1" stop-color="#DEDCD3"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1600" height="2560" fill="url(#bg)"/>
+
+  <!-- 원장 괘선 — 종이 질감으로만. 도해가 아니다 -->
+  <g stroke="#191919" stroke-width="1" opacity="0.03">
+    <path d="M160 0v2560M480 0v2560M800 0v2560M1120 0v2560M1440 0v2560"/>
+  </g>
+
+  <!-- 판면 시작선 -->
+  <path d="M96 300v1960" stroke="#9C7A2C" stroke-width="2" opacity="0.32"/>
+
+  <!-- ── 브랜드 로크업 ─────────────────────────────── -->
+  <g transform="translate(160,222)">
+    <rect x="0" y="-20" width="20" height="20" fill="#9C7A2C"/>
+    <rect x="26" y="-20" width="8" height="20" fill="#9C7A2C" opacity="0.45"/>
+    <text x="52" y="-2" font-family="'Segoe UI', Helvetica, Arial, sans-serif"
+          font-size="26" letter-spacing="7" fill="#9C7A2C" opacity="0.82">MEZZANINE CODE</text>
+  </g>
+
+  <!-- ── 표제 ──────────────────────────────────────── -->
+  <text x="160" y="1060" font-family="KoPubWorldBatang, 'Noto Serif KR', serif"
+        font-size="230" font-weight="700" fill="#191919" letter-spacing="-6">메자닌 코드</text>
+
+  <!-- 강조 밑선 -->
+  <path d="M160 1126h430" stroke="#9C7A2C" stroke-width="7"/>
+
+  <!-- 부표제 -->
+  <text x="160" y="1262" font-family="KoPubWorldBatang, 'Noto Serif KR', serif"
+        font-size="78" font-weight="700" fill="#191919" letter-spacing="-2" opacity="0.88">DART 공시를 관통하는 질문들</text>
+
+  <!-- ── 부제 ──────────────────────────────────────── -->
+  <text x="160" y="1420" font-family="KoPubWorldDotum, 'Noto Sans KR', sans-serif"
+        font-size="46" fill="#3C4148" opacity="0.92">장부의 룰을 해체하고</text>
+  <text x="160" y="1490" font-family="KoPubWorldDotum, 'Noto Sans KR', sans-serif"
+        font-size="46" fill="#3C4148" opacity="0.92">세력의 등에 올라타는 이벤트 드리븐 매매법</text>
+
+  <!-- ── 하단 ──────────────────────────────────────── -->
+  <path d="M160 2286h1280" stroke="#9C7A2C" stroke-width="1.5" opacity="0.32"/>
+  <text x="160" y="2372" font-family="KoPubWorldBatang, 'Noto Serif KR', serif"
+        font-size="52" fill="#191919" opacity="0.9">다트인사이트</text>
+  <text x="1440" y="2372" text-anchor="end" font-family="'Segoe UI', Helvetica, Arial, sans-serif"
+        font-size="22" letter-spacing="4" fill="#9C7A2C" opacity="0.9">CB · BW · EB</text>
+</svg>

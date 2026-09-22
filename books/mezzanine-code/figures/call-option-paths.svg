@@ -1,0 +1,41 @@
+<svg viewBox="0 0 440 404" role="img" aria-label="콜옵션 행사 공시가 떴을 때 갈라지는 세 갈래. 제3자가 대주주 본인이고 자기자본이면 호재 방출과 급등으로, 페이퍼컴퍼니와 주식담보대출이면 테마 급조와 반대매매로, 콜옵션 미행사면 내부자조차 포기한 최악의 신호로 이어진다">
+  <defs>
+    <marker id="coArrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="currentColor" />
+    </marker>
+  </defs>
+  <!-- 출발 -->
+  <rect x="16" y="14" width="408" height="46" fill="none" stroke="currentColor" stroke-width="1" opacity="0.5" />
+  <text x="220" y="34" font-size="13" font-weight="700" text-anchor="middle" fill="currentColor">CB 매도청구권 행사 공시</text>
+  <text x="220" y="51" font-size="11.5" text-anchor="middle" class="d-pct">70% 바닥 직후</text>
+  <path d="M 220 60 V 72" stroke="currentColor" stroke-width="1.2" opacity="0.6" fill="none" marker-end="url(#coArrow)" />
+  <!-- 질문 -->
+  <rect x="16" y="76" width="408" height="42" fill="none" stroke-width="1.8" class="d-accent-stroke" />
+  <text x="220" y="102" font-size="13" font-weight="700" text-anchor="middle" class="d-accent-t">제3자는 누구인가 · 돈은 어디서 왔나</text>
+  <path d="M 220 118 V 130" stroke="currentColor" stroke-width="1.2" opacity="0.6" fill="none" marker-end="url(#coArrow)" />
+  <!-- A -->
+  <rect x="16" y="134" width="408" height="66" class="d-accent" />
+  <text x="28" y="156" font-size="13" font-weight="700" class="d-on-accent">대주주 본인 · 순수 자기 사재</text>
+  <g font-size="11.5" class="d-on-accent">
+    <text x="28" y="175">내부자의 확신 → 호재 봉쇄 해제 → 숏커버링 · 급등</text>
+    <text x="28" y="191">→ 불타기 타점</text>
+  </g>
+  <!-- B -->
+  <rect x="16" y="212" width="408" height="66" fill="none" stroke="currentColor" stroke-width="1" opacity="0.6" />
+  <text x="28" y="234" font-size="13" font-weight="700" fill="currentColor">설립 한 달 페이퍼컴퍼니 · 주식담보대출</text>
+  <g font-size="11.5" class="d-pct">
+    <text x="28" y="253">규제 우회 차명 배정 → 테마 급조 → 반대매매</text>
+    <text x="28" y="269">→ 경영권 분쟁</text>
+  </g>
+  <!-- C -->
+  <rect x="16" y="290" width="408" height="66" fill="none" stroke="currentColor" stroke-width="1" opacity="0.6" stroke-dasharray="4 3" />
+  <text x="28" y="312" font-size="13" font-weight="700" fill="currentColor">콜옵션 미행사 (포기)</text>
+  <g font-size="11.5" class="d-pct">
+    <text x="28" y="331">헐값 기회조차 버림 = 내부자도 구제 불능</text>
+    <text x="28" y="347">→ 즉시 전량 매도</text>
+  </g>
+  <g font-size="11.5" class="d-pct">
+    <text x="16" y="378">같은 '콜옵션'이라는 단어 — 돈의 출처와 명의라는 팩트로만 갈린다.</text>
+    <text x="16" y="394">5% 보고서 · 임원·주요주주 소유상황보고서로 확인한다.</text>
+  </g>
+</svg>

@@ -1,0 +1,48 @@
+<svg viewBox="0 0 440 500" role="img" aria-label="분할 진입 3단계 모델. 1차는 70퍼센트 바닥 리픽싱과 원샷 납입 확정의 쌍끌이 시그널에 시드의 30퍼센트, 2차는 거래량 터진 첫 장대양봉에 30퍼센트, 3차는 대주주 콜옵션 행사 공시에 40퍼센트. 평단가는 세력 전환가의 플러스 10퍼센트 이내, 손익비 1대3, 3개월 무반응이면 타임스톱">
+  <defs>
+    <marker id="e3Arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="currentColor" />
+    </marker>
+  </defs>
+  <!-- 1차 -->
+  <rect x="16" y="16" width="408" height="30" class="d-accent" />
+  <text x="28" y="36" font-size="13" font-weight="700" class="d-on-accent">1차 · 시드의 30%</text>
+  <text x="16" y="68" font-size="12.5" font-weight="700" fill="currentColor">쌍끌이 시그널 (Double Trigger)</text>
+  <g font-size="12" class="d-pct">
+    <text x="16" y="86">① 바닥권 리픽싱 완료 (70% 도달)</text>
+    <text x="16" y="102">② 납입 완료 확정 (증권발행실적보고서)</text>
+    <text x="16" y="118">+ 거래량 3~5배 바닥 탈출 · 이평선 수렴 돌파</text>
+  </g>
+  <path d="M 40 126 V 136" stroke="currentColor" stroke-width="1.2" opacity="0.6" fill="none" marker-end="url(#e3Arrow)" />
+  <!-- 2차 -->
+  <rect x="16" y="140" width="408" height="30" class="d-accent" />
+  <text x="28" y="160" font-size="13" font-weight="700" class="d-on-accent">2차 · 30%</text>
+  <text x="16" y="192" font-size="12.5" font-weight="700" fill="currentColor">추세 확인</text>
+  <text x="16" y="210" font-size="12" class="d-pct">뉴스와 함께 거래량 터진 첫 장대양봉</text>
+  <path d="M 40 218 V 228" stroke="currentColor" stroke-width="1.2" opacity="0.6" fill="none" marker-end="url(#e3Arrow)" />
+  <!-- 3차 -->
+  <rect x="16" y="232" width="408" height="30" class="d-accent" />
+  <text x="28" y="252" font-size="13" font-weight="700" class="d-on-accent">3차 · 40%</text>
+  <text x="16" y="284" font-size="12.5" font-weight="700" fill="currentColor">내부자의 확신</text>
+  <g font-size="12" class="d-pct">
+    <text x="16" y="302">대주주 콜옵션 행사 공시 → 불타기(Pyramiding)</text>
+    <text x="16" y="318">대주주 취득단가 = 손절선</text>
+  </g>
+  <!-- 통제 규칙 -->
+  <path d="M 16 338 H 424" stroke="currentColor" stroke-width="0.6" opacity="0.25" />
+  <text x="16" y="360" font-size="13" font-weight="700" fill="currentColor">포지션을 지키는 네 개의 숫자</text>
+  <g font-size="12" fill="currentColor">
+    <text x="16" y="384">평단가</text>
+    <text x="16" y="402" font-size="12.5" font-weight="700" class="d-accent-t">세력 전환가 +10% 이내</text>
+    <text x="230" y="384">손익비</text>
+    <text x="230" y="402" font-size="12.5" font-weight="700" class="d-accent-t">-5% : +20% ↑ (1:3 룰)</text>
+    <text x="16" y="428">타임스톱</text>
+    <text x="16" y="446" font-size="12.5" font-weight="700" class="d-accent-t">3개월 무반응이면 회수</text>
+    <text x="230" y="428">트레일링 스톱</text>
+    <text x="230" y="446" font-size="12.5" font-weight="700" class="d-accent-t">20일선으로 끌어올림</text>
+  </g>
+  <g font-size="11.5" class="d-pct">
+    <text x="16" y="474">즉시 철수: 미완성 리픽싱 진입 · 납입 2회 이상 연기</text>
+    <text x="16" y="490">· 대주주 콜옵션 포기 · 세력 평단가 아래 3거래일 연속 이탈</text>
+  </g>
+</svg>

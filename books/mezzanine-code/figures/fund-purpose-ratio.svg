@@ -1,0 +1,40 @@
+<svg viewBox="0 0 440 372" role="img" aria-label="자금조달 목적표의 9대 1 착시. A기업은 500억 원 전액이 시설자금이고, B기업은 300억 원 중 시설자금 30억 원, 운영자금 170억 원, 채무상환자금 100억 원이다">
+  <!-- 다섯 바구니 -->
+  <text x="16" y="22" font-size="12" class="d-pct">자금의 사용목적 표준표 — 다섯 가지 바구니</text>
+  <rect x="16" y="36" width="14" height="8" class="d-accent" />
+  <text x="36" y="44" font-size="12" fill="currentColor">시설자금(CAPEX)</text>
+  <rect x="150" y="36" width="14" height="8" fill="currentColor" opacity="0.35" />
+  <text x="170" y="44" font-size="12" fill="currentColor">운영자금</text>
+  <rect x="244" y="36" width="14" height="8" fill="currentColor" opacity="0.2" />
+  <text x="264" y="44" font-size="12" fill="currentColor">채무상환자금</text>
+  <rect x="16" y="58" width="14" height="8" fill="none" stroke="currentColor" stroke-width="1" opacity="0.6" />
+  <text x="36" y="66" font-size="12" fill="currentColor">타법인 증권 취득자금</text>
+  <rect x="180" y="58" width="14" height="8" fill="none" stroke="currentColor" stroke-width="1" opacity="0.3" stroke-dasharray="2 2" />
+  <text x="200" y="66" font-size="12" fill="currentColor">기타자금</text>
+  <path d="M 16 82 H 424" stroke="currentColor" stroke-width="0.6" opacity="0.25" />
+
+  <!-- A기업 -->
+  <text x="16" y="108" font-size="13" font-weight="700" fill="currentColor">A기업 — 500억</text>
+  <rect x="16" y="118" width="408" height="30" class="d-accent" />
+  <text x="220" y="138" font-size="12.5" font-weight="700" text-anchor="middle" class="d-on-accent">시설자금 500억 (100%)</text>
+  <g font-size="12" class="d-pct">
+    <text x="16" y="170">같은 날 토지·공장 취득 공시 + 수주 잔고(Backlog) 연동</text>
+    <text x="16" y="187">— 가동률 95% 초과</text>
+  </g>
+
+  <!-- B기업 -->
+  <text x="16" y="224" font-size="13" font-weight="700" fill="currentColor">B기업 — 300억</text>
+  <rect x="16" y="234" width="41" height="30" class="d-accent" />
+  <rect x="57" y="234" width="231" height="30" fill="currentColor" opacity="0.35" />
+  <rect x="288" y="234" width="136" height="30" fill="currentColor" opacity="0.2" />
+  <text x="36" y="254" font-size="12" font-weight="700" text-anchor="middle" class="d-on-accent">30</text>
+  <text x="172" y="254" font-size="12" text-anchor="middle" fill="currentColor">운영자금 170억</text>
+  <text x="356" y="254" font-size="12" text-anchor="middle" fill="currentColor">채무상환 100억</text>
+  <g font-size="12" class="d-pct">
+    <text x="16" y="286">헤드라인은 '이차전지 신사업 시설투자' —</text>
+    <text x="16" y="303">표를 뜯으면 시설자금은 10%,</text>
+    <text x="16" y="320">나머지 90%는 이번 달 결제 대금과 헌 빚</text>
+  </g>
+  <text x="16" y="350" font-size="13" font-weight="700" class="d-accent-t">비율의 함정 (9:1 착시)</text>
+  <text x="16" y="366" font-size="12" class="d-accent-t">뉴스 제목이 아니라 표의 비율을 읽는다</text>
+</svg>

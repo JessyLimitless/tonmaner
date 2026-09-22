@@ -1,0 +1,61 @@
+<svg viewBox="0 0 440 580" role="img" aria-label="락업 해제 전후의 타임라인. 발행일에서 1년이 지나면 락업 해제일이다. 그 2주 전이 D-14 선제 탈출 원칙, 해제 뒤 릴레이 전환청구 공시가 이어지고, 신주 상장예정일 2영업일 전 권리매도 갭하락이 온다. 차트에는 윗꼬리 대량거래 장대음봉이 찍힌다">
+  <defs>
+    <marker id="leArrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="currentColor" />
+    </marker>
+  </defs>
+  <!-- 세로 시간축 -->
+  <path d="M 60 24 V 412" stroke="currentColor" stroke-width="1.3" opacity="0.5" marker-end="url(#leArrow)" />
+  <!-- 락업 구간 -->
+  <rect x="55" y="40" width="10" height="140" fill="currentColor" opacity="0.15" />
+  <g font-size="11.5" class="d-pct">
+    <text x="76" y="88">의무보유(락업) 1년 —</text>
+    <text x="76" y="104">리픽싱으로 단가를 깎는 시간</text>
+  </g>
+  <!-- 마커 -->
+  <g fill="currentColor" opacity="0.6">
+    <circle cx="60" cy="40" r="5" />
+    <circle cx="60" cy="180" r="5" />
+    <circle cx="60" cy="230" r="5" />
+    <circle cx="60" cy="280" r="5" />
+    <circle cx="60" cy="380" r="5" />
+  </g>
+  <g class="d-accent">
+    <circle cx="60" cy="130" r="6" />
+    <circle cx="60" cy="330" r="6" />
+  </g>
+  <!-- 발행일 -->
+  <text x="76" y="45" font-size="12.5" font-weight="700" fill="currentColor">발행일</text>
+  <!-- D-14 -->
+  <text x="76" y="134" font-size="13" font-weight="700" class="d-accent-t">D-14 선제 탈출</text>
+  <text x="76" y="151" font-size="11.5" class="d-pct">고점이면 세력보다 반 발짝 먼저</text>
+  <!-- 락업 해제일 -->
+  <text x="76" y="184" font-size="12.5" font-weight="700" fill="currentColor">락업 해제일</text>
+  <text x="76" y="201" font-size="11.5" class="d-pct">발행일 + 1년</text>
+  <!-- 전환청구 공시 -->
+  <text x="76" y="234" font-size="12.5" font-weight="700" fill="currentColor">전환청구 공시</text>
+  <text x="76" y="251" font-size="11.5" class="d-pct">1차 → 2차 → 3차 → 4차 릴레이</text>
+  <!-- 호재 찌라시 -->
+  <text x="76" y="284" font-size="12.5" font-weight="700" fill="currentColor">호재 찌라시 극대화</text>
+  <text x="76" y="301" font-size="11.5" class="d-pct">그날 저녁 기습 공시</text>
+  <!-- D-2 -->
+  <text x="76" y="334" font-size="13" font-weight="700" class="d-accent-t">D-2 권리매도 갭하락</text>
+  <text x="76" y="351" font-size="11.5" class="d-pct">시초가 -5~10% · 하한가 도미노</text>
+  <!-- 신주 상장일 -->
+  <text x="76" y="384" font-size="12.5" font-weight="700" fill="currentColor">신주 상장일</text>
+  <text x="76" y="401" font-size="11.5" class="d-pct">전량 전환 완료 = 주포 퇴장</text>
+
+  <!-- 차트 신호 -->
+  <path d="M 16 426 H 424" stroke="currentColor" stroke-width="0.6" opacity="0.25" />
+  <text x="16" y="448" font-size="13" font-weight="700" fill="currentColor">차트가 비명을 지르는 신호</text>
+  <g font-size="11.5" class="d-pct">
+    <text x="16" y="470">윗꼬리 대량거래 장대음봉</text>
+    <text x="16" y="486">— 평소의 10~20배 거래량에 종가는 시가 아래</text>
+    <text x="16" y="504">볼린저 상단 이탈 후 꺾임 · 하락 다이버전스</text>
+    <text x="16" y="520">허매수 벽 붕괴 · D-2 갭하락</text>
+  </g>
+  <g font-size="12" font-weight="700" class="d-accent-t">
+    <text x="16" y="548">공시 뜬 날 대응 공식: 익일 시초가에 비중 축소</text>
+    <text x="16" y="566">상장예정일 − 2영업일 = 진짜 출회일</text>
+  </g>
+</svg>

@@ -1,0 +1,63 @@
+<svg viewBox="0 0 440 330" role="img" aria-label="폰지형 연쇄 발행 구조. 제3회차 CB의 락업이 풀리는 시점에 제4회차 발행 공시를 띄워 주가를 올리고 앞 회차가 엑시트한다. 제4회차는 제5회차로, 제5회차는 제6회차로 같은 방식이 반복된다">
+  <defs>
+    <marker id="ciArrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="currentColor" />
+    </marker>
+  </defs>
+  <!-- 시간축 -->
+  <path d="M 80 30 H 432" stroke="currentColor" stroke-width="1.2" opacity="0.5" marker-end="url(#ciArrow)" />
+  <g font-size="11.5" class="d-pct" text-anchor="middle">
+    <text x="90" y="20">발행</text>
+    <text x="201" y="20">+1년</text>
+    <text x="312" y="20">+2년</text>
+    <text x="423" y="20">+3년</text>
+  </g>
+  <g stroke="currentColor" stroke-width="0.6" opacity="0.2">
+    <path d="M 90 30 V 226 M 201 30 V 226 M 312 30 V 226 M 423 30 V 226" />
+  </g>
+  <!-- 회차 라벨 -->
+  <g font-size="12.5" font-weight="700" fill="currentColor">
+    <text x="16" y="70">제3회차</text>
+    <text x="16" y="140">제4회차</text>
+    <text x="16" y="210">제5회차</text>
+  </g>
+  <!-- 락업 구간 -->
+  <g fill="none" stroke="currentColor" stroke-width="1" opacity="0.5">
+    <rect x="90" y="50" width="111" height="30" />
+    <rect x="201" y="120" width="111" height="30" />
+    <rect x="312" y="190" width="111" height="30" />
+  </g>
+  <g class="d-accent">
+    <rect x="201" y="50" width="46" height="30" />
+    <rect x="312" y="120" width="46" height="30" />
+    <rect x="423" y="190" width="14" height="30" />
+  </g>
+  <g font-size="11.5" class="d-pct" text-anchor="middle">
+    <text x="145" y="69">락업 · 리픽싱 (1년)</text>
+    <text x="256" y="139">락업 · 리픽싱 (1년)</text>
+    <text x="367" y="209">락업 · 리픽싱 (1년)</text>
+  </g>
+  <g font-size="11.5" font-weight="700" class="d-on-accent" text-anchor="middle">
+    <text x="224" y="69">엑시트</text>
+    <text x="335" y="139">엑시트</text>
+  </g>
+  <!-- 발행 공시 = 앞 회차 엑시트 판 깔기 -->
+  <g fill="none" stroke-width="1.6" class="d-accent-stroke">
+    <path d="M 201 118 V 92" marker-end="url(#ciArrow)" />
+    <path d="M 312 188 V 162" marker-end="url(#ciArrow)" />
+  </g>
+  <g font-size="11.5" font-weight="700" class="d-accent-t">
+    <text x="207" y="108">신규 발행 공시 + 새 테마</text>
+    <text x="306" y="178" text-anchor="end">신규 발행 공시 + 새 테마</text>
+  </g>
+  <!-- 하단 설명 -->
+  <path d="M 16 240 H 424" stroke="currentColor" stroke-width="0.6" opacity="0.25" />
+  <g font-size="12.5" fill="currentColor">
+    <text x="16" y="262">뒷 회차의 '호재'는 신규 사업이 아니라</text>
+    <text x="16" y="280">앞 회차 사채권자의 고가 엑시트를 위한 판 깔아주기다.</text>
+  </g>
+  <g font-size="12" class="d-pct">
+    <text x="16" y="304">새 빚(신규 CB)으로 헌 빚(구 CB 세력의 엑시트)을 갚는</text>
+    <text x="16" y="321">폰지형 연쇄 발행 — 점이 아니라 선으로 읽어야 보인다.</text>
+  </g>
+</svg>

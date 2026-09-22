@@ -1,0 +1,57 @@
+<svg viewBox="0 0 440 400" role="img" aria-label="조합 쪼개기. 200억 원의 배정 물량을 다섯 개의 신생 조합에 각각 지분율 4.9퍼센트 이하로 나누어, 5퍼센트 대량보유 공시 의무를 피하고 락업 해제 후 장내에서 분산 매도한다">
+  <defs>
+    <marker id="saArrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="currentColor" />
+    </marker>
+  </defs>
+  <!-- 원천 -->
+  <rect x="16" y="111" width="110" height="56" fill="none" stroke="currentColor" stroke-width="1" opacity="0.5" />
+  <text x="71" y="135" font-size="14" font-weight="700" text-anchor="middle" fill="currentColor">CB 200억</text>
+  <text x="71" y="155" font-size="12" text-anchor="middle" class="d-pct">제3자배정</text>
+  <!-- 5% 선 -->
+  <path d="M 148 32 V 244" stroke-width="1.6" class="d-accent-stroke" stroke-dasharray="5 4" fill="none" />
+  <text x="154" y="26" font-size="11.5" class="d-accent-t">5% 대량보유 공시선</text>
+  <!-- 다섯 조합 -->
+  <g fill="none" stroke="currentColor" stroke-width="1" opacity="0.5">
+    <rect x="166" y="44" width="258" height="30" />
+    <rect x="166" y="84" width="258" height="30" />
+    <rect x="166" y="124" width="258" height="30" />
+    <rect x="166" y="164" width="258" height="30" />
+    <rect x="166" y="204" width="258" height="30" />
+  </g>
+  <g font-size="12.5" fill="currentColor">
+    <text x="178" y="64">알파 1호 조합</text>
+    <text x="178" y="104">베타 2호 조합</text>
+    <text x="178" y="144">○○투자조합 제1호</text>
+    <text x="178" y="184">△△신기술투자조합 3호</text>
+    <text x="178" y="224">□□ 조합</text>
+  </g>
+  <g font-size="13" font-weight="700" text-anchor="end" class="d-accent-t">
+    <text x="412" y="64">4.9%</text>
+    <text x="412" y="104">4.9%</text>
+    <text x="412" y="144">4.9%</text>
+    <text x="412" y="184">4.9%</text>
+    <text x="412" y="224">4.9%</text>
+  </g>
+  <g fill="none" stroke="currentColor" stroke-width="1" opacity="0.5">
+    <path d="M 126 139 C 146 139 146 59 164 59" marker-end="url(#saArrow)" />
+    <path d="M 126 139 C 146 139 146 99 164 99" marker-end="url(#saArrow)" />
+    <path d="M 126 139 H 164" marker-end="url(#saArrow)" />
+    <path d="M 126 139 C 146 139 146 179 164 179" marker-end="url(#saArrow)" />
+    <path d="M 126 139 C 146 139 146 219 164 219" marker-end="url(#saArrow)" />
+  </g>
+  <!-- 결과 -->
+  <path d="M 16 254 H 424" stroke="currentColor" stroke-width="0.6" opacity="0.25" />
+  <g font-size="12.5" fill="currentColor">
+    <text x="16" y="276">설립 몇 주, 자본금 100만~1,000만 원</text>
+    <text x="16" y="294">등기부상 대표는 차명 · 바지조합원</text>
+  </g>
+  <g font-size="12.5" font-weight="700" class="d-accent-t">
+    <text x="16" y="322">각 4.9% 이하 → 지분 변동 공시 없음</text>
+    <text x="16" y="340">락업 해제 후 개인 창구 뒤에서 분산 매도</text>
+  </g>
+  <g font-size="12" class="d-pct">
+    <text x="16" y="368">3~5개로 쪼개진 배정은 그 자체가</text>
+    <text x="16" y="385">설거지 경로를 미리 설계했다는 자백이다</text>
+  </g>
+</svg>

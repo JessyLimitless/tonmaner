@@ -1,0 +1,48 @@
+<svg viewBox="0 0 440 470" role="img" aria-label="전환청구권행사 공시부터 신주 상장까지의 달력. 신주 상장예정일이 10월 25일이면 권리공매도는 이틀 전인 10월 23일 시초가부터 가능하다. 24일에 팔고 도망치려던 개미는 23일 시초가 갭하락에 갇힌다. 위쪽에는 30퍼센트 룰의 두 사례가 있다">
+  <defs>
+    <marker id="odArrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="currentColor" />
+    </marker>
+  </defs>
+  <!-- 30% 룰 -->
+  <text x="16" y="22" font-size="13" font-weight="700" fill="currentColor">오버행 임계점 필터 (30% 룰)</text>
+  <text x="16" y="40" font-size="12" class="d-pct">전환청구 후 남은 미전환 물량은 몇 %인가</text>
+  <!-- 눈금: 0~50%, 1% = 7.08px, 30% 선 x=282 -->
+  <path d="M 282 50 V 128" stroke-width="1.5" class="d-accent-stroke" stroke-dasharray="3 2" />
+  <text x="282" y="140" font-size="11" text-anchor="middle" class="d-accent-t">30% 선</text>
+  <text x="16" y="70" font-size="12.5" fill="currentColor">A기업</text>
+  <rect x="70" y="57" width="177" height="18" fill="currentColor" opacity="0.2" />
+  <rect x="70" y="57" width="21" height="18" class="d-accent" />
+  <text x="16" y="110" font-size="12.5" fill="currentColor">B기업</text>
+  <rect x="70" y="97" width="177" height="18" fill="currentColor" opacity="0.2" />
+  <rect x="70" y="97" width="248" height="18" fill="none" stroke="currentColor" stroke-width="1.2" opacity="0.7" />
+  <text x="16" y="164" font-size="12" class="d-accent-t">A · 25% → 3% 미만 · 오버행 클린 → 안도 랠리</text>
+  <text x="16" y="182" font-size="12" fill="currentColor">B · 이 물량만으로 +35% · 설거지 전환청구 경보</text>
+
+  <!-- 달력 (세로 시간축) -->
+  <path d="M 16 200 H 424" stroke="currentColor" stroke-width="0.6" opacity="0.25" />
+  <path d="M 60 214 V 402" stroke="currentColor" stroke-width="1.3" opacity="0.5" marker-end="url(#odArrow)" />
+  <g fill="currentColor" opacity="0.6">
+    <circle cx="60" cy="226" r="5" />
+    <circle cx="60" cy="338" r="5" />
+    <circle cx="60" cy="384" r="5" />
+  </g>
+  <circle cx="60" cy="282" r="6" class="d-accent" />
+  <!-- 장 마감 후 -->
+  <text x="76" y="222" font-size="12.5" font-weight="700" fill="currentColor">장 마감 후 — 전환청구권행사 공시</text>
+  <text x="76" y="239" font-size="11.5" class="d-pct">400만 주 · 신주상장예정일 명시</text>
+  <!-- D-2 -->
+  <text x="76" y="278" font-size="13" font-weight="700" class="d-accent-t">10/23 (D-2) — 권리매도 개시</text>
+  <text x="76" y="295" font-size="12" class="d-accent-t">시초가 갭하락</text>
+  <text x="76" y="311" font-size="11.5" class="d-pct">주식 입고 전인데 합법적으로 매도 가능</text>
+  <!-- D-1 -->
+  <text x="76" y="334" font-size="12.5" font-weight="700" fill="currentColor">10/24 (D-1) — 개미가 팔려던 날</text>
+  <text x="76" y="351" font-size="11.5" class="d-pct">이미 점하한가</text>
+  <!-- D-Day -->
+  <text x="76" y="380" font-size="12.5" font-weight="700" fill="currentColor">10/25 — 신주 상장예정일</text>
+  <text x="76" y="397" font-size="11.5" class="d-pct">Listing Date</text>
+
+  <rect x="16" y="418" width="408" height="44" fill="none" stroke-width="1.5" class="d-accent-stroke" />
+  <text x="220" y="436" font-size="12.5" font-weight="700" text-anchor="middle" fill="currentColor">승패를 가르는 2일의 시차</text>
+  <text x="220" y="453" font-size="11.5" text-anchor="middle" class="d-pct">상장예정일에서 영업일 -2를 빼는 것이 진짜 출회일</text>
+</svg>

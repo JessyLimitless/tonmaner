@@ -1,0 +1,79 @@
+<svg viewBox="0 0 440 432" role="img" aria-label="납입 시계열의 두 갈래. A기업은 납입일 당일 원샷 납입과 발행결과 공시, 3개월 뒤 현금흐름표에 100억 원이 찍힌다. B기업은 납입일 변경 공시가 네 차례 이어지고 200억 원이 50억 원으로 감액된 뒤 철회 공시, 불성실공시법인 지정, 거래정지와 상장적격성 실질심사로 간다">
+  <defs>
+    <marker id="ptArrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="currentColor" />
+    </marker>
+  </defs>
+  <!-- 공통 출발 -->
+  <rect x="120" y="12" width="200" height="44" fill="none" stroke="currentColor" stroke-width="1" opacity="0.5" />
+  <text x="220" y="31" font-size="13" font-weight="700" text-anchor="middle" fill="currentColor">발행 결정 공시</text>
+  <text x="220" y="48" font-size="11.5" text-anchor="middle" class="d-pct">세력의 일방적 주장</text>
+  <path d="M 180 56 C 150 62 130 62 114 70" fill="none" stroke-width="1.6" class="d-accent-stroke" marker-end="url(#ptArrow)" />
+  <path d="M 260 56 C 290 62 310 62 326 70" fill="none" stroke="currentColor" stroke-width="1.2" opacity="0.5" marker-end="url(#ptArrow)" />
+
+  <!-- Case A (왼쪽 열) -->
+  <text x="16" y="82" font-size="13" font-weight="700" class="d-accent-t">Case A</text>
+  <text x="74" y="82" font-size="12" class="d-accent-t">팩트로 증명된 100억</text>
+  <g class="d-accent">
+    <rect x="16" y="94" width="196" height="46" />
+    <rect x="16" y="152" width="196" height="46" />
+    <rect x="16" y="210" width="196" height="46" />
+  </g>
+  <g font-size="12.5" font-weight="700" text-anchor="middle" class="d-on-accent">
+    <text x="114" y="113">납입일 — 원샷 납입</text>
+    <text x="114" y="171">당일 발행결과 공시</text>
+    <text x="114" y="229">3개월 뒤 분기보고서</text>
+  </g>
+  <g font-size="11.5" text-anchor="middle" class="d-on-accent">
+    <text x="114" y="131">청약일~납입일 간격 짧음</text>
+    <text x="114" y="189">[기재정정] 마크 없음</text>
+    <text x="114" y="247">재무활동현금흐름 +100억</text>
+  </g>
+  <g fill="none" stroke="currentColor" stroke-width="1.2" opacity="0.5">
+    <path d="M 114 140 V 150" marker-end="url(#ptArrow)" />
+    <path d="M 114 198 V 208" marker-end="url(#ptArrow)" />
+  </g>
+  <g font-size="11.5" class="d-pct">
+    <text x="16" y="278">자금 출처 소명서: 전액 자기자본</text>
+    <text x="16" y="294">→ 진성 자본 필터 통과</text>
+    <text x="16" y="310">→ 납입 확정 D-Day 매매</text>
+  </g>
+
+  <!-- Case B (오른쪽 열) -->
+  <text x="228" y="82" font-size="13" font-weight="700" fill="currentColor">Case B</text>
+  <text x="278" y="82" font-size="11.5" fill="currentColor">4차례 연기 끝에 상폐 직행</text>
+  <g fill="none" stroke="currentColor" stroke-width="1" opacity="0.5">
+    <rect x="228" y="94" width="196" height="46" />
+    <rect x="228" y="152" width="196" height="46" />
+    <rect x="228" y="210" width="196" height="46" />
+    <rect x="228" y="268" width="196" height="46" />
+    <rect x="228" y="326" width="196" height="46" />
+  </g>
+  <g font-size="12.5" font-weight="700" text-anchor="middle" fill="currentColor">
+    <text x="326" y="113">납입일 변경</text>
+    <text x="326" y="171">인수 대금 감액</text>
+    <text x="326" y="229">철회 공시</text>
+    <text x="326" y="287">불성실공시법인</text>
+    <text x="326" y="345">거래정지</text>
+  </g>
+  <g font-size="11.5" text-anchor="middle" class="d-pct">
+    <text x="326" y="131">1차 → 2차 → 3차 → 4차</text>
+    <text x="326" y="189">200억 → 50억</text>
+    <text x="326" y="247">발행 취소</text>
+    <text x="326" y="305">누적 벌점</text>
+    <text x="326" y="363">실질심사</text>
+  </g>
+  <g fill="none" stroke="currentColor" stroke-width="1.2" opacity="0.5">
+    <path d="M 326 140 V 150" marker-end="url(#ptArrow)" />
+    <path d="M 326 198 V 208" marker-end="url(#ptArrow)" />
+    <path d="M 326 256 V 266" marker-end="url(#ptArrow)" />
+    <path d="M 326 314 V 324" marker-end="url(#ptArrow)" />
+  </g>
+
+  <!-- 하단 경고 -->
+  <path d="M 16 386 H 424" stroke="currentColor" stroke-width="0.6" opacity="0.25" />
+  <g font-size="11.5" class="d-pct">
+    <text x="16" y="406">중간에 돈이 꽂혀도 안심 금물 — 주식담보대출 · 가장납입</text>
+    <text x="16" y="422">· 에스크로 미설정 · 동시 턴키 유출 · 반대매매 뇌관</text>
+  </g>
+</svg>

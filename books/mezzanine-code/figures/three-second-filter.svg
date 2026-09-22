@@ -1,0 +1,61 @@
+<svg viewBox="0 0 440 470" role="img" aria-label="3초 불순물 필터링 룰. 전환사채발행결정 공시가 목적, 금리, 규모, 납입 횟수의 네 관문을 차례로 통과해야 관심종목이 된다. 운영자금과 타법인증권취득자금 합이 70퍼센트 초과, 이율 4에서 7퍼센트 이상, 신주 물량이 유통 주식 수의 20퍼센트 초과, 납입일 2회 이상 연기 중 하나라도 걸리면 휴지통이다">
+  <defs>
+    <marker id="tsArrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="currentColor" />
+    </marker>
+  </defs>
+  <text x="16" y="22" font-size="12" class="d-pct">'전환사채발행결정' 공시 ↓</text>
+  <!-- 네 관문 -->
+  <g fill="none" stroke-width="1.8" class="d-accent-stroke">
+    <rect x="16" y="36" width="330" height="56" />
+    <rect x="16" y="106" width="330" height="56" />
+    <rect x="16" y="176" width="330" height="56" />
+    <rect x="16" y="246" width="330" height="56" />
+  </g>
+  <g font-size="11.5" class="d-pct">
+    <text x="28" y="54">관문 1 · 목적</text>
+    <text x="28" y="124">관문 2 · 금리</text>
+    <text x="28" y="194">관문 3 · 규모</text>
+    <text x="28" y="264">관문 4 · 납입 횟수</text>
+  </g>
+  <g font-size="13" font-weight="700" class="d-accent-t">
+    <text x="28" y="78">운영 + 타법인취득 &gt; 70% 인가?</text>
+    <text x="28" y="148">이율 4~7% 이상인가?</text>
+    <text x="28" y="218">신주 / 유통 주식 수 &gt; 20% 인가?</text>
+    <text x="28" y="288">납입일 연기 2회 이상인가?</text>
+  </g>
+  <!-- 아니오: 아래로 -->
+  <g fill="none" stroke="currentColor" stroke-width="1.2" opacity="0.6">
+    <path d="M 180 92 V 104" marker-end="url(#tsArrow)" />
+    <path d="M 180 162 V 174" marker-end="url(#tsArrow)" />
+    <path d="M 180 232 V 244" marker-end="url(#tsArrow)" />
+    <path d="M 180 302 V 314" marker-end="url(#tsArrow)" />
+  </g>
+  <g font-size="11" class="d-pct">
+    <text x="188" y="102">아니오</text>
+    <text x="188" y="172">아니오</text>
+    <text x="188" y="242">아니오</text>
+    <text x="188" y="312">아니오</text>
+  </g>
+  <!-- 예: 오른쪽으로 모아 아래 휴지통으로 -->
+  <g fill="none" stroke="currentColor" stroke-width="1.2" opacity="0.6">
+    <path d="M 346 64 H 396" marker-end="url(#tsArrow)" />
+    <path d="M 346 134 H 396" marker-end="url(#tsArrow)" />
+    <path d="M 346 204 H 396" marker-end="url(#tsArrow)" />
+    <path d="M 346 274 H 396" marker-end="url(#tsArrow)" />
+  </g>
+  <g font-size="11" class="d-pct">
+    <text x="364" y="58">예</text>
+    <text x="364" y="128">예</text>
+    <text x="364" y="198">예</text>
+    <text x="364" y="268">예</text>
+  </g>
+  <path d="M 400 64 V 404" fill="none" stroke-width="1.8" class="d-accent-stroke" marker-end="url(#tsArrow)" />
+  <!-- 넷 다 아니오 -->
+  <rect x="16" y="318" width="330" height="40" class="d-accent" />
+  <text x="181" y="343" font-size="12" font-weight="700" text-anchor="middle" class="d-on-accent">넷 다 '아니오' → 관심종목 → 10대 체크리스트</text>
+  <!-- 하나라도 예 -->
+  <rect x="16" y="408" width="408" height="52" fill="none" stroke="currentColor" stroke-width="1" opacity="0.5" />
+  <text x="220" y="429" font-size="12.5" font-weight="700" text-anchor="middle" fill="currentColor">하나라도 '예' → 즉시 창을 닫는다</text>
+  <text x="220" y="448" font-size="11.5" text-anchor="middle" class="d-pct">(좀비 · 사채업자 돈 · 오버행 폭탄 · 상폐 급행열차)</text>
+</svg>

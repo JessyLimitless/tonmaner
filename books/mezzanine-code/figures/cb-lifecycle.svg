@@ -1,0 +1,65 @@
+<svg viewBox="0 0 440 432" role="img" aria-label="메자닌의 4단계 생애 주기. 발행(부채의 탄생), 락업 및 리픽싱(잠복기, 1년), 전환청구(자본 전환과 오버행의 시작), 소각 및 상환(게임의 종료). 같은 시간을 개미는 매물을 받아내며 보내고 세력은 다음 단계를 준비하며 보낸다">
+  <defs>
+    <marker id="lcArrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="currentColor" />
+    </marker>
+  </defs>
+  <!-- 두 열의 머리 -->
+  <text x="30" y="24" font-size="12" font-weight="700" class="d-pct">개미의 시간</text>
+  <text x="232" y="24" font-size="12" font-weight="700" class="d-accent-t">세력의 시간</text>
+  <path d="M 220 12 V 400" stroke="currentColor" stroke-width="0.6" opacity="0.2" />
+
+  <!-- 1단계 -->
+  <rect x="16" y="36" width="408" height="30" class="d-accent" />
+  <text x="28" y="56" font-size="13" font-weight="700" class="d-on-accent">1단계 · 발행 — 부채의 탄생</text>
+  <g font-size="12.5" class="d-pct">
+    <text x="30" y="88">장밋빛 미래에</text>
+    <text x="30" y="105">불나방처럼 모여든다</text>
+  </g>
+  <g font-size="12.5" class="d-accent-t">
+    <text x="232" y="88">자금 납입 후</text>
+    <text x="232" y="105">다음 단계를 준비</text>
+  </g>
+
+  <!-- 2단계 -->
+  <rect x="16" y="126" width="408" height="30" class="d-accent" />
+  <text x="28" y="146" font-size="13" font-weight="700" class="d-on-accent">2단계 · 락업 · 리픽싱 — 잠복기 (1년)</text>
+  <g font-size="12.5" class="d-pct">
+    <text x="30" y="178">계좌가 파랗게</text>
+    <text x="30" y="195">멍들어 가는 시간</text>
+  </g>
+  <g font-size="12.5" class="d-accent-t">
+    <text x="232" y="178">주가를 누르며</text>
+    <text x="232" y="195">단가를 깎는 쇼핑 기간</text>
+  </g>
+
+  <!-- 락업 해제 표시 -->
+  <path d="M 16 218 H 284" stroke-width="2" class="d-accent-stroke" stroke-dasharray="5 4" />
+  <text x="424" y="222" font-size="11.5" text-anchor="end" font-weight="700" class="d-accent-t">발행 후 1년 — 락업 해제</text>
+
+  <!-- 3단계 -->
+  <rect x="16" y="234" width="408" height="30" class="d-accent" />
+  <text x="28" y="254" font-size="13" font-weight="700" class="d-on-accent">3단계 · 전환청구 — 자본 전환</text>
+  <g font-size="12.5" class="d-pct">
+    <text x="30" y="286">쏟아지는 매물 폭탄을</text>
+    <text x="30" y="303">받아낸다</text>
+  </g>
+  <g font-size="12.5" class="d-accent-t">
+    <text x="232" y="286">전환청구권행사 공시 —</text>
+    <text x="232" y="303">본격 엑시트</text>
+  </g>
+
+  <!-- 4단계 -->
+  <rect x="16" y="324" width="408" height="30" class="d-accent" />
+  <text x="28" y="344" font-size="13" font-weight="700" class="d-on-accent">4단계 · 소각 · 상환 — 종료</text>
+  <g font-size="12.5" class="d-pct">
+    <text x="30" y="376">늘어난 주식 수,</text>
+    <text x="30" y="393">영구 훼손된 지분 가치</text>
+  </g>
+  <g font-size="12.5" class="d-accent-t">
+    <text x="232" y="376">차익 실현 후 퇴장,</text>
+    <text x="232" y="393">실패 시 풋옵션으로 회수</text>
+  </g>
+  <!-- 시간의 흐름 -->
+  <path d="M 8 40 V 414" stroke="currentColor" stroke-width="1.2" opacity="0.4" marker-end="url(#lcArrow)" />
+</svg>

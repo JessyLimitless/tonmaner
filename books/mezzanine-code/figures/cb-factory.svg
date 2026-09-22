@@ -1,0 +1,53 @@
+<svg viewBox="0 0 440 396" role="img" aria-label="CB 공장의 흥망성쇠 연대기. 사명 변경과 테마 사업목적 추가, 주가 펌핑, 수백억 메자닌 연쇄 발행, 자금의 외부 전용, 락업 해제 전 호재 방출, 전환과 희석이 수레바퀴처럼 돌다가 감자·횡령 배임·거래 정지·상장 폐지로 끝난다">
+  <defs>
+    <marker id="cfArrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="currentColor" />
+    </marker>
+  </defs>
+  <text x="220" y="26" font-size="11.5" text-anchor="middle" class="d-pct">다시 ①로 — 테마만 갈아 끼운다</text>
+  <!-- 수레바퀴: 왼쪽 열 ①②③ 아래로, 오른쪽 열 ④⑤⑥ 위로 -->
+  <g fill="none" stroke="currentColor" stroke-width="1" opacity="0.5">
+    <rect x="16" y="44" width="184" height="66" />
+    <rect x="16" y="128" width="184" height="66" />
+    <rect x="16" y="212" width="184" height="66" />
+    <rect x="240" y="212" width="184" height="66" />
+    <rect x="240" y="128" width="184" height="66" />
+    <rect x="240" y="44" width="184" height="66" />
+  </g>
+  <g font-size="11.5" class="d-pct">
+    <text x="28" y="61">①</text><text x="28" y="145">②</text><text x="28" y="229">③</text>
+    <text x="252" y="229">④</text><text x="252" y="145">⑤</text><text x="252" y="61">⑥</text>
+  </g>
+  <g font-size="13" fill="currentColor" font-weight="700">
+    <text x="28" y="81">사명 변경 · 테마 추가</text>
+    <text x="28" y="165">주가 펌핑</text>
+    <text x="28" y="249">메자닌 연쇄 발행</text>
+    <text x="252" y="249">자금 외부 전용</text>
+    <text x="252" y="165">락업 해제 전 재펌핑</text>
+    <text x="252" y="81">전환 · 희석</text>
+  </g>
+  <g font-size="11.5" class="d-pct">
+    <text x="28" y="99">2차전지 · AI · 초전도체</text>
+    <text x="28" y="183">거래량이 터지면 미끼로</text>
+    <text x="28" y="267">수백억 단위, 연달아</text>
+    <text x="252" y="267">껍데기 인수 · 돌려막기</text>
+    <text x="252" y="183">앞 회차 고가 엑시트용</text>
+    <text x="252" y="99">주식 수 팽창, 결손금 누적</text>
+  </g>
+  <g fill="none" stroke="currentColor" stroke-width="1.2" opacity="0.6">
+    <path d="M 108 110 V 126" marker-end="url(#cfArrow)" />
+    <path d="M 108 194 V 210" marker-end="url(#cfArrow)" />
+    <path d="M 200 245 H 238" marker-end="url(#cfArrow)" />
+    <path d="M 332 212 V 196" marker-end="url(#cfArrow)" />
+    <path d="M 332 128 V 112" marker-end="url(#cfArrow)" />
+    <path d="M 240 77 H 202" marker-end="url(#cfArrow)" />
+  </g>
+  <!-- 결말 -->
+  <path d="M 332 278 V 308" stroke-width="1.8" class="d-accent-stroke" fill="none" marker-end="url(#cfArrow)" />
+  <rect x="16" y="312" width="408" height="70" class="d-accent" />
+  <text x="220" y="336" font-size="13" font-weight="700" text-anchor="middle" class="d-on-accent">정해진 결말 — 감자 → 횡령 · 배임 공시 → 거래 정지 → 상장 폐지</text>
+  <g font-size="11.5" text-anchor="middle" class="d-on-accent">
+    <text x="220" y="356">세력이 단물을 빨아먹고 떠난 뒤, 사채를 찍을 체력조차 없는</text>
+    <text x="220" y="372">껍데기는 뒤늦게 올라탄 개인의 몫이 된다</text>
+  </g>
+</svg>

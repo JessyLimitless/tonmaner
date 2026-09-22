@@ -1,0 +1,47 @@
+<svg viewBox="0 0 440 372" role="img" aria-label="전환사채 발행결정 공시 화면을 상단·중단·하단으로 나눈 시선 이동 동선. 상단은 자금조달의 목적과 사채의 이율, 중단은 전환가액과 발행할 주식의 수, 하단은 사채를 취득하는 자와 각주를 읽는다">
+  <!-- 공시 문서 틀 -->
+  <rect x="16" y="14" width="408" height="344" fill="none" stroke="currentColor" stroke-width="1.2" opacity="0.5" />
+  <text x="30" y="36" font-size="11.5" class="d-pct">주요사항보고서 (전환사채발행결정)</text>
+  <path d="M 16 46 H 424" stroke="currentColor" stroke-width="1" opacity="0.3" />
+
+  <!-- 세 구간 -->
+  <g fill="none" stroke-width="1.8" class="d-accent-stroke">
+    <rect x="30" y="58" width="380" height="88" />
+    <rect x="30" y="156" width="380" height="88" />
+    <rect x="30" y="254" width="380" height="92" />
+  </g>
+  <g class="d-accent">
+    <rect x="30" y="58" width="52" height="88" />
+    <rect x="30" y="156" width="52" height="88" />
+    <rect x="30" y="254" width="52" height="92" />
+  </g>
+  <g font-size="14" font-weight="700" text-anchor="middle" class="d-on-accent">
+    <text x="56" y="107">상단</text>
+    <text x="56" y="205">중단</text>
+    <text x="56" y="305">하단</text>
+  </g>
+
+  <!-- 상단 -->
+  <g font-size="12.5" fill="currentColor">
+    <text x="94" y="78">자금조달의 목적 · 사채의 이율 (표면 · 만기)</text>
+    <text x="94" y="118">시설자금 vs 운영 · 채무상환자금</text>
+    <text x="94" y="136">이자 0% = 시세 차익에 배팅한 채권자</text>
+  </g>
+  <text x="94" y="98" font-size="13" font-weight="700" class="d-accent-t">공장을 짓는 돈인가, 급전인가</text>
+
+  <!-- 중단 -->
+  <g font-size="12.5" fill="currentColor">
+    <text x="94" y="176">전환가액 · 발행할 주식의 수 · 주식 총수 대비 비율</text>
+    <text x="94" y="216">총 주식 수 대비 20~30%를 넘으면</text>
+    <text x="94" y="234">호재가 터져도 주가는 짓눌린다</text>
+  </g>
+  <text x="94" y="196" font-size="13" font-weight="700" class="d-accent-t">쏟아질 물량은 얼마나 되는가</text>
+
+  <!-- 하단 -->
+  <g font-size="12.5" fill="currentColor">
+    <text x="94" y="274">사채를 취득하는 자 (배정 대상자) · 각주</text>
+    <text x="94" y="314">자본금 수백만 원짜리 'OO투자조합 1호'</text>
+    <text x="94" y="332">깨알 글씨 각주 속 매도청구권(콜옵션) 조건</text>
+  </g>
+  <text x="94" y="294" font-size="13" font-weight="700" class="d-accent-t">돈을 대는 자는 누구인가</text>
+</svg>

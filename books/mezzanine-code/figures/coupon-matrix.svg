@@ -1,0 +1,41 @@
+<svg viewBox="0 0 440 506" role="img" aria-label="금리 매트릭스. 표면 0퍼센트 만기 0퍼센트는 채권자가 이자 수익을 포기하고 주가 차익에 건 업사이드 베팅이며, 표면 4퍼센트 만기 7퍼센트 이상은 정크본드 금리의 사이렌이다. 표면 금리 뒤에는 선취 수수료, 풋옵션 연동 금리, 연체이자율이 숨어 있다">
+  <!-- 첫째 칸: 0% / 0% -->
+  <rect x="16" y="16" width="408" height="148" fill="none" stroke-width="2" class="d-accent-stroke" />
+  <text x="30" y="38" font-size="11.5" class="d-pct">표면이자율 / 만기보장수익률</text>
+  <text x="30" y="78" font-size="30" font-weight="700" class="d-accent-t">0% / 0%</text>
+  <text x="30" y="102" font-size="13" font-weight="700" fill="currentColor">작전 · 호재 대기형 (Zero-Zero)</text>
+  <g font-size="12" class="d-pct">
+    <text x="30" y="122">연 4~5%의 확실한 기회비용을 버렸다</text>
+    <text x="30" y="138">= 주가 차익에 전부 걸었다는 업사이드 베팅</text>
+    <text x="30" y="154">전환하지 못하면 헛수고 — 주식 전환 강제성</text>
+  </g>
+
+  <!-- 둘째 칸: 4% / 7%↑ -->
+  <rect x="16" y="178" width="408" height="148" fill="none" stroke="currentColor" stroke-width="1" opacity="0.5" />
+  <text x="30" y="200" font-size="11.5" class="d-pct">표면이자율 / 만기보장수익률</text>
+  <text x="30" y="240" font-size="30" font-weight="700" fill="currentColor">4% / 7%↑</text>
+  <text x="30" y="264" font-size="13" font-weight="700" fill="currentColor">고위험 사채형 (정크본드 금리)</text>
+  <g font-size="12" class="d-pct">
+    <text x="30" y="284">제도권 은행 문턱을 넘지 못한 한계기업</text>
+    <text x="30" y="300">부도 위험 프리미엄(Credit Spread)일 뿐</text>
+    <text x="30" y="316">이자 미지급 → 기한이익상실(EOD) → 상장폐지</text>
+  </g>
+
+  <!-- 숨은 금리 -->
+  <path d="M 16 344 H 424" stroke="currentColor" stroke-width="0.6" opacity="0.3" />
+  <text x="16" y="366" font-size="13" font-weight="700" fill="currentColor">표면 0% 뒤에 숨은 진짜 금리 — 각주(제18호)를 열어야 보인다</text>
+  <g font-size="12" fill="currentColor">
+    <text x="16" y="392">선취 자문료 · 주선수수료</text>
+    <text x="16" y="410" font-size="13" class="d-accent-t">조달액의 5~10%</text>
+    <text x="230" y="392">풋옵션 금리 연동 조항</text>
+    <text x="230" y="410" font-size="13" class="d-accent-t">1년 뒤 연 복리 8%</text>
+    <text x="16" y="436">연체이자율 (Default Rate)</text>
+    <text x="16" y="454" font-size="13" class="d-accent-t">연 15~19%</text>
+    <text x="230" y="436">기준금리 대비</text>
+    <text x="230" y="454" font-size="13" class="d-accent-t">3.5% vs 8%↑</text>
+  </g>
+  <g font-size="11.5" class="d-pct">
+    <text x="16" y="482">100억을 빌리며 10억을 떼였다면</text>
+    <text x="16" y="498">실질 차입 금리는 이미 명동 사채시장을 능가한다</text>
+  </g>
+</svg>
