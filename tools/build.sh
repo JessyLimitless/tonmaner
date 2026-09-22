@@ -104,15 +104,49 @@ pandoc "$BOOK/meta/metadata.yaml" $FILES \
   --resource-path=".:$BOOK:$BOOK/images:fonts"
 
 # 페이지 넘김 리더 (독서 확인용)
-# 리더 UI 강조색 — 책별 override.css 의 표시선에서 뽑는다 (없으면 공용 먹청색)
-ACC_L=$(sed -n 's/.*--accent: *\([^;]*\);.*reader-accent-light.*/\1/p' "$BOOK/style/override.css" 2>/dev/null | head -1)
-ACC_D=$(sed -n 's/.*--accent: *\([^;]*\);.*reader-accent-dark.*/\1/p' "$BOOK/style/override.css" 2>/dev/null | head -1)
-[ -z "$ACC_L" ] && ACC_L="#2B3A55"
-[ -z "$ACC_D" ] && ACC_D="#9DB4D6"
+# 리더 UI 색 — 책별 override.css 의 /* reader-<이름>-<모드> */ 표시선에서 뽑는다.
+# 표시가 없으면 아래 기본값(공용 먹청 톤)을 쓴다. 책마다 리더의 톤앤매너가 달라진다.
+pick() {           # pick <이름> <light|dark> <기본값>
+  local v
+  v=$(sed -n "s|.*: *\([^;]*\);.*reader-$1-$2 \*/.*|\1|p" "$BOOK/style/override.css" 2>/dev/null | head -1)
+  [ -z "$v" ] && v="$3"
+  printf '%s' "$v"
+}
+
+SED_ARGS=()
+add() { SED_ARGS+=(-e "s|{{$1}}|$2|g"); }
+
+add ACCENT      "$(pick accent light '#2B3A55')"
+add PAGE        "$(pick page   light '#FFFFFF')"
+add INK         "$(pick ink    light '#14120F')"
+add SOFT        "$(pick soft   light '#6E6862')"
+add FAINT       "$(pick faint  light '#A8A29A')"
+add RULE        "$(pick rule   light '#E6E2DC')"
+add RULE2       "$(pick rule2  light '#C9C3BA')"
+add WASH        "$(pick wash   light '#F7F6F3')"
+add UIBG        "$(pick uibg   light '#E8E5DF')"
+add UIBG2       "$(pick uibg2  light '#DCD8D0')"
+
+add ACCENT_DARK "$(pick accent dark '#9DB4D6')"
+add PAGE_DARK   "$(pick page   dark '#15171A')"
+add INK_DARK    "$(pick ink    dark '#DDE0E4')"
+add SOFT_DARK   "$(pick soft   dark '#9AA0A7')"
+add FAINT_DARK  "$(pick faint  dark '#5F666E')"
+add RULE_DARK   "$(pick rule   dark '#2B2F34')"
+add RULE2_DARK  "$(pick rule2  dark '#3D434A')"
+add WASH_DARK   "$(pick wash   dark '#1B1E22')"
+add UIBG_DARK   "$(pick uibg   dark '#0C0E11')"
+add UIBG2_DARK  "$(pick uibg2  dark '#07080A')"
 
 TITLE=$(sed -n 's/^title: *"\(.*\)"/\1/p' "$BOOK/meta/metadata.yaml" | head -1)
 [ -z "$TITLE" ] && TITLE="$SLUG"
-sed -e "s|{{TITLE}}|$TITLE|g" -e "s|{{ACCENT}}|$ACC_L|g" -e "s|{{ACCENT_DARK}}|$ACC_D|g" tools/reader-template.html > "$BOOK/build/reader.html"
+add TITLE "$TITLE"
+sed "${SED_ARGS[@]}" tools/reader-template.html > "$BOOK/build/reader.html"
+
+if grep -q '{{' "$BOOK/build/reader.html"; then
+  echo "⚠️  리더에 채우지 못한 자리표시자가 남았습니다:"
+  grep -o '{{[A-Z_]*}}' "$BOOK/build/reader.html" | sort -u | sed 's/^/   /'
+fi
 
 rm -rf "$WORK"
 

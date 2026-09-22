@@ -52,6 +52,14 @@ python -m http.server 8900 --bind 127.0.0.1
 - **표지는 gap 0.** 안 그러면 epub.js 가 넣는 좌우 패딩이 표지 둘레에 흰 띠를 만든다.
   이미지의 `max-height` 도 epub.js 가 걸므로 테마에서 `none` 으로 풀어야 꽉 찬다.
 
+### 책별 색 (2026-09-23)
+
+리더 UI 색은 책마다 다르다. `books/<슬러그>/style/override.css` 에서 줄 끝에
+`/* reader-<이름>-<모드> */` 를 붙인 줄을 빌드가 읽어 리더 템플릿의 자리표시자에 넣는다.
+이름은 `accent · page · ink · soft · faint · rule · rule2 · wash · uibg · uibg2`,
+모드는 `light | dark`. 표시가 없으면 공용 먹청 톤 기본값을 쓴다.
+빌드는 채우지 못한 자리표시자가 남으면 경고한다.
+
 확인은 헤드리스 브라우저로 한다 — 눈으로 보기 전에 판면을 바꾸지 않는다.
 
 ```bash
@@ -152,4 +160,4 @@ python tools/reader3d.py capital-allocator 40   # 앞 40쪽만 (데모·홍보�
 |---|---|---|
 | `capital-allocator` | 버핏의 자본 배치학 | 먹청 `#2B3A55` |
 | `anthropic-engineering-standard` | 앤스로픽 엔지니어링 표준 | 코랄 `#C15F3C` |
-| `mezzanine-code` | 메자닌 코드 | 황동 `#9C7A2C` |
+| `mezzanine-code` | 메자닌 코드 | 빨강 `#DC2626` (다트인사이트 톤) |

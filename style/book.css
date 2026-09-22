@@ -664,6 +664,9 @@ figure.diagram svg {
   width: 100%;
   max-width: 100%;
   height: auto;
+  /* 한 쪽보다 크면 SVG 는 쪼갤 수 없어 통째로 잘린다. 쪽 높이 안에 가둔다.
+     (vh 는 리더에서 한 쪽의 높이다) */
+  max-height: 76vh;
   color: var(--ink);          /* SVG의 currentColor 기준 */
   font-family: var(--sans);
 }
@@ -678,6 +681,12 @@ figure.diagram svg text { fill: currentColor; }
   .d-accent, .d-accent-t, .d-zero { fill: #9DB4D6; fill: var(--accent); }
   .d-accent-stroke { stroke: #9DB4D6; stroke: var(--accent); }
   .d-pct { fill: #9AA0A7; }
+}
+/* 좁은 화면(폰) — 도해만 판면 여백까지 넓힌다. 글줄은 그대로 둔다.
+   SVG 안의 글자는 그림과 함께 축소되므로, 폭 20% 가 곧 가독성이다. */
+@media (max-width: 34em) {
+  figure.diagram { margin-left: -2em; margin-right: -2em; }
+  figure.diagram figcaption { padding-left: 2em; padding-right: 2em; }
 }
 figure.diagram figcaption {
   text-align: left;
@@ -731,14 +740,23 @@ figure.diagram figcaption {
 }
 
 /* ══════════ 표 ═════════════════════════════════════════ */
-.table-wrap { overflow-x: auto; margin: 1.8em 0; }
+/* overflow 를 걸면 이 상자가 '쪼갤 수 없는 덩어리'가 되어, 한 쪽보다 길면
+   다음 쪽으로 이어지지 못하고 넘치는 부분이 통째로 사라진다.
+   2026-09-23 실측: 부록 '이 책의 숫자' 표 15행 중 8행이 그렇게 없어졌다.
+   표는 width:100% 라 가로로 넘칠 일이 없으므로 스크롤 상자로 두지 않는다. */
+.table-wrap { margin: 1.8em 0; }
 table {
   width: 100%;
+  break-inside: auto;
   border-collapse: collapse;
   font-family: var(--sans);
   font-size: 0.84em;
   line-height: 1.6;
   font-variant-numeric: tabular-nums;
+}
+tr {
+  page-break-inside: avoid;
+  break-inside: avoid;   /* 한 행이 두 쪽에 걸쳐 잘리지 않게 */
 }
 caption {
   caption-side: top;

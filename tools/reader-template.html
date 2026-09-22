@@ -15,8 +15,8 @@
 
   /* ── 리더 UI 팔레트 — 본문 조판과 같은 어법 ───────────── */
   :root{
-    --ui-bg:#E8E5DF; --ui-bg2:#DCD8D0; --ui-panel:#FFFFFF; --ui-ink:#14120F;
-    --ui-soft:#6E6862; --ui-faint:#A8A29A; --ui-rule:#E0DCD5; --ui-accent:{{ACCENT}};
+    --ui-bg:{{UIBG}}; --ui-bg2:{{UIBG2}}; --ui-panel:{{PAGE}}; --ui-ink:{{INK}};
+    --ui-soft:{{SOFT}}; --ui-faint:{{FAINT}}; --ui-rule:{{RULE}}; --ui-accent:{{ACCENT}};
     --ui-shadow:rgba(20,18,15,.13); --ui-glass:rgba(255,255,255,.82);
   }
   [data-ui="sepia"]{
@@ -25,8 +25,8 @@
     --ui-shadow:rgba(59,50,38,.16); --ui-glass:rgba(246,239,223,.84);
   }
   [data-ui="dark"]{
-    --ui-bg:#0C0E11; --ui-bg2:#07080A; --ui-panel:#15171A; --ui-ink:#DDE0E4;
-    --ui-soft:#9AA0A7; --ui-faint:#5F666E; --ui-rule:#2B2F34; --ui-accent:{{ACCENT_DARK}};
+    --ui-bg:{{UIBG_DARK}}; --ui-bg2:{{UIBG2_DARK}}; --ui-panel:{{PAGE_DARK}}; --ui-ink:{{INK_DARK}};
+    --ui-soft:{{SOFT_DARK}}; --ui-faint:{{FAINT_DARK}}; --ui-rule:{{RULE_DARK}}; --ui-accent:{{ACCENT_DARK}};
     --ui-shadow:rgba(0,0,0,.6); --ui-glass:rgba(21,23,26,.86);
   }
   *{box-sizing:border-box}
@@ -286,9 +286,9 @@ function save(){ try{ localStorage.setItem(KEY, JSON.stringify(cfg)); }catch(e){
 
 /* 본문(iframe) 팔레트 — book.css 의 :root 변수를 덮어쓴다 */
 var PALETTE = {
-  light:{page:'#FFFFFF',ink:'#14120F',soft:'#6E6862',faint:'#A8A29A',rule:'#E6E2DC',rule2:'#C9C3BA',accent:'{{ACCENT}}',wash:'#F7F6F3'},
+  light:{page:'{{PAGE}}',ink:'{{INK}}',soft:'{{SOFT}}',faint:'{{FAINT}}',rule:'{{RULE}}',rule2:'{{RULE2}}',accent:'{{ACCENT}}',wash:'{{WASH}}'},
   sepia:{page:'#F6EFDF',ink:'#3B3226',soft:'#7A6E5C',faint:'#A99B84',rule:'#E3D8C2',rule2:'#CFC0A2',accent:'#7A5C2E',wash:'#EFE6D2'},
-  dark: {page:'#15171A',ink:'#DDE0E4',soft:'#9AA0A7',faint:'#5F666E',rule:'#2B2F34',rule2:'#3D434A',accent:'{{ACCENT_DARK}}',wash:'#1B1E22'}
+  dark: {page:'{{PAGE_DARK}}',ink:'{{INK_DARK}}',soft:'{{SOFT_DARK}}',faint:'{{FAINT_DARK}}',rule:'{{RULE_DARK}}',rule2:'{{RULE2_DARK}}',accent:'{{ACCENT_DARK}}',wash:'{{WASH_DARK}}'}
 };
 
 var book = ePub('book.epub');
@@ -351,7 +351,7 @@ function applyWidth(force){
    ⚠️ epub.js 의 resize() 는 무대 크기가 그대로면 그냥 돌아간다(조판을 다시 하지 않는다).
    그래서 폭이 안 바뀐 채 여백만 바꿀 때는 _stageSize 를 지워 강제로 다시 재게 한다.
    되돌아오는 relocated 경로에서는 force 를 주지 않는다 — 주면 재조판이 끝없이 돈다. */
-var rlT;
+var rlT, curGap = 0;
 function relayout(force){
   clearTimeout(rlT);
   rlT = setTimeout(function(){
@@ -365,6 +365,7 @@ function relayout(force){
     /* 표지는 그림이 종이를 꽉 채워야 한다 — epub.js 가 gap 으로 넣는
        좌우 패딩이 표지 둘레에 흰 띠를 만든다 */
     if (sh.classList.contains('coverpage')) g = 0;
+    curGap = g;
     try {
       rendition.settings.gap = g;
       if (rendition.manager) {
@@ -380,7 +381,7 @@ function applyTheme(){
   var p = PALETTE[cfg.theme] || PALETTE.light;
   document.documentElement.setAttribute('data-ui', cfg.theme);
   var pd = String(cfg.pad).split('/');
-  rendition.themes.register('cur', {
+  var rules = {
     ':root':{'--page':p.page,'--ink':p.ink,'--soft':p.soft,'--faint':p.faint,
              '--rule':p.rule,'--rule-2':p.rule2,'--accent':p.accent,'--wash':p.wash},
     'body':{'background':p.page+' !important','color':p.ink+' !important',
@@ -392,8 +393,25 @@ function applyTheme(){
     'body#cover svg, body#cover #cover-image img':
       {'width':'100% !important','height':'100% !important','display':'block !important',
        'max-width':'none !important','max-height':'none !important'},
-    'img':{'max-width':'100% !important'}
-  });
+    'img':{'max-width':'100% !important'},
+    /* epub.js 가 svg 에 max-width: 칼럼폭x0.65 를 !important 로 박는다 —
+       그래서 도해가 판면의 65% 로만 그려졌다. 더 높은 특이도로 되돌린다. */
+    'figure.diagram svg':{'width':'100% !important','max-width':'100% !important',
+                          'height':'auto !important','max-height':'76vh !important'}
+  };
+  /* 좁은 화면(폰) — 도해만 판면 여백까지 넓힌다. 글줄은 그대로 둔다.
+     book.css 의 @media 는 여기서 쓸 수 없다 — 쪽 넘김 iframe 의 innerWidth 는
+     한 쪽이 아니라 전체 단(段) 길이(폰에서도 3,620px)라 미디어쿼리가 안 걸린다. */
+  var sh = $('#sheet');
+  var pageW = sh.clientWidth / (sh.classList.contains('two') ? 2 : 1);
+  if (pageW < 430 && curGap > 0) {
+    var bl = Math.round(curGap / 2);
+    rules['figure.diagram'] = {'margin-left':(-bl)+'px !important',
+                               'margin-right':(-bl)+'px !important'};
+    rules['figure.diagram figcaption'] = {'padding-left':bl+'px !important',
+                                          'padding-right':bl+'px !important'};
+  }
+  rendition.themes.register('cur', rules);
   rendition.themes.select('cur');
   rendition.themes.fontSize(cfg.font + '%');
   $('#sheet').style.background = p.page;
