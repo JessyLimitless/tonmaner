@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="ko"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
-<title>버핏의 자본 배치학</title>
+<title>메자닌 코드</title>
 <style>
   /* ── 서체 — 본문과 같은 KoPubWorld. 껍데기만 딴 서체를 쓰지 않는다 ── */
   @font-face{font-family:"KoPubWorld Batang";font-weight:300;font-display:swap;
@@ -15,8 +15,8 @@
 
   /* ── 리더 UI 팔레트 — 본문 조판과 같은 어법 ───────────── */
   :root{
-    --ui-bg:#E8E5DF; --ui-bg2:#DCD8D0; --ui-panel:#FFFFFF; --ui-ink:#14120F;
-    --ui-soft:#6E6862; --ui-faint:#A8A29A; --ui-rule:#E0DCD5; --ui-accent:#2B3A55;
+    --ui-bg:#EFEFF1; --ui-bg2:#E4E4E7; --ui-panel:#FFFFFF; --ui-ink:#18181B;
+    --ui-soft:#52525B; --ui-faint:#A1A1AA; --ui-rule:#E4E4E7; --ui-accent:#DC2626;
     --ui-shadow:rgba(20,18,15,.13); --ui-glass:rgba(255,255,255,.82);
   }
   [data-ui="sepia"]{
@@ -25,8 +25,8 @@
     --ui-shadow:rgba(59,50,38,.16); --ui-glass:rgba(246,239,223,.84);
   }
   [data-ui="dark"]{
-    --ui-bg:#0C0E11; --ui-bg2:#07080A; --ui-panel:#15171A; --ui-ink:#DDE0E4;
-    --ui-soft:#9AA0A7; --ui-faint:#5F666E; --ui-rule:#2B2F34; --ui-accent:#9DB4D6;
+    --ui-bg:#09090B; --ui-bg2:#050506; --ui-panel:#18181B; --ui-ink:#FAFAFA;
+    --ui-soft:#A1A1AA; --ui-faint:#71717A; --ui-rule:#27272A; --ui-accent:#EF4444;
     --ui-shadow:rgba(0,0,0,.6); --ui-glass:rgba(21,23,26,.86);
   }
   *{box-sizing:border-box}
@@ -38,7 +38,7 @@
   button{font:inherit;color:inherit;background:none;border:0;cursor:pointer;padding:0}
 
   /* ── 상단 바 ───────────────────────────────────────── */
-  #top{position:fixed;top:0;left:0;right:0;height:54px;z-index:40;
+  #top{position:fixed;top:0;left:0;right:0;height:44px;z-index:40;
     display:flex;align-items:center;gap:2px;padding:0 12px;
     background:var(--ui-glass);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
     border-bottom:1px solid var(--ui-rule);
@@ -46,7 +46,7 @@
   #top.hide{transform:translateY(-100%);opacity:0}
   #top .title{flex:1;min-width:0;text-align:center;font-size:12.5px;color:var(--ui-soft);
     white-space:nowrap;overflow:hidden;text-overflow:ellipsis;padding:0 10px;letter-spacing:-.2px}
-  .ic{width:38px;height:38px;border-radius:9px;display:flex;align-items:center;
+  .ic{width:34px;height:34px;border-radius:8px;display:flex;align-items:center;
     justify-content:center;color:var(--ui-soft);flex:none;
     transition:background .16s,color .16s}
   .ic:hover{background:var(--ui-bg);color:var(--ui-accent)}
@@ -56,17 +56,17 @@
   .ic .aa{font:700 15px/1 "KoPubWorld Dotum","Malgun Gothic",sans-serif;letter-spacing:-.5px}
 
   /* 상단 진행 실선 */
-  #prog{position:fixed;top:54px;left:0;right:0;height:2px;z-index:41;
+  #prog{position:fixed;top:44px;left:0;right:0;height:2px;z-index:41;
     background:var(--ui-rule);transition:transform .3s cubic-bezier(.4,0,.2,1),opacity .3s}
-  #prog.hide{transform:translateY(-56px);opacity:0}
+  #prog.hide{transform:translateY(-46px);opacity:0}
   #prog i{display:block;height:100%;width:0;background:var(--ui-accent);
     transition:width .25s ease}
 
   /* ── 무대 ──────────────────────────────────────────── */
-  #stage{position:absolute;inset:56px 0 66px 0;display:flex;align-items:stretch;
+  #stage{position:absolute;inset:46px 0 52px 0;display:flex;align-items:stretch;
     transition:inset .3s cubic-bezier(.4,0,.2,1)}
-  #paper{flex:1;min-width:0;padding:20px 76px;display:flex;justify-content:center}
-  #sheet{position:relative;width:100%;max-width:1080px;
+  #paper{flex:1;min-width:0;padding:14px 40px;display:flex;justify-content:center}
+  #sheet{position:relative;width:100%;max-width:1160px;
     background:var(--ui-panel);border-radius:3px;
     box-shadow:0 1px 2px var(--ui-shadow),0 14px 40px -12px var(--ui-shadow);
     transition:max-width .3s cubic-bezier(.4,0,.2,1)}
@@ -75,11 +75,12 @@
     margin-left:-17px;pointer-events:none;z-index:2;
     background:linear-gradient(90deg,transparent 0%,var(--ui-shadow) 44%,
       transparent 50%,var(--ui-shadow) 56%,transparent 100%);opacity:.55}
-  /* 표지 쪽 — 종이를 표지 비율(1600:2560)로 맞춰 이미지가 꽉 차게 한다 */
-  #sheet.coverpage{width:auto;height:100%;max-width:none;aspect-ratio:1600/2560}
-  /* 한 쪽 모드 — 한 줄이 너무 길어지면 읽기가 무너진다 */
-  #sheet.single{max-width:700px}
-  #paper.coverpaper{padding:20px 0}
+  /* 표지 쪽 — 종이를 표지 비율(1600:2560)로 맞춘다. 실제 폭은 applyWidth() 가
+     높이에서 계산해 넣는다 — flex 안에서는 aspect-ratio 만으로는 폭이 안 잡힌다 */
+  #sheet.coverpage{height:100%;max-width:none;flex:0 0 auto}
+  /* 한 쪽 모드 — 한 줄이 너무 길어지면 읽기가 무너진다. 상한은 applyWidth()가 잡는다 */
+  #sheet.single{max-width:760px}
+  #paper.coverpaper{padding:14px 0}
   /* 페이지 엣지 — 러닝헤드와 쪽번호. 실제 책의 판면 가장자리 */
   #edges{position:absolute;inset:0;z-index:3;pointer-events:none;
     font-family:"KoPubWorld Batang",serif;font-weight:300;
@@ -109,8 +110,8 @@
   #prev{left:16px} #next{right:16px}
 
   /* ── 하단 바 ───────────────────────────────────────── */
-  #bot{position:fixed;bottom:0;left:0;right:0;height:66px;z-index:40;
-    padding:11px 22px 12px;background:var(--ui-glass);
+  #bot{position:fixed;bottom:0;left:0;right:0;height:52px;z-index:40;
+    padding:8px 22px 9px;background:var(--ui-glass);
     backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);
     border-top:1px solid var(--ui-rule);
     transition:transform .3s cubic-bezier(.4,0,.2,1),opacity .3s}
@@ -148,7 +149,7 @@
   #toclist a.lv2{padding-left:38px;font-size:12px;color:var(--ui-soft)}
 
   /* ── 설정 패널 ─────────────────────────────────────── */
-  #set{position:fixed;top:62px;right:12px;z-index:60;width:306px;padding:18px;
+  #set{position:fixed;top:52px;right:12px;z-index:60;width:306px;padding:18px;
     background:var(--ui-panel);border:1px solid var(--ui-rule);border-radius:12px;
     box-shadow:0 12px 40px -10px var(--ui-shadow);
     opacity:0;transform:translateY(-8px) scale(.98);pointer-events:none;
@@ -196,7 +197,7 @@
 
 <div id="top">
   <button class="ic" id="bToc" title="목차 (T)"><svg viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button>
-  <span class="title">버핏의 자본 배치학</span>
+  <span class="title">메자닌 코드</span>
   <button class="ic" id="bSet" title="보기 설정 (S)"><span class="aa">Aa</span></button>
   <button class="ic" id="bMark" title="북마크 (B)"><svg viewBox="0 0 24 24"><path d="M6 4h12v16l-6-4.2L6 20z"/></svg></button>
   <button class="ic" id="bFull" title="몰입 모드 (F)"><svg viewBox="0 0 24 24"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></svg></button>
@@ -235,7 +236,7 @@
     </div></div>
 
   <div class="grp"><label>화면 폭</label><div class="seg" id="gWide">
-    <button data-v="760">좁게</button><button data-v="1080">보통</button>
+    <button data-v="820">좁게</button><button data-v="1160">보통</button>
     <button data-v="1360">넓게</button><button data-v="9999">전체</button></div></div>
 
   <div class="grp"><label>줄 간격</label><div class="seg" id="gLead">
@@ -269,13 +270,15 @@ var $ = function(s){ return document.querySelector(s); };
 var msg = $('#msg');
 if (!window.ePub) { msg.textContent = 'epub.js를 불러오지 못했습니다. 인터넷 연결을 확인하세요.'; return; }
 
-var KEY = 'reader:버핏의 자본 배치학';
+var KEY = 'reader:메자닌 코드';
 var FONTS = [85, 95, 100, 110, 125, 140, 160];
 var cfg = {theme:'light', font:95, lead:1.9, spread:'auto', pad:'2.8/5',
-           wide:'1080', edge:'full', cfi:null, mark:null};
+           wide:'1160', edge:'full', cfi:null, mark:null};
 try { Object.assign(cfg, JSON.parse(localStorage.getItem(KEY) || '{}')); } catch(e){}
 var PAD_MIGRATE = {'1.6/2':'2/3.2', '2.6/3.4':'2.8/5', '3.6/5.2':'3.6/7'};
 if (PAD_MIGRATE[cfg.pad]) cfg.pad = PAD_MIGRATE[cfg.pad];
+var WIDE_MIGRATE = {'1080':'1160'};
+if (WIDE_MIGRATE[String(cfg.wide)]) cfg.wide = WIDE_MIGRATE[String(cfg.wide)];
 var LEAD_MIGRATE = {'1.6':'1.7', '1.82':'1.9', '2.1':'2.15'};
 if (LEAD_MIGRATE[String(cfg.lead)]) cfg.lead = +LEAD_MIGRATE[String(cfg.lead)];
 if (!cfg.edge) cfg.edge = 'full';
@@ -283,9 +286,9 @@ function save(){ try{ localStorage.setItem(KEY, JSON.stringify(cfg)); }catch(e){
 
 /* 본문(iframe) 팔레트 — book.css 의 :root 변수를 덮어쓴다 */
 var PALETTE = {
-  light:{page:'#FFFFFF',ink:'#14120F',soft:'#6E6862',faint:'#A8A29A',rule:'#E6E2DC',rule2:'#C9C3BA',accent:'#2B3A55',wash:'#F7F6F3'},
+  light:{page:'#FFFFFF',ink:'#18181B',soft:'#52525B',faint:'#A1A1AA',rule:'#E4E4E7',rule2:'#D4D4D8',accent:'#DC2626',wash:'#F4F4F5'},
   sepia:{page:'#F6EFDF',ink:'#3B3226',soft:'#7A6E5C',faint:'#A99B84',rule:'#E3D8C2',rule2:'#CFC0A2',accent:'#7A5C2E',wash:'#EFE6D2'},
-  dark: {page:'#15171A',ink:'#DDE0E4',soft:'#9AA0A7',faint:'#5F666E',rule:'#2B2F34',rule2:'#3D434A',accent:'#9DB4D6',wash:'#1B1E22'}
+  dark: {page:'#18181B',ink:'#FAFAFA',soft:'#A1A1AA',faint:'#71717A',rule:'#27272A',rule2:'#3F3F46',accent:'#EF4444',wash:'#27272A'}
 };
 
 var book = ePub('book.epub');
@@ -296,17 +299,89 @@ var rendition = book.renderTo('viewer', {
   allowScriptedContent:false
 });
 
-function applyWidth(){
+/* 여백 설정 — 위아래는 em, 좌우는 쪽 폭에 대한 비율.
+   좌우를 em 으로 두면 '좁게' 폭에서 판면이 무너진다(쪽이 좁아져도 여백은 그대로라서).
+   비율로 두면 어느 폭에서도 책의 판면 비례가 유지된다. */
+var PADS = {'2/3.2':{h:.085}, '2.8/5':{h:.13}, '3.6/7':{h:.17}};
+function padH(){ return (PADS[cfg.pad] || PADS['2.8/5']).h; }
+
+/* 두 쪽 펼침 여부 — 지금 종이의 폭이 아니라 '앞으로 잡힐 폭'으로 판단한다.
+   표지에서는 종이가 표지 비율(434px)로 좁아져 있어, 현재 폭을 보면 본문으로
+   넘어갈 때 한 쪽 모드로 잘못 떨어진다. */
+function paperInner(){
+  var pa = $('#paper');
+  var cs = getComputedStyle(pa);
+  return pa.clientWidth - parseFloat(cs.paddingLeft) - parseFloat(cs.paddingRight);
+}
+function twoWanted(want){
+  if ((want || cfg.spread) !== 'auto') return false;
   var w = +cfg.wide;
-  $('#sheet').style.maxWidth = w >= 9000 ? 'none' : (w + 'px');
-  setTimeout(function(){ try{ rendition.resize(); }catch(e){} }, 320);
+  return Math.min(w >= 9000 ? 99999 : w, paperInner()) > 900;
+}
+
+/* 종이 폭 상한 — 높이가 천장이라 폭만 키우면 한 쪽이 정사각형이 된다.
+   한 쪽의 가로세로 비가 0.95 를 넘지 않게 잡는다. */
+function widthCap(){
+  if (cfg.spread === 'scrolled') return 99999;   /* 세로로 흐르므로 비례를 잴 쪽이 없다 */
+  var st = $('#stage').getBoundingClientRect();
+  var h = st.height - 28;                       /* #paper 의 상하 패딩 */
+  var two = $('#sheet').classList.contains('two');
+  return Math.round(h * (two ? 2 : 1) * 0.95);
+}
+
+function applyWidth(force){
+  var sh = $('#sheet');
+  /* 표지는 제 비율(1600:2560)로 높이에 맞춘다 — 폭 상한을 걸면 종이가 잘린다 */
+  if (sh.classList.contains('coverpage')) {
+    var ch = $('#paper').clientHeight - 28;
+    sh.style.maxWidth = 'none';
+    sh.style.width = Math.round(ch * 1600 / 2560) + 'px';
+    relayout(force); return;
+  }
+  sh.style.width = '';
+  var w = +cfg.wide;
+  var eff = Math.min(w >= 9000 ? 99999 : w, widthCap());
+  if (sh.classList.contains('single')) eff = Math.min(eff, 760);
+  sh.style.maxWidth = eff + 'px';
+  relayout(force);
+}
+
+/* epub.js 는 본문 좌우 패딩을 제 gap 계산(폭÷12)으로 덮어쓴다.
+   그래서 테마의 padding 만으로는 좌우 여백이 바뀌지 않는다 — gap 을 직접 넘긴다.
+   ⚠️ epub.js 의 resize() 는 무대 크기가 그대로면 그냥 돌아간다(조판을 다시 하지 않는다).
+   그래서 폭이 안 바뀐 채 여백만 바꿀 때는 _stageSize 를 지워 강제로 다시 재게 한다.
+   되돌아오는 relocated 경로에서는 force 를 주지 않는다 — 주면 재조판이 끝없이 돈다. */
+var rlT, curGap = 0;
+function relayout(force){
+  clearTimeout(rlT);
+  rlT = setTimeout(function(){
+    var sh = $('#sheet');
+    var page = sh.clientWidth / (sh.classList.contains('two') ? 2 : 1);
+    var g = Math.round(page * padH() * 2);
+    /* 좁은 화면에서는 비율을 그대로 쓰면 글줄이 무너진다 — 본문 폭 300px 을 지킨다 */
+    g = Math.min(g, Math.max(0, Math.round(page) - 300));
+    if (g % 2) g -= 1;
+    if (g < 0) g = 0;
+    /* 표지는 그림이 종이를 꽉 채워야 한다 — epub.js 가 gap 으로 넣는
+       좌우 패딩이 표지 둘레에 흰 띠를 만든다 */
+    if (sh.classList.contains('coverpage')) g = 0;
+    curGap = g;
+    try {
+      rendition.settings.gap = g;
+      if (rendition.manager) {
+        rendition.manager.settings.gap = g;
+        if (force) rendition.manager._stageSize = undefined;
+      }
+      rendition.resize();
+    } catch(e){}
+  }, 320);
 }
 
 function applyTheme(){
   var p = PALETTE[cfg.theme] || PALETTE.light;
   document.documentElement.setAttribute('data-ui', cfg.theme);
   var pd = String(cfg.pad).split('/');
-  rendition.themes.register('cur', {
+  var rules = {
     ':root':{'--page':p.page,'--ink':p.ink,'--soft':p.soft,'--faint':p.faint,
              '--rule':p.rule,'--rule-2':p.rule2,'--accent':p.accent,'--wash':p.wash},
     'body':{'background':p.page+' !important','color':p.ink+' !important',
@@ -314,8 +389,29 @@ function applyTheme(){
             'max-width':'none !important',
             'padding':pd[0]+'em '+pd[1]+'em !important'},
     'body#cover':{'padding':'0 !important','margin':'0 !important','max-width':'none !important'},
-    'img':{'max-width':'100% !important'}
-  });
+    'body#cover #cover-image':{'height':'100% !important','width':'100% !important'},
+    'body#cover svg, body#cover #cover-image img':
+      {'width':'100% !important','height':'100% !important','display':'block !important',
+       'max-width':'none !important','max-height':'none !important'},
+    'img':{'max-width':'100% !important'},
+    /* epub.js 가 svg 에 max-width: 칼럼폭x0.65 를 !important 로 박는다 —
+       그래서 도해가 판면의 65% 로만 그려졌다. 더 높은 특이도로 되돌린다. */
+    'figure.diagram svg':{'width':'100% !important','max-width':'100% !important',
+                          'height':'auto !important','max-height':'76vh !important'}
+  };
+  /* 좁은 화면(폰) — 도해만 판면 여백까지 넓힌다. 글줄은 그대로 둔다.
+     book.css 의 @media 는 여기서 쓸 수 없다 — 쪽 넘김 iframe 의 innerWidth 는
+     한 쪽이 아니라 전체 단(段) 길이(폰에서도 3,620px)라 미디어쿼리가 안 걸린다. */
+  var sh = $('#sheet');
+  var pageW = sh.clientWidth / (sh.classList.contains('two') ? 2 : 1);
+  if (pageW < 430 && curGap > 0) {
+    var bl = Math.round(curGap / 2);
+    rules['figure.diagram'] = {'margin-left':(-bl)+'px !important',
+                               'margin-right':(-bl)+'px !important'};
+    rules['figure.diagram figcaption'] = {'padding-left':bl+'px !important',
+                                          'padding-right':bl+'px !important'};
+  }
+  rendition.themes.register('cur', rules);
   rendition.themes.select('cur');
   rendition.themes.fontSize(cfg.font + '%');
   $('#sheet').style.background = p.page;
@@ -323,7 +419,7 @@ function applyTheme(){
 
 rendition.display(cfg.cfi || undefined).then(function(){
   msg.remove();
-  applyTheme(); applyWidth();
+  applyTheme(); applyWidth(true);
 }).catch(function(e){ msg.textContent = 'EPUB을 여는 데 실패했습니다: ' + e; });
 
 /* 표지는 항상 한 쪽으로 — 2단 조판에서 한 단만 채우면 반쪽이 빈다 */
@@ -335,10 +431,10 @@ function syncSpread(href){
   if (cfg.spread === 'scrolled') { $('#sheet').classList.remove('two'); return; }
   var want = onCover ? 'none' : cfg.spread;
   if (want !== curSpread) { curSpread = want; rendition.spread(want); }
-  var two = want === 'auto' && $('#sheet').clientWidth > 900;
+  var two = twoWanted(want);
   $('#sheet').classList.toggle('two', two);
   $('#sheet').classList.toggle('single', !onCover && want === 'none');
-  setTimeout(function(){ try{ rendition.resize(); }catch(e){} }, 340);
+  applyWidth();
 }
 
 /* ── 목차 ─────────────────────────────────────────── */
@@ -453,8 +549,8 @@ function seg(id, get, fn){
 }
 seg('#gTheme', function(){ return cfg.theme; }, function(v){ cfg.theme = v; applyTheme(); });
 seg('#gLead',  function(){ return cfg.lead;  }, function(v){ cfg.lead = +v; applyTheme(); });
-seg('#gPad',   function(){ return cfg.pad;   }, function(v){ cfg.pad = v; applyTheme(); });
-seg('#gWide',  function(){ return cfg.wide;  }, function(v){ cfg.wide = v; applyWidth(); });
+seg('#gPad',   function(){ return cfg.pad;   }, function(v){ cfg.pad = v; applyTheme(); relayout(true); });
+seg('#gWide',  function(){ return cfg.wide;  }, function(v){ cfg.wide = v; applyWidth(true); });
 seg('#gEdge',  function(){ return cfg.edge;  }, function(v){
   cfg.edge = v;
   if (rendition.location) rendition.emit('relocated', rendition.location);
@@ -464,8 +560,8 @@ seg('#gSpread',function(){ return cfg.spread;}, function(v){
   rendition.flow(v === 'scrolled' ? 'scrolled-doc' : 'paginated');
   curSpread = v === 'scrolled' ? 'none' : v;
   rendition.spread(curSpread);
-  $('#sheet').classList.toggle('two', v === 'auto' && $('#sheet').clientWidth > 900);
-  applyTheme();
+  $('#sheet').classList.toggle('two', twoWanted(v));
+  applyTheme(); applyWidth(true);
 });
 
 /* 글자 크기 스테퍼 */
@@ -507,7 +603,7 @@ $('#bFull').onclick = function(){
   } else if (!bare && document.fullscreenElement && document.exitFullscreen) {
     document.exitFullscreen().catch(function(){});
   }
-  setTimeout(function(){ try{ rendition.resize(); }catch(e){} }, 340);
+  applyWidth(true);
 };
 
 /* 창 크기 변화 대응 */
@@ -515,9 +611,8 @@ var rt;
 window.addEventListener('resize', function(){
   clearTimeout(rt);
   rt = setTimeout(function(){
-    $('#sheet').classList.toggle('two',
-      cfg.spread === 'auto' && $('#sheet').clientWidth > 900);
-    try{ rendition.resize(); }catch(e){}
+    $('#sheet').classList.toggle('two', twoWanted());
+    applyWidth(true);
   }, 180);
 });
 
