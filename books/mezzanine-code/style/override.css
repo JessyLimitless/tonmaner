@@ -4,15 +4,47 @@
    메자닌 코드 — 책별 조판 오버라이드
    공용 style/book.css 뒤에 얹힌다.
 
-   황동(#9C7A2C) — 표지의 차콜 바탕 위 금박 활자에서 가져왔다.
-   흰 종이에서는 살짝 눌러 명도를 낮추고(4.5:1 이상),
-   어두운 화면에서는 표지의 금색에 가깝게 밝힌다.
+   색은 다트인사이트 UI 의 톤앤매너를 그대로 가져왔다 (2026-09-23 저자 지시).
+   빨강 하나와 중성 먹빛(zinc) 두 축이다 — 대시보드의
+   dashboard/src/styles/theme-vars.css 와 같은 값을 쓴다.
+     강조   #DC2626 (red-600)  · 다크 #EF4444 (red-500)
+     먹빛   #18181B(zinc-900) → #52525B → #A1A1AA
+     괘선   #E4E4E7(zinc-200) · #D4D4D8 · 바탕 #F4F4F5
+
+   /* reader-*-light|dark */ 표시가 붙은 줄은 빌드가 읽어 리더 UI 에도
+   같은 색을 먹인다 (tools/build.sh). 표시와 값은 한 줄에 둔다.
    ══════════════════════════════════════════════════════════ */
 
-:root { --accent: #9C7A2C; }   /* reader-accent-light */
+:root {
+  --page:   #FFFFFF;   /* reader-page-light */
+  --ink:    #18181B;   /* reader-ink-light */
+  --soft:   #52525B;   /* reader-soft-light */
+  --faint:  #A1A1AA;   /* reader-faint-light */
+  --rule:   #E4E4E7;   /* reader-rule-light */
+  --rule-2: #D4D4D8;   /* reader-rule2-light */
+  --accent: #DC2626;   /* reader-accent-light */
+  --wash:   #F4F4F5;   /* reader-wash-light */
+}
+
+/* 리더 바깥(책상 면)과 상·하단 바 — 대시보드의 --bg-primary 계열 */
+:root {
+  --ui-bg:  #EFEFF1;   /* reader-uibg-light */
+  --ui-bg2: #E4E4E7;   /* reader-uibg2-light */
+}
 
 @media (prefers-color-scheme: dark) {
-  :root { --accent: #D9BC5F; } /* reader-accent-dark */
+  :root {
+    --page:   #18181B;   /* reader-page-dark */
+    --ink:    #FAFAFA;   /* reader-ink-dark */
+    --soft:   #A1A1AA;   /* reader-soft-dark */
+    --faint:  #71717A;   /* reader-faint-dark */
+    --rule:   #27272A;   /* reader-rule-dark */
+    --rule-2: #3F3F46;   /* reader-rule2-dark */
+    --accent: #EF4444;   /* reader-accent-dark */
+    --wash:   #27272A;   /* reader-wash-dark */
+    --ui-bg:  #09090B;   /* reader-uibg-dark */
+    --ui-bg2: #050506;   /* reader-uibg2-dark */
+  }
 }
 
 /* ══════════════════════════════════════════════════════════
