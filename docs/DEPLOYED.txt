@@ -1,6 +1,6 @@
 배포된 책 : 메자닌 코드
 슬러그    : mezzanine-code
-구운 시각 : 2026-09-23 08:13:31
+구운 시각 : 2026-09-23 17:07:34
 
 이 폴더는 tools/deploy-prep.sh 가 만든다. 직접 고치지 말 것.
 원고를 고쳤으면  bash tools/deploy-prep.sh mezzanine-code  를 다시 돌리고 커밋한다.

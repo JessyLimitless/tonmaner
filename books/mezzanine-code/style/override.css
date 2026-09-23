@@ -4,14 +4,14 @@
    메자닌 코드 — 책별 조판 오버라이드
    공용 style/book.css 뒤에 얹힌다.
 
-   색은 다트인사이트 UI 의 톤앤매너를 그대로 가져왔다 (2026-09-23 저자 지시).
+   색은 DART IN UI 의 톤앤매너를 그대로 가져왔다 (2026-09-23 저자 지시).
    빨강 하나와 중성 먹빛(zinc) 두 축이다 — 대시보드의
    dashboard/src/styles/theme-vars.css 와 같은 값을 쓴다.
      강조   #DC2626 (red-600)  · 다크 #EF4444 (red-500)
      먹빛   #18181B(zinc-900) → #52525B → #A1A1AA
      괘선   #E4E4E7(zinc-200) · #D4D4D8 · 바탕 #F4F4F5
 
-   /* reader-*-light|dark */ 표시가 붙은 줄은 빌드가 읽어 리더 UI 에도
+   「reader-이름-모드」 표시가 붙은 줄은 빌드가 읽어 리더 UI 에도
    같은 색을 먹인다 (tools/build.sh). 표시와 값은 한 줄에 둔다.
    ══════════════════════════════════════════════════════════ */
 
@@ -83,7 +83,7 @@ h3 .case {
   font-weight: 700;
   letter-spacing: 0.1em;
   line-height: 1.5;
-  color: var(--page);
+  color: #FFFFFF;             /* 빨간 바탕 위 글자는 늘 흰색 */
   background: var(--accent);
   padding: 0.08em 0.55em 0.04em;
   margin-right: 0.65em;
@@ -111,8 +111,12 @@ h3:has(.case) { margin-top: 2.8em; }
   margin-right: 0.25em;
 }
 
-/* 도해 안 — 강조색 상자 위에 얹는 글자 (종이색) */
-figure.diagram svg text.d-on-accent { fill: #FFFFFF; fill: var(--page); }
+/* 도해 안 — 빨간 바탕 위의 글자는 라이트·다크 모두 흰색 (2026-09-23 저자 지시).
+   예전엔 종이색(var(--page))을 따라가 다크에서 검정이 됐고, 클래스를 <g> 에
+   건 글줄은 이 규칙이 아예 안 닿아 라이트에서도 먹색으로 떨어졌다.
+   그래서 text 자신과 묶음 <g> 안의 text 를 둘 다 잡는다. */
+figure.diagram svg text.d-on-accent,
+figure.diagram svg .d-on-accent text { fill: #FFFFFF; }
 
 /* ══════════════════════════════════════════════════════════
    간지 — 장 앞에 한 장, 차례 뒤에 한 장 (2026-09-22 저자 요청)
