@@ -46,7 +46,7 @@
   <!-- ── 하단 ──────────────────────────────────────── -->
   <path d="M160 2286h1280" stroke="#DC2626" stroke-width="1.5" opacity="0.26"/>
   <text x="160" y="2372" font-family="'Segoe UI', Helvetica, Arial, sans-serif"
-        font-size="46" font-weight="700" letter-spacing="8" fill="#18181B" opacity="0.9">Jessy</text>
+        font-size="46" font-weight="700" letter-spacing="8" fill="#18181B" opacity="0.9">DART IN</text>
   <text x="1440" y="2372" text-anchor="end" font-family="'Segoe UI', Helvetica, Arial, sans-serif"
         font-size="22" letter-spacing="4" fill="#DC2626" opacity="0.9">CB · BW · EB</text>
 </svg>
