@@ -52,6 +52,26 @@ python -m http.server 8900 --bind 127.0.0.1
 - **표지는 gap 0.** 안 그러면 epub.js 가 넣는 좌우 패딩이 표지 둘레에 흰 띠를 만든다.
   이미지의 `max-height` 도 epub.js 가 걸므로 테마에서 `none` 으로 풀어야 꽉 찬다.
 
+### 폰 (2026-09-23 — "모바일에서 책을 보기 힘들다")
+
+실측 원인 세 가지. 에뮬레이터 스크린샷만 보면 멀쩡해 보여서 못 잡았다 — **손가락으로 넘겨 봐야** 드러난다.
+
+- **스와이프·탭이 전혀 없었다.** 넘기는 길은 화살표 버튼과 키보드뿐이었다. 본문은 epub.js iframe
+  안이라 부모 문서에 터치가 안 올라온다 → `rendition.on('touchstart'|'touchmove'|'touchend')` 로 받는다.
+  가장자리 판정은 iframe 좌표에 `frameElement` 위치를 더해 부모 좌표로 바꾼다(iframe 은 단 전체 폭).
+- **가로 밀기를 브라우저가 스크롤로 가져가면 touchend 대신 touchcancel 이 온다.** 테마에
+  `html{touch-action: pan-y pinch-zoom}` 을 넣고, touchcancel 은 마지막 touchmove 위치로 판정한다.
+- **표지가 화면 밖으로 삐져나갔다**(390px 폰에 421px). 표지 폭을 높이로만 쟀기 때문 — 폭이 천장이면 폭에 맞춘다.
+- 손가락 기기에서는 화살표 버튼을 숨긴다(본문 첫 글자를 가렸다). 처음 한 번만 넘기는 법을 띄운다.
+
+확인은 Playwright 로 `isMobile/hasTouch` 컨텍스트에서 CDP `Input.dispatchTouchEvent` 로 민다.
+
+## 배포 사이트의 링크 미리보기
+
+`tools/og.sh <슬러그>` 가 표지+제목의 1200×630 카드(`images/og.png`)를 굽고, `deploy-prep.sh` 가
+`docs/og.png` 와 `og:*` 태그를 `docs/index.html` 에 넣는다. 카톡은 세로 표지를 가운데만 잘라서 가로판을 따로 만든다.
+⚠️ 카톡은 미리보기를 캐시한다 — 이미 보낸 주소는 카카오 개발자 사이트의 공유 디버거에서 캐시를 지워야 새 카드가 뜬다.
+
 ### 책별 색 (2026-09-23)
 
 리더 UI 색은 책마다 다르다. `books/<슬러그>/style/override.css` 에서 줄 끝에

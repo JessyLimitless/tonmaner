@@ -1,6 +1,20 @@
 <!DOCTYPE html>
 <html lang="ko"><head><meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<meta name="description" content="전환사채(CB)·신주인수권부사채(BW) 발행 공시 한 장에 세력의 의도가 숫자로 번역되어 있다.">
+<meta name="author" content="Jessy">
+<meta property="og:type" content="book">
+<meta property="og:site_name" content="메자닌 코드">
+<meta property="og:title" content="메자닌 코드 — DART 공시를 관통하는 질문들">
+<meta property="og:description" content="전환사채(CB)·신주인수권부사채(BW) 발행 공시 한 장에 세력의 의도가 숫자로 번역되어 있다.">
+<meta property="og:url" content="https://tonmaner.cloud5.socialbrain.co.kr/">
+<meta property="og:image" content="https://tonmaner.cloud5.socialbrain.co.kr/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="ko_KR">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://tonmaner.cloud5.socialbrain.co.kr/og.png">
+<link rel="apple-touch-icon" href="cover.png">
 <title>메자닌 코드</title>
 <style>
   /* ── 서체 — 본문과 같은 KoPubWorld. 껍데기만 딴 서체를 쓰지 않는다 ── */
@@ -193,6 +207,19 @@
     #prev{left:6px} #next{right:6px}
     #set{right:8px;left:8px;width:auto}
   }
+  /* 손가락 기기 — 화살표 버튼이 본문 첫 글자를 가린다. 밀기·가장자리 탭으로 넘긴다 */
+  @media (hover:none) and (pointer:coarse){
+    .turner{display:none}
+  }
+  html,body{overscroll-behavior:none}
+  #stage{touch-action:pan-y pinch-zoom}
+  #hint{position:fixed;left:50%;top:58px;transform:translateX(-50%);z-index:60;
+    padding:9px 16px;border-radius:20px;font-size:13px;white-space:nowrap;
+    background:var(--ui-glass);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
+    border:1px solid var(--ui-rule);color:var(--ui-soft);
+    box-shadow:0 3px 14px -4px var(--ui-shadow);opacity:0;pointer-events:none;
+    transition:opacity .4s}
+  #hint.on{opacity:1}
 </style></head><body>
 
 <div id="top">
@@ -334,11 +361,22 @@ function applyWidth(force){
   /* 표지는 제 비율(1600:2560)로 높이에 맞춘다 — 폭 상한을 걸면 종이가 잘린다 */
   if (sh.classList.contains('coverpage')) {
     var ch = $('#paper').clientHeight - 28;
+    var cw = Math.round(ch * 1600 / 2560);
+    /* 폰은 높이가 아니라 폭이 천장이다 — 높이로만 재면 표지가 화면 밖으로 삐져나간다
+       (390px 폰에서 421px). 폭에 걸리면 높이를 표지 비율로 줄이고 세로 가운데에 둔다. */
+    var pw = paperInner();
     sh.style.maxWidth = 'none';
-    sh.style.width = Math.round(ch * 1600 / 2560) + 'px';
+    if (cw > pw) {
+      sh.style.width = pw + 'px';
+      sh.style.height = Math.round(pw * 2560 / 1600) + 'px';
+      sh.style.alignSelf = 'center';
+    } else {
+      sh.style.width = cw + 'px';
+      sh.style.height = ''; sh.style.alignSelf = '';
+    }
     relayout(force); return;
   }
-  sh.style.width = '';
+  sh.style.width = ''; sh.style.height = ''; sh.style.alignSelf = '';
   var w = +cfg.wide;
   var eff = Math.min(w >= 9000 ? 99999 : w, widthCap());
   if (sh.classList.contains('single')) eff = Math.min(eff, 760);
@@ -382,6 +420,9 @@ function applyTheme(){
   document.documentElement.setAttribute('data-ui', cfg.theme);
   var pd = String(cfg.pad).split('/');
   var rules = {
+    /* 가로 밀기를 브라우저가 스크롤로 가져가면 touchend 대신 touchcancel 이 와서
+       쪽이 안 넘어간다 — 가로는 리더가 받는다 */
+    'html':{'touch-action':'pan-y pinch-zoom !important'},
     ':root':{'--page':p.page,'--ink':p.ink,'--soft':p.soft,'--faint':p.faint,
              '--rule':p.rule,'--rule-2':p.rule2,'--accent':p.accent,'--wash':p.wash},
     'body':{'background':p.page+' !important','color':p.ink+' !important',
@@ -516,6 +557,67 @@ function turn(d){
 }
 $('#prev').onclick = function(){ turn(-1); };
 $('#next').onclick = function(){ turn(1); };
+
+/* 폰 — 옆으로 밀거나 가장자리(좌우 30%)를 눌러 넘긴다.
+   본문은 epub.js iframe 안에 있어 부모 문서로 터치가 올라오지 않는다 —
+   rendition.on 으로 받는다. iframe 안 좌표는 단(段) 전체 기준이라
+   가장자리 판정은 iframe 의 화면 위치를 더해 부모 좌표로 바꾼다. */
+var touch0 = null;
+function tX(e, t){
+  var fe = e.view && e.view.frameElement;
+  return fe ? fe.getBoundingClientRect().left + t.clientX : t.clientX;
+}
+function tStart(e){
+  var t = e.changedTouches && e.changedTouches[0]; if (!t) return;
+  touch0 = {x:t.clientX, y:t.clientY, px:tX(e,t), at:Date.now()};
+}
+function tEnd(e){
+  var t = e.changedTouches && e.changedTouches[0];
+  if (!t || !touch0) return;
+  var dx = t.clientX - touch0.x, dy = t.clientY - touch0.y, dt = Date.now() - touch0.at;
+  var px = touch0.px; touch0 = null;
+  if (Math.abs(dx) > 40 && Math.abs(dx) > Math.abs(dy) * 1.4 && dt < 900) {
+    turn(dx < 0 ? 1 : -1); return;
+  }
+  if (Math.abs(dx) < 10 && Math.abs(dy) < 10 && dt < 400) {
+    var el = e.target;
+    if (el && el.closest && el.closest('a,button,input,label,select')) return;
+    var W = window.innerWidth;
+    if (px < W * 0.3) turn(-1);
+    else if (px > W * 0.7) turn(1);
+  }
+}
+function tMove(e){
+  var t = e.changedTouches && e.changedTouches[0];
+  if (t && touch0) touch0.last = {clientX:t.clientX, clientY:t.clientY};
+}
+function tCancel(e){
+  if (!touch0 || !touch0.last) { touch0 = null; return; }
+  tEnd({changedTouches:[touch0.last], target:null, view:e.view});
+}
+rendition.on('touchstart', tStart);
+rendition.on('touchmove', tMove);
+rendition.on('touchend', tEnd);
+rendition.hooks.content.register(function(c){
+  c.document.addEventListener('touchcancel', tCancel);
+});
+$('#stage').addEventListener('touchstart', tStart, {passive:true});
+$('#stage').addEventListener('touchmove', tMove, {passive:true});
+$('#stage').addEventListener('touchend', tEnd);
+$('#stage').addEventListener('touchcancel', tCancel);
+
+/* 처음 온 손가락 기기에만 한 번 — 버튼을 숨겼으니 넘기는 법을 알려 준다 */
+if (window.matchMedia && matchMedia('(hover:none) and (pointer:coarse)').matches) {
+  var seen = false; try { seen = localStorage.getItem('reader-hint') === '1'; } catch(e){}
+  if (!seen) {
+    var hn = document.createElement('div'); hn.id = 'hint';
+    hn.textContent = '옆으로 밀거나 가장자리를 눌러 넘기세요';
+    document.body.appendChild(hn);
+    setTimeout(function(){ hn.classList.add('on'); }, 900);
+    setTimeout(function(){ hn.classList.remove('on'); }, 4600);
+    try { localStorage.setItem('reader-hint', '1'); } catch(e){}
+  }
+}
 
 /* ── 서랍·패널 ────────────────────────────────────── */
 function openToc(){ $('#toc').classList.add('open'); $('#scrim').classList.add('open'); }
