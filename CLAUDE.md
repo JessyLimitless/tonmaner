@@ -66,7 +66,7 @@ python -m http.server 8900 --bind 127.0.0.1
 
 확인은 Playwright 로 `isMobile/hasTouch` 컨텍스트에서 CDP `Input.dispatchTouchEvent` 로 민다.
 
-## 배포 사이트의 링크 미리보기
+### 배포 사이트의 링크 미리보기
 
 `tools/og.sh <슬러그>` 가 표지+제목의 1200×630 카드(`images/og.png`)를 굽고, `deploy-prep.sh` 가
 `docs/og.png` 와 `og:*` 태그를 `docs/index.html` 에 넣는다. 카톡은 세로 표지를 가운데만 잘라서 가로판을 따로 만든다.
